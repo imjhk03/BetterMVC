@@ -56,15 +56,23 @@
 		C1615CCB261696110052918D /* BetterMVC */ = {
 			isa = PBXGroup;
 			children = (
+				C1615CE22616964E0052918D /* List */,
 				C1615CCC261696110052918D /* AppDelegate.swift */,
 				C1615CCE261696110052918D /* SceneDelegate.swift */,
-				C1615CD0261696110052918D /* ViewController.swift */,
 				C1615CD2261696110052918D /* Main.storyboard */,
 				C1615CD5261696120052918D /* Assets.xcassets */,
 				C1615CD7261696120052918D /* LaunchScreen.storyboard */,
 				C1615CDA261696120052918D /* Info.plist */,
 			);
 			path = BetterMVC;
+			sourceTree = "<group>";
+		};
+		C1615CE22616964E0052918D /* List */ = {
+			isa = PBXGroup;
+			children = (
+				C1615CD0261696110052918D /* ViewController.swift */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
