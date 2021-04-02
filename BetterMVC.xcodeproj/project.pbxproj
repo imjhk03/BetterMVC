@@ -18,7 +18,10 @@
 		C1615CEC261698590052918D /* ListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1615CEA261698590052918D /* ListCollectionViewCell.xib */; };
 		C1615CF1261699680052918D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1615CF0261699680052918D /* NetworkManager.swift */; };
 		C1615CF5261699C90052918D /* ListLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1615CF4261699C90052918D /* ListLogicController.swift */; };
-		C1615CFA26169A0F0052918D /* ProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1615CF926169A0F0052918D /* ProductList.swift */; };
+		C1615CFE26169D890052918D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1615CFD26169D890052918D /* Constants.swift */; };
+		C1615D462616C6990052918D /* ResponseResultExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1615D452616C6990052918D /* ResponseResultExample.swift */; };
+		C1615D492616C6E60052918D /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1615D482616C6E60052918D /* Movie.swift */; };
+		C1615D662617081E0052918D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1615D652617081E0052918D /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +38,10 @@
 		C1615CEA261698590052918D /* ListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCollectionViewCell.xib; sourceTree = "<group>"; };
 		C1615CF0261699680052918D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C1615CF4261699C90052918D /* ListLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLogicController.swift; sourceTree = "<group>"; };
-		C1615CF926169A0F0052918D /* ProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductList.swift; sourceTree = "<group>"; };
+		C1615CFD26169D890052918D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C1615D452616C6990052918D /* ResponseResultExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseResultExample.swift; sourceTree = "<group>"; };
+		C1615D482616C6E60052918D /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		C1615D652617081E0052918D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,7 @@
 				C1615CD5261696120052918D /* Assets.xcassets */,
 				C1615CD7261696120052918D /* LaunchScreen.storyboard */,
 				C1615CDA261696120052918D /* Info.plist */,
+				C1615CFD26169D890052918D /* Constants.swift */,
 			);
 			path = BetterMVC;
 			sourceTree = "<group>";
@@ -104,6 +111,7 @@
 		C1615CEF2616995B0052918D /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				C1615D652617081E0052918D /* NetworkError.swift */,
 				C1615CF0261699680052918D /* NetworkManager.swift */,
 			);
 			path = Manager;
@@ -120,7 +128,8 @@
 		C1615CF826169A020052918D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C1615CF926169A0F0052918D /* ProductList.swift */,
+				C1615D452616C6990052918D /* ResponseResultExample.swift */,
+				C1615D482616C6E60052918D /* Movie.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -197,13 +206,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1615CF1261699680052918D /* NetworkManager.swift in Sources */,
-				C1615CFA26169A0F0052918D /* ProductList.swift in Sources */,
 				C1615CD1261696110052918D /* ListViewController.swift in Sources */,
 				C1615CF5261699C90052918D /* ListLogicController.swift in Sources */,
 				C1615CEB261698590052918D /* ListCollectionViewCell.swift in Sources */,
 				C1615CCD261696110052918D /* AppDelegate.swift in Sources */,
+				C1615D462616C6990052918D /* ResponseResultExample.swift in Sources */,
 				C1615CE6261697B00052918D /* ListDataSource.swift in Sources */,
 				C1615CCF261696110052918D /* SceneDelegate.swift in Sources */,
+				C1615D492616C6E60052918D /* Movie.swift in Sources */,
+				C1615D662617081E0052918D /* NetworkError.swift in Sources */,
+				C1615CFE26169D890052918D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,9 +7,9 @@
 
 import UIKit
 
-enum ViewState<ProductList> {
+enum ViewState<Movie> {
     case loading
-    case presenting(ProductList)
+    case presenting([Movie])
     case failed
 }
 
@@ -43,15 +43,19 @@ final class ListViewController: UIViewController {
 
 }
 
+// MARK: - Render
 private extension ListViewController {
-    private func render(_ state: ViewState<ProductList>) {
+    private func render(_ state: ViewState<Movie>) {
         switch state {
         case .loading:
             break
         case .presenting(let list):
-            break
+            dataSource.movies = list
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
         case .failed:
-            break
+            print("Failed to load")
         }
     }
 }

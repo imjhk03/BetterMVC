@@ -9,6 +9,8 @@ import UIKit
 
 final class ListDataSource: NSObject {
     
+    var movies: [Movie] = []
+    
     init(collectionView: UICollectionView) {
         let nib = UINib(nibName: "ListCollectionViewCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "ListCollectionViewCell")
@@ -19,13 +21,14 @@ final class ListDataSource: NSObject {
 // MARK: - UICollectionViewDataSource
 extension ListDataSource: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return movies.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCollectionViewCell", for: indexPath) as? ListCollectionViewCell else {
             fatalError("Failed to dequeue ListCollectionViewCell")
         }
+        cell.configure(.init(movie: movies[indexPath.item]))
         return cell
     }
 }
