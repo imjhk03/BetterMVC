@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,7 @@
 		C1615D462616C6990052918D /* ResponseResultExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1615D452616C6990052918D /* ResponseResultExample.swift */; };
 		C1615D492616C6E60052918D /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1615D482616C6E60052918D /* Movie.swift */; };
 		C1615D662617081E0052918D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1615D652617081E0052918D /* NetworkError.swift */; };
+		C1615D81261716C00052918D /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = C1615D80261716C00052918D /* Nuke */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1615D81261716C00052918D /* Nuke in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +152,9 @@
 			dependencies = (
 			);
 			name = BetterMVC;
+			packageProductDependencies = (
+				C1615D80261716C00052918D /* Nuke */,
+			);
 			productName = BetterMVC;
 			productReference = C1615CC9261696110052918D /* BetterMVC.app */;
 			productType = "com.apple.product-type.application";
@@ -177,6 +182,9 @@
 				Base,
 			);
 			mainGroup = C1615CC0261696110052918D;
+			packageReferences = (
+				C1615D7F261716C00052918D /* XCRemoteSwiftPackageReference "Nuke" */,
+			);
 			productRefGroup = C1615CCA261696110052918D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -417,6 +425,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C1615D7F261716C00052918D /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.4.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C1615D80261716C00052918D /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C1615D7F261716C00052918D /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C1615CC1261696110052918D /* Project object */;
 }
