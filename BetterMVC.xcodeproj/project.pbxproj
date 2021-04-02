@@ -76,9 +76,9 @@
 		C1615CCB261696110052918D /* BetterMVC */ = {
 			isa = PBXGroup;
 			children = (
+				C1615D83261717510052918D /* Activities */,
 				C1615CF826169A020052918D /* Model */,
 				C1615CEF2616995B0052918D /* Manager */,
-				C1615CE22616964E0052918D /* List */,
 				C1615CCC261696110052918D /* AppDelegate.swift */,
 				C1615CCE261696110052918D /* SceneDelegate.swift */,
 				C1615CD2261696110052918D /* Main.storyboard */,
@@ -134,6 +134,14 @@
 				C1615D482616C6E60052918D /* Movie.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C1615D83261717510052918D /* Activities */ = {
+			isa = PBXGroup;
+			children = (
+				C1615CE22616964E0052918D /* List */,
+			);
+			path = Activities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
