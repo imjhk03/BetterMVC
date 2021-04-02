@@ -7,7 +7,15 @@
 
 import UIKit
 
+enum ViewState<ProductList> {
+    case loading
+    case presenting(ProductList)
+    case failed
+}
+
 final class ListViewController: UIViewController {
+    
+    private let logic = ListLogicController()
     
     private lazy var dataSource = ListDataSource(collectionView: collectionView)
     
@@ -17,6 +25,9 @@ final class ListViewController: UIViewController {
         super.viewDidLoad()
         
         setupView()
+        logic.load { [weak self] state in
+            self?.render(state)
+        }
     }
 
     private func setupView() {
@@ -32,3 +43,15 @@ final class ListViewController: UIViewController {
 
 }
 
+private extension ListViewController {
+    private func render(_ state: ViewState<ProductList>) {
+        switch state {
+        case .loading:
+            break
+        case .presenting(let list):
+            break
+        case .failed:
+            break
+        }
+    }
+}

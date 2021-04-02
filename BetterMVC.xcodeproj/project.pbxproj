@@ -17,6 +17,8 @@
 		C1615CEB261698590052918D /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1615CE9261698590052918D /* ListCollectionViewCell.swift */; };
 		C1615CEC261698590052918D /* ListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1615CEA261698590052918D /* ListCollectionViewCell.xib */; };
 		C1615CF1261699680052918D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1615CF0261699680052918D /* NetworkManager.swift */; };
+		C1615CF5261699C90052918D /* ListLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1615CF4261699C90052918D /* ListLogicController.swift */; };
+		C1615CFA26169A0F0052918D /* ProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1615CF926169A0F0052918D /* ProductList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		C1615CE9261698590052918D /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
 		C1615CEA261698590052918D /* ListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCollectionViewCell.xib; sourceTree = "<group>"; };
 		C1615CF0261699680052918D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		C1615CF4261699C90052918D /* ListLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLogicController.swift; sourceTree = "<group>"; };
+		C1615CF926169A0F0052918D /* ProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 		C1615CCB261696110052918D /* BetterMVC */ = {
 			isa = PBXGroup;
 			children = (
+				C1615CF826169A020052918D /* Model */,
 				C1615CEF2616995B0052918D /* Manager */,
 				C1615CE22616964E0052918D /* List */,
 				C1615CCC261696110052918D /* AppDelegate.swift */,
@@ -79,6 +84,7 @@
 		C1615CE22616964E0052918D /* List */ = {
 			isa = PBXGroup;
 			children = (
+				C1615CF3261699BF0052918D /* Logic */,
 				C1615CE82616984D0052918D /* View */,
 				C1615CD0261696110052918D /* ListViewController.swift */,
 				C1615CE5261697B00052918D /* ListDataSource.swift */,
@@ -101,6 +107,22 @@
 				C1615CF0261699680052918D /* NetworkManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		C1615CF3261699BF0052918D /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				C1615CF4261699C90052918D /* ListLogicController.swift */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		C1615CF826169A020052918D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C1615CF926169A0F0052918D /* ProductList.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,7 +197,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1615CF1261699680052918D /* NetworkManager.swift in Sources */,
+				C1615CFA26169A0F0052918D /* ProductList.swift in Sources */,
 				C1615CD1261696110052918D /* ListViewController.swift in Sources */,
+				C1615CF5261699C90052918D /* ListLogicController.swift in Sources */,
 				C1615CEB261698590052918D /* ListCollectionViewCell.swift in Sources */,
 				C1615CCD261696110052918D /* AppDelegate.swift in Sources */,
 				C1615CE6261697B00052918D /* ListDataSource.swift in Sources */,
