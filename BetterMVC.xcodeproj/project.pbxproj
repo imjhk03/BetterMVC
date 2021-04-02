@@ -16,6 +16,7 @@
 		C1615CE6261697B00052918D /* ListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1615CE5261697B00052918D /* ListDataSource.swift */; };
 		C1615CEB261698590052918D /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1615CE9261698590052918D /* ListCollectionViewCell.swift */; };
 		C1615CEC261698590052918D /* ListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1615CEA261698590052918D /* ListCollectionViewCell.xib */; };
+		C1615CF1261699680052918D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1615CF0261699680052918D /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		C1615CE5261697B00052918D /* ListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDataSource.swift; sourceTree = "<group>"; };
 		C1615CE9261698590052918D /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
 		C1615CEA261698590052918D /* ListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCollectionViewCell.xib; sourceTree = "<group>"; };
+		C1615CF0261699680052918D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		C1615CCB261696110052918D /* BetterMVC */ = {
 			isa = PBXGroup;
 			children = (
+				C1615CEF2616995B0052918D /* Manager */,
 				C1615CE22616964E0052918D /* List */,
 				C1615CCC261696110052918D /* AppDelegate.swift */,
 				C1615CCE261696110052918D /* SceneDelegate.swift */,
@@ -90,6 +93,14 @@
 				C1615CEA261698590052918D /* ListCollectionViewCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C1615CEF2616995B0052918D /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				C1615CF0261699680052918D /* NetworkManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +174,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1615CF1261699680052918D /* NetworkManager.swift in Sources */,
 				C1615CD1261696110052918D /* ListViewController.swift in Sources */,
 				C1615CEB261698590052918D /* ListCollectionViewCell.swift in Sources */,
 				C1615CCD261696110052918D /* AppDelegate.swift in Sources */,
