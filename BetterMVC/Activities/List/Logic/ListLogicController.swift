@@ -11,11 +11,10 @@ final class ListLogicController {
     private let networking = NetworkManager.shared
     
     func load(then handler: @escaping (ViewState<Movie>) -> Void) {
-        handler(.loading)
-        
-        networking.loadMovies { result in
-            switch result {
-            case .success(let movies):
+        networking.request(.discover(page: 1)) { (response: Result<MovieList, NetworkError>) in
+            switch response {
+            case .success(let response):
+                let movies = response.results
                 handler(.presenting(movies))
             case .failure(let error):
                 handler(.failed)

@@ -28,6 +28,8 @@
 		C1A30523261D48A1002DC30F /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A30522261D48A1002DC30F /* UIViewController+Extensions.swift */; };
 		C1A30526261D48C9002DC30F /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A30525261D48C9002DC30F /* LoadingViewController.swift */; };
 		C1A3052A261D4CE4002DC30F /* DataLoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A30529261D4CE4002DC30F /* DataLoadingVC.swift */; };
+		C1A3052D261D6A06002DC30F /* DetailLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A3052C261D6A06002DC30F /* DetailLogicController.swift */; };
+		C1A30530261D8DB0002DC30F /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A3052F261D8DB0002DC30F /* Genre.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,8 @@
 		C1A30522261D48A1002DC30F /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		C1A30525261D48C9002DC30F /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		C1A30529261D4CE4002DC30F /* DataLoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoadingVC.swift; sourceTree = "<group>"; };
+		C1A3052C261D6A06002DC30F /* DetailLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLogicController.swift; sourceTree = "<group>"; };
+		C1A3052F261D8DB0002DC30F /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,7 @@
 			children = (
 				C1615D452616C6990052918D /* ResponseResultExample.swift */,
 				C1615D482616C6E60052918D /* Movie.swift */,
+				C1A3052F261D8DB0002DC30F /* Genre.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 		C1A30519261D4651002DC30F /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				C1A3052C261D6A06002DC30F /* DetailLogicController.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -295,7 +301,9 @@
 				C1A30526261D48C9002DC30F /* LoadingViewController.swift in Sources */,
 				C1615D462616C6990052918D /* ResponseResultExample.swift in Sources */,
 				C1615CE6261697B00052918D /* ListDataSource.swift in Sources */,
+				C1A30530261D8DB0002DC30F /* Genre.swift in Sources */,
 				C1615CCF261696110052918D /* SceneDelegate.swift in Sources */,
+				C1A3052D261D6A06002DC30F /* DetailLogicController.swift in Sources */,
 				C1615D492616C6E60052918D /* Movie.swift in Sources */,
 				C1A3052A261D4CE4002DC30F /* DataLoadingVC.swift in Sources */,
 				C1615D662617081E0052918D /* NetworkError.swift in Sources */,

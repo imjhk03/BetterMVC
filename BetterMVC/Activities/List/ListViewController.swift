@@ -26,6 +26,8 @@ final class ListViewController: DataLoadingViewController {
         
         setupView()
         
+        render(.loading)
+        
         logic.load { [weak self] state in
             self?.render(state)
         }
@@ -46,6 +48,7 @@ final class ListViewController: DataLoadingViewController {
 
 // MARK: - Render
 private extension ListViewController {
+    // movieList.state
     private func render(_ state: ViewState<Movie>) {
         switch state {
         case .loading:
@@ -58,11 +61,14 @@ private extension ListViewController {
                 self.collectionView.reloadData()
             }
         case .failed:
+            hideLoadingView()
+            
             print("Failed to load")
         }
     }
 }
 
+// MARK: - ListDataSourceDelegate
 extension ListViewController: ListDataSourceDelegate {
     func moveToDetail() {
         let detailVC = DetailViewController()

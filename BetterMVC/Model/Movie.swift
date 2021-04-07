@@ -7,9 +7,15 @@
 
 import Foundation
 
-struct MoviewList: Codable {
+struct MovieList: Codable {
     let page: Int
     let results: [Movie]
+    
+    enum MovieListState {
+        case loading
+        case presenting([Movie])
+        case failed
+    }
 }
 
 struct Movie: Codable {
@@ -18,13 +24,13 @@ struct Movie: Codable {
     private(set) var backdrop_path: String?
     private(set) var genre_ids: [Int]
     private(set) var id: Int
-    private(set) var original_language: String?
-    private(set) var original_title: String?
+    private(set) var original_title: String
     private(set) var overview: String?
     private(set) var popularity: Double
     private(set) var poster_path: String?
-    private(set) var release_date: String?
-    private(set) var title: String?
+    private(set) var release_date: String   // format: date
+    private(set) var runtime: Int?
+    private(set) var title: String
     private(set) var video: Bool
     private(set) var vote_average: Double
     private(set) var vote_count: Int

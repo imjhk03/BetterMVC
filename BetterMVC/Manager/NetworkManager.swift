@@ -7,27 +7,59 @@
 
 import Foundation
 
+struct EndPoint {
+    let path: String
+    let queryItems: [URLQueryItem]
+}
+
+enum Sorting: String {
+    case popularityDesc = "popularity.desc"
+}
+
+extension EndPoint {
+    static func discover(page: Int, sortedBy sorting: Sorting = .popularityDesc) -> EndPoint {
+        return EndPoint(
+            path: "/discover/movie",
+            queryItems: [
+                URLQueryItem(name: "api_key", value: API_KEY),
+                URLQueryItem(name: "language", value: "ko-KR"),
+                URLQueryItem(name: "sort_by", value: sorting.rawValue),
+                URLQueryItem(name: "page", value: String(page))
+            ]
+        )
+    }
+}
+
+extension EndPoint {
+    var url: URL? {
+        var components = URLComponents()
+        components.scheme = NetworkManager.scheme
+        components.host = NetworkManager.host
+        components.path = NetworkManager.basePath + path
+        components.queryItems = queryItems
+        
+        return components.url
+    }
+}
+
 final class NetworkManager {
     
     static let shared       = NetworkManager()
     private let baseURL     = "https://api.themoviedb.org/3/movie/550?api_key=\(API_KEY)"
-    private let scheme = "https"
-    private let host = "api.themoviedb.org"
-    private let basePath = "/3"
+    static let scheme = "https"
+    static let host = "api.themoviedb.org"
+    static let basePath = "/3"
     
-    private let testURL = "https://api.themoviedb.org/3/discover/movie?api_key=\(API_KEY)&language=ko-KR&sort_by=popularity.desc&include_adult=false&include_video=false&page=1"
+    private let testDetailURL = "https://api.themoviedb.org/3/movie/791373?api_key=\(API_KEY)&language=ko-KR"
     
-    func loadMovies(_ handler: @escaping (Result<[Movie], NetworkError>) -> Void) {
-        var components = URLComponents()
-        components.scheme = scheme
-        components.host = host
-        components.path = basePath + "/discover/movie"
-        
-        guard let url = URL(string: testURL) else {
-            preconditionFailure("Failed to construct URL")
+    
+    func request<T: Decodable>(_ endpoint: EndPoint,
+                 then handler: @escaping (Result<T, NetworkError>) -> Void) {
+        guard let url = endpoint.url else {
+            return handler(.failure(.invalidURL))
         }
-
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+        
+        let task = URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data else {
                 handler(.failure(.invalidData))
                 return
@@ -35,9 +67,10 @@ final class NetworkManager {
             
             do {
                 let decoder = JSONDecoder()
-                let responseData = try decoder.decode(MoviewList.self, from: data)
-                handler(.success(responseData.results))
+                let responseData = try decoder.decode(T.self, from: data)
+                handler(.success(responseData))
             } catch {
+                print("Invalid JSON")
                 handler(.failure(.invalidData))
             }
         }
