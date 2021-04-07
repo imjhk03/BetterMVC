@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Nuke
 
 final class ListCollectionViewCell: UICollectionViewCell {
     
@@ -14,6 +15,11 @@ final class ListCollectionViewCell: UICollectionViewCell {
         
         var title: String? { movie.title }
         var releaseDate: String? { movie.release_date }
+        var imageURL: URL? {
+            let finalString = "https://image.tmdb.org/t/p/original" + (movie.poster_path ?? "")
+            guard let url = URL(string: finalString) else { return nil }
+            return url
+        }
     }
 
     @IBOutlet private weak var imageView: UIImageView!
@@ -27,12 +33,16 @@ final class ListCollectionViewCell: UICollectionViewCell {
     }
     
     private func setupView() {
-        imageView.backgroundColor = .systemGreen
+        imageView.contentMode = .scaleAspectFill
     }
     
     func configure(_ viewModel: ViewModel) {
         titleLabel.text = viewModel.title
         releaseDateLabel.text = viewModel.releaseDate
+        guard let url = viewModel.imageURL else { return }
+        let placeholder = UIImage(named: "film.fill")
+        let options = ImageLoadingOptions(placeholder: placeholder, transition: .fadeIn(duration: 0.5))
+        Nuke.loadImage(with: url, options: options, into: imageView)
     }
 
 }
