@@ -7,12 +7,6 @@
 
 import UIKit
 
-enum ViewState<Movie> {
-    case loading
-    case presenting([Movie])
-    case failed
-}
-
 final class ListViewController: DataLoadingViewController {
     
     private let logic = ListLogicController()
@@ -48,8 +42,7 @@ final class ListViewController: DataLoadingViewController {
 
 // MARK: - Render
 private extension ListViewController {
-    // movieList.state
-    private func render(_ state: ViewState<Movie>) {
+    private func render(_ state: MovieList.State) {
         switch state {
         case .loading:
             showLoadingView()

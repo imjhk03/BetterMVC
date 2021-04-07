@@ -10,7 +10,7 @@ import Foundation
 final class ListLogicController {
     private let networking = NetworkManager.shared
     
-    func load(then handler: @escaping (ViewState<Movie>) -> Void) {
+    func load(then handler: @escaping (MovieList.State) -> Void) {
         networking.request(.discover(page: 1)) { (response: Result<MovieList, NetworkError>) in
             switch response {
             case .success(let response):

@@ -7,27 +7,45 @@
 
 import UIKit
 
-final class DetailViewController: UIViewController {
+final class DetailViewController: DataLoadingViewController {
+    
+    private let logic = DetailLogicController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupView()
+        
+        render(.loading)
+        
+        logic.load { [weak self] state in
+            self?.render(state)
+        }
     }
     
     private func setupView() {
         view.backgroundColor = .systemPink
     }
 
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+// MARK: - Render
+private extension DetailViewController {
+    private func render(_ state: MovieDetail.State) {
+        switch state {
+        case .loading:
+            showLoadingView()
+        case .presenting(let detail):
+            hideLoadingView()
+            
+//            dataSource.movies = list
+//            DispatchQueue.main.async {
+//                self.collectionView.reloadData()
+//            }
+        case .failed:
+            hideLoadingView()
+            
+            print("Failed to load")
+        }
     }
-    */
-
 }

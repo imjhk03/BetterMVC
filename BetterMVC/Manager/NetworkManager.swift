@@ -28,6 +28,16 @@ extension EndPoint {
             ]
         )
     }
+    
+    static func detail(movieID: String) -> EndPoint {
+        return EndPoint(
+            path: "/movie/\(movieID)",
+            queryItems: [
+                URLQueryItem(name: "api_key", value: API_KEY),
+                URLQueryItem(name: "language", value: "ko-KR")
+            ]
+        )
+    }
 }
 
 extension EndPoint {
@@ -45,10 +55,9 @@ extension EndPoint {
 final class NetworkManager {
     
     static let shared       = NetworkManager()
-    private let baseURL     = "https://api.themoviedb.org/3/movie/550?api_key=\(API_KEY)"
-    static let scheme = "https"
-    static let host = "api.themoviedb.org"
-    static let basePath = "/3"
+    static let scheme       = "https"
+    static let host         = "api.themoviedb.org"
+    static let basePath     = "/3"
     
     private let testDetailURL = "https://api.themoviedb.org/3/movie/791373?api_key=\(API_KEY)&language=ko-KR"
     
