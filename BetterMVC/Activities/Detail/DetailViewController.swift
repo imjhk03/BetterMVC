@@ -10,6 +10,9 @@ import UIKit
 final class DetailViewController: DataLoadingViewController {
     
     private let logic = DetailLogicController()
+    private lazy var dataSource = DetailDataSource(collectionView: collectionView)
+    
+    @IBOutlet weak var collectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +27,8 @@ final class DetailViewController: DataLoadingViewController {
     }
     
     private func setupView() {
-        view.backgroundColor = .systemPink
+        collectionView.dataSource = dataSource
+        collectionView.delegate = dataSource
     }
 
 }
@@ -38,10 +42,11 @@ private extension DetailViewController {
         case .presenting(let detail):
             hideLoadingView()
             
-//            dataSource.movies = list
-//            DispatchQueue.main.async {
-//                self.collectionView.reloadData()
-//            }
+            dataSource.movie = detail
+            DispatchQueue.main.async {
+                self.navigationItem.title = detail.title
+                self.collectionView.reloadData()
+            }
         case .failed:
             hideLoadingView()
             

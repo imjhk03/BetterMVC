@@ -30,6 +30,9 @@
 		C1A3052A261D4CE4002DC30F /* DataLoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A30529261D4CE4002DC30F /* DataLoadingVC.swift */; };
 		C1A3052D261D6A06002DC30F /* DetailLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A3052C261D6A06002DC30F /* DetailLogicController.swift */; };
 		C1A30530261D8DB0002DC30F /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A3052F261D8DB0002DC30F /* Genre.swift */; };
+		C1A30535261DA736002DC30F /* DetailTopInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A30533261DA736002DC30F /* DetailTopInfoCollectionViewCell.swift */; };
+		C1A30536261DA736002DC30F /* DetailTopInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1A30534261DA736002DC30F /* DetailTopInfoCollectionViewCell.xib */; };
+		C1A30539261DAB63002DC30F /* DetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A30538261DAB63002DC30F /* DetailDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +60,9 @@
 		C1A30529261D4CE4002DC30F /* DataLoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoadingVC.swift; sourceTree = "<group>"; };
 		C1A3052C261D6A06002DC30F /* DetailLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLogicController.swift; sourceTree = "<group>"; };
 		C1A3052F261D8DB0002DC30F /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		C1A30533261DA736002DC30F /* DetailTopInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTopInfoCollectionViewCell.swift; sourceTree = "<group>"; };
+		C1A30534261DA736002DC30F /* DetailTopInfoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTopInfoCollectionViewCell.xib; sourceTree = "<group>"; };
+		C1A30538261DAB63002DC30F /* DetailDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,8 +163,8 @@
 		C1615D83261717510052918D /* Activities */ = {
 			isa = PBXGroup;
 			children = (
-				C1A30518261D464A002DC30F /* Detail */,
 				C1615CE22616964E0052918D /* List */,
+				C1A30518261D464A002DC30F /* Detail */,
 			);
 			path = Activities;
 			sourceTree = "<group>";
@@ -170,6 +176,7 @@
 				C1A3051A261D4657002DC30F /* View */,
 				C1A3051B261D4687002DC30F /* DetailViewController.swift */,
 				C1A3051C261D4687002DC30F /* DetailViewController.xib */,
+				C1A30538261DAB63002DC30F /* DetailDataSource.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -185,6 +192,8 @@
 		C1A3051A261D4657002DC30F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C1A30533261DA736002DC30F /* DetailTopInfoCollectionViewCell.swift */,
+				C1A30534261DA736002DC30F /* DetailTopInfoCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -281,6 +290,7 @@
 				C1A3051E261D4687002DC30F /* DetailViewController.xib in Resources */,
 				C1615CEC261698590052918D /* ListCollectionViewCell.xib in Resources */,
 				C1615CD4261696110052918D /* Main.storyboard in Resources */,
+				C1A30536261DA736002DC30F /* DetailTopInfoCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,12 +306,14 @@
 				C1A30523261D48A1002DC30F /* UIViewController+Extensions.swift in Sources */,
 				C1615CF5261699C90052918D /* ListLogicController.swift in Sources */,
 				C1A3051D261D4687002DC30F /* DetailViewController.swift in Sources */,
+				C1A30535261DA736002DC30F /* DetailTopInfoCollectionViewCell.swift in Sources */,
 				C1615CEB261698590052918D /* ListCollectionViewCell.swift in Sources */,
 				C1615CCD261696110052918D /* AppDelegate.swift in Sources */,
 				C1A30526261D48C9002DC30F /* LoadingViewController.swift in Sources */,
 				C1615D462616C6990052918D /* ResponseResultExample.swift in Sources */,
 				C1615CE6261697B00052918D /* ListDataSource.swift in Sources */,
 				C1A30530261D8DB0002DC30F /* Genre.swift in Sources */,
+				C1A30539261DAB63002DC30F /* DetailDataSource.swift in Sources */,
 				C1615CCF261696110052918D /* SceneDelegate.swift in Sources */,
 				C1A3052D261D6A06002DC30F /* DetailLogicController.swift in Sources */,
 				C1615D492616C6E60052918D /* Movie.swift in Sources */,
