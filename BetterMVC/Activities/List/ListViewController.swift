@@ -26,10 +26,7 @@ final class ListViewController: DataLoadingViewController {
         
         setupView()
         
-        showLoadingView()
-        
         logic.load { [weak self] state in
-            self?.hideLoadingView()
             self?.render(state)
         }
     }
@@ -52,8 +49,10 @@ private extension ListViewController {
     private func render(_ state: ViewState<Movie>) {
         switch state {
         case .loading:
-            break
+            showLoadingView()
         case .presenting(let list):
+            hideLoadingView()
+            
             dataSource.movies = list
             DispatchQueue.main.async {
                 self.collectionView.reloadData()

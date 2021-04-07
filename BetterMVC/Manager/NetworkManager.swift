@@ -23,7 +23,6 @@ final class NetworkManager {
         components.host = host
         components.path = basePath + "/discover/movie"
         
-//        guard let url = components.url else {
         guard let url = URL(string: testURL) else {
             preconditionFailure("Failed to construct URL")
         }
