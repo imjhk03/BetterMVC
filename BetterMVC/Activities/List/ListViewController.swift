@@ -63,8 +63,8 @@ private extension ListViewController {
 
 // MARK: - ListDataSourceDelegate
 extension ListViewController: ListDataSourceDelegate {
-    func moveToDetail() {
-        let detailVC = DetailViewController()
+    func moveToDetail(_ movieID: Int) {
+        let detailVC = DetailViewController.initialize(with: movieID)
         navigationController?.pushViewController(detailVC, animated: true)
     }
 }

@@ -8,10 +8,14 @@
 import Foundation
 
 final class DetailLogicController {
-    private let movieID = "791373"
+    var movieID: String?
     private let networking = NetworkManager.shared
     
     func load(then handler: @escaping (MovieDetail.State) -> Void) {
+        guard let movieID = self.movieID else {
+            handler(.failed)
+            return
+        }
         networking.request(.detail(movieID: movieID)) { (response: Result<MovieDetail, NetworkError>) in
             switch response {
             case .success(let movie):

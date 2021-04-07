@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ListDataSourceDelegate: AnyObject {
-    func moveToDetail()
+    func moveToDetail(_ movieID: Int)
 }
 
 final class ListDataSource: NSObject {
@@ -43,7 +43,8 @@ extension ListDataSource: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegate
 extension ListDataSource: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.moveToDetail()
+        let movieID = movies[indexPath.item].id
+        delegate?.moveToDetail(movieID)
     }
 }
 

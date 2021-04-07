@@ -9,6 +9,12 @@ import UIKit
 
 final class DetailViewController: DataLoadingViewController {
     
+    static func initialize(with movieID: Int) -> DetailViewController {
+        let vc = DetailViewController()
+        vc.logic.movieID = String(movieID)
+        return vc
+    }
+    
     private let logic = DetailLogicController()
     private lazy var dataSource = DetailDataSource(collectionView: collectionView)
     
