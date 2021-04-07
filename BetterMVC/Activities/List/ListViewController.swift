@@ -13,7 +13,7 @@ enum ViewState<Movie> {
     case failed
 }
 
-final class ListViewController: UIViewController {
+final class ListViewController: DataLoadingViewController {
     
     private let logic = ListLogicController()
     
@@ -25,7 +25,11 @@ final class ListViewController: UIViewController {
         super.viewDidLoad()
         
         setupView()
+        
+        showLoadingView()
+        
         logic.load { [weak self] state in
+            self?.hideLoadingView()
             self?.render(state)
         }
     }
