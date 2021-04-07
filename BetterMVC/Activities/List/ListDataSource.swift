@@ -7,11 +7,18 @@
 
 import UIKit
 
+protocol ListDataSourceDelegate: AnyObject {
+    func moveToDetail()
+}
+
 final class ListDataSource: NSObject {
     
     var movies: [Movie] = []
+    weak var delegate: ListDataSourceDelegate?
     
-    init(collectionView: UICollectionView) {
+    init(collectionView: UICollectionView, delegate: ListDataSourceDelegate?) {
+        self.delegate = delegate
+        
         let nib = UINib(nibName: "ListCollectionViewCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "ListCollectionViewCell")
     }
@@ -35,7 +42,9 @@ extension ListDataSource: UICollectionViewDataSource {
 
 // MARK: - UICollectionViewDelegate
 extension ListDataSource: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.moveToDetail()
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout

@@ -17,7 +17,7 @@ final class ListViewController: DataLoadingViewController {
     
     private let logic = ListLogicController()
     
-    private lazy var dataSource = ListDataSource(collectionView: collectionView)
+    private lazy var dataSource = ListDataSource(collectionView: collectionView, delegate: self)
     
     @IBOutlet private weak var collectionView: UICollectionView!
 
@@ -60,5 +60,12 @@ private extension ListViewController {
         case .failed:
             print("Failed to load")
         }
+    }
+}
+
+extension ListViewController: ListDataSourceDelegate {
+    func moveToDetail() {
+        let detailVC = DetailViewController()
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 }
