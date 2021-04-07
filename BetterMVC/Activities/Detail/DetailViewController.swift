@@ -16,7 +16,7 @@ final class DetailViewController: DataLoadingViewController {
     }
     
     private let logic = DetailLogicController()
-    private lazy var dataSource = DetailDataSource(collectionView: collectionView)
+    private lazy var dataSource = DetailDataSource(collectionView: collectionView, delegates: self)
     
     @IBOutlet weak var collectionView: UICollectionView!
 
@@ -58,5 +58,14 @@ private extension DetailViewController {
             
             print("Failed to load")
         }
+    }
+}
+
+// MARK: - DetailTopInfoCollectionViewCellDelegate
+extension DetailViewController: DetailTopInfoCollectionViewCellDelegate {
+    func buttonTapped() {
+        dataSource.movie?.isFavorite.toggle()
+        guard let detail = dataSource.movie else { return }
+        render(.presenting(detail))
     }
 }

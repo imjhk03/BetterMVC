@@ -16,7 +16,13 @@ final class DetailDataSource: NSObject {
     
     var movie: MovieDetail?
     
-    init(collectionView: UICollectionView) {
+    private weak var delegates: Delegates?
+    
+    typealias Delegates = DetailTopInfoCollectionViewCellDelegate
+    
+    init(collectionView: UICollectionView, delegates: Delegates?) {
+        self.delegates = delegates
+        
         let nib = UINib(nibName: "DetailTopInfoCollectionViewCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "DetailTopInfoCollectionViewCell")
         
@@ -44,7 +50,7 @@ extension DetailDataSource: UICollectionViewDataSource {
                 fatalError("Failed to dequeue DetailTopInfoCollectionViewCell")
             }
             guard let movieDetail = movie else { return cell }
-            cell.configure(.init(movie: movieDetail))
+            cell.configure(.init(movie: movieDetail), delegate: delegates)
             return cell
         case .overview:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailOverviewCollectionViewCell", for: indexPath) as? DetailOverviewCollectionViewCell else {

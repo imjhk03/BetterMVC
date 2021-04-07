@@ -8,6 +8,10 @@
 import UIKit
 import Nuke
 
+protocol DetailTopInfoCollectionViewCellDelegate: AnyObject {
+    func buttonTapped()
+}
+
 final class DetailTopInfoCollectionViewCell: UICollectionViewCell {
     
     struct ViewModel {
@@ -35,13 +39,17 @@ final class DetailTopInfoCollectionViewCell: UICollectionViewCell {
             }
             return value
         }
+        var isFavorite: Bool { movie.isFavorite }
     }
+    
+    private weak var delegate: DetailTopInfoCollectionViewCellDelegate?
 
     @IBOutlet private weak var backgroundImageView: UIImageView!
     @IBOutlet private weak var posterImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var genreLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var favoriteButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -56,9 +64,12 @@ final class DetailTopInfoCollectionViewCell: UICollectionViewCell {
         genreLabel.textColor = .white
         descriptionLabel.font = .preferredFont(forTextStyle: .footnote)
         descriptionLabel.textColor = .white
+        favoriteButton.layer.cornerRadius = 8
     }
     
-    func configure(_ viewModel: ViewModel) {
+    func configure(_ viewModel: ViewModel, delegate: DetailTopInfoCollectionViewCellDelegate?) {
+        self.delegate = delegate
+        
         titleLabel.text = viewModel.title
         genreLabel.text = viewModel.genre
         descriptionLabel.text = viewModel.description
@@ -70,8 +81,15 @@ final class DetailTopInfoCollectionViewCell: UICollectionViewCell {
         
         guard let posterURL = viewModel.posterImageURL else { return }
         Nuke.loadImage(with: posterURL, options: options, into: posterImageView)
+        
+        favoriteButton.isSelected = viewModel.isFavorite
+        favoriteButton.tintColor = viewModel.isFavorite ? UIColor.systemPink : UIColor.lightGray
     }
-
+    
+    @IBAction private func favoriteButtonTapped(_ sender: UIButton) {
+        delegate?.buttonTapped()
+    }
+    
 }
 
 extension Int {

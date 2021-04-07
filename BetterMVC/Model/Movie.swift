@@ -56,4 +56,23 @@ struct MovieDetail: Model {
     private(set) var vote_average: Double
     private(set) var vote_count: Int
     
+    var isFavorite: Bool = false
+    
+    enum CodingKeys: String, CodingKey {
+        case adult
+        case backdrop_path
+        case genres
+        case id
+        case original_title
+        case overview
+        case popularity
+        case poster_path
+        case release_date
+        case runtime
+        case title
+        case video
+        case vote_average
+        case vote_count
+    }
+    
 }
