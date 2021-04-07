@@ -41,7 +41,7 @@ final class DetailViewController: DataLoadingViewController {
 
 // MARK: - Render
 private extension DetailViewController {
-    private func render(_ state: MovieDetail.State) {
+    private func render(_ state: ViewState<MovieDetail>) {
         switch state {
         case .loading:
             showLoadingView()

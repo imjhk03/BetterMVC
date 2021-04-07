@@ -42,7 +42,7 @@ final class ListViewController: DataLoadingViewController {
 
 // MARK: - Render
 private extension ListViewController {
-    private func render(_ state: MovieList.State) {
+    private func render(_ state: ViewState<[Movie]>) {
         switch state {
         case .loading:
             showLoadingView()

@@ -7,18 +7,20 @@
 
 import Foundation
 
-struct MovieList: Codable {
-    let page: Int
-    let results: [Movie]
-    
-    enum State {
-        case loading
-        case presenting([Movie])
-        case failed
-    }
+protocol Model: Codable { }
+
+enum ViewState<Model> {
+    case loading
+    case presenting(Model)
+    case failed
 }
 
-struct Movie: Codable {
+struct MovieList: Model {
+    let page: Int
+    let results: [Movie]
+}
+
+struct Movie: Model {
     
     private(set) var adult: Bool
     private(set) var backdrop_path: String?
@@ -37,7 +39,7 @@ struct Movie: Codable {
     
 }
 
-struct MovieDetail: Codable {
+struct MovieDetail: Model {
     
     private(set) var adult: Bool
     private(set) var backdrop_path: String?
@@ -53,11 +55,5 @@ struct MovieDetail: Codable {
     private(set) var video: Bool
     private(set) var vote_average: Double
     private(set) var vote_count: Int
-    
-    enum State {
-        case loading
-        case presenting(MovieDetail)
-        case failed
-    }
     
 }

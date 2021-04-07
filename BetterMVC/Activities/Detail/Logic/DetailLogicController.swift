@@ -11,7 +11,7 @@ final class DetailLogicController {
     var movieID: String?
     private let networking = NetworkManager.shared
     
-    func load(then handler: @escaping (MovieDetail.State) -> Void) {
+    func load(then handler: @escaping (ViewState<MovieDetail>) -> Void) {
         guard let movieID = self.movieID else {
             handler(.failed)
             return
