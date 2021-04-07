@@ -51,7 +51,7 @@ extension ListDataSource: UICollectionViewDelegate {
 extension ListDataSource: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width: CGFloat = (collectionView.frame.width - (16 * 2) - 8) / 2
-        return .init(width: width, height: 300)
+        return .init(width: width, height: 325)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

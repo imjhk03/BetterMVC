@@ -27,7 +27,7 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.66000000000000003" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     </view>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="fBI-5F-Cvl">
-                        <rect key="frame" x="182" y="75" width="145" height="218"/>
+                        <rect key="frame" x="182" y="66" width="145" height="227"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqP-fB-RTN" userLabel="Title Label">
                                 <rect key="frame" x="0.0" y="0.0" width="145" height="20.5"/>
@@ -42,7 +42,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aU2-tz-Luv" userLabel="Description Label">
-                                <rect key="frame" x="0.0" y="69" width="145" height="149"/>
+                                <rect key="frame" x="0.0" y="69" width="145" height="158"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -63,6 +63,7 @@
                 <constraint firstItem="Vlt-Pq-soy" firstAttribute="centerY" secondItem="1fw-jL-7WW" secondAttribute="centerY" id="91x-Cg-kkM"/>
                 <constraint firstItem="fBI-5F-Cvl" firstAttribute="leading" secondItem="xqo-5e-ZGr" secondAttribute="trailing" constant="16" id="92z-UI-ZFs"/>
                 <constraint firstItem="1fw-jL-7WW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="CwB-Et-rLS"/>
+                <constraint firstItem="fBI-5F-Cvl" firstAttribute="top" secondItem="xqo-5e-ZGr" secondAttribute="top" constant="16" id="DNN-FO-DsF"/>
                 <constraint firstItem="fBI-5F-Cvl" firstAttribute="bottom" secondItem="1fw-jL-7WW" secondAttribute="bottom" constant="-50" id="HSp-3t-Qrj"/>
                 <constraint firstItem="Vlt-Pq-soy" firstAttribute="width" secondItem="1fw-jL-7WW" secondAttribute="width" id="HXe-7s-1F9"/>
                 <constraint firstItem="Vlt-Pq-soy" firstAttribute="centerX" secondItem="1fw-jL-7WW" secondAttribute="centerX" id="Hwb-4g-hF2"/>
@@ -72,7 +73,6 @@
                 <constraint firstItem="1fw-jL-7WW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="iDx-bz-XMP"/>
                 <constraint firstAttribute="trailing" secondItem="1fw-jL-7WW" secondAttribute="trailing" id="jw7-bd-DFb"/>
                 <constraint firstAttribute="trailing" secondItem="fBI-5F-Cvl" secondAttribute="trailing" constant="16" id="nEd-pi-cko"/>
-                <constraint firstItem="fBI-5F-Cvl" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="75" id="x2r-Oq-PQE"/>
             </constraints>
             <size key="customSize" width="343" height="151"/>
             <connections>

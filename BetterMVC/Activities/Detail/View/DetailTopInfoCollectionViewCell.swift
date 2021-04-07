@@ -15,7 +15,7 @@ final class DetailTopInfoCollectionViewCell: UICollectionViewCell {
         
         var title: String? { movie.title }
         var genre: String? {
-            let joinedTags = movie.genres.map({ $0.name }).joined(separator: " ")
+            let joinedTags = movie.genres.map({ $0.name }).joined(separator: ", ")
             return joinedTags
         }
         var backgroundImageURL: URL? {
@@ -28,7 +28,13 @@ final class DetailTopInfoCollectionViewCell: UICollectionViewCell {
             guard let url = URL(string: finalString) else { return nil }
             return url
         }
-        var description: String? { movie.overview }
+        var description: String? {
+            var value = movie.release_date
+            if let runtime = movie.runtime {
+                value += "   " + runtime.toRelativeRuntime()
+            }
+            return value
+        }
     }
 
     @IBOutlet private weak var backgroundImageView: UIImageView!
@@ -66,4 +72,14 @@ final class DetailTopInfoCollectionViewCell: UICollectionViewCell {
         Nuke.loadImage(with: posterURL, options: options, into: posterImageView)
     }
 
+}
+
+extension Int {
+    func toRelativeRuntime() -> String {
+        let hour = self / 60
+        let minute = self % 60
+        
+        return String(format: "%2i시간 %2i분", hour, minute)
+        
+    }
 }

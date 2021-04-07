@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C1418640261DE3F800808EAB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C141863F261DE3F800808EAB /* Constants.swift */; };
+		C1418645261DEDB700808EAB /* DetailOverviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1418643261DEDB700808EAB /* DetailOverviewCollectionViewCell.swift */; };
+		C1418646261DEDB700808EAB /* DetailOverviewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1418644261DEDB700808EAB /* DetailOverviewCollectionViewCell.xib */; };
+		C141864C261DFB9500808EAB /* NibInitable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C141864B261DFB9500808EAB /* NibInitable.swift */; };
+		C1418650261DFBD500808EAB /* AnyBundleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C141864F261DFBD500808EAB /* AnyBundleable.swift */; };
 		C1615CCD261696110052918D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1615CCC261696110052918D /* AppDelegate.swift */; };
 		C1615CCF261696110052918D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1615CCE261696110052918D /* SceneDelegate.swift */; };
 		C1615CD1261696110052918D /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1615CD0261696110052918D /* ListViewController.swift */; };
@@ -18,7 +23,6 @@
 		C1615CEC261698590052918D /* ListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1615CEA261698590052918D /* ListCollectionViewCell.xib */; };
 		C1615CF1261699680052918D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1615CF0261699680052918D /* NetworkManager.swift */; };
 		C1615CF5261699C90052918D /* ListLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1615CF4261699C90052918D /* ListLogicController.swift */; };
-		C1615CFE26169D890052918D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1615CFD26169D890052918D /* Constants.swift */; };
 		C1615D462616C6990052918D /* ResponseResultExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1615D452616C6990052918D /* ResponseResultExample.swift */; };
 		C1615D492616C6E60052918D /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1615D482616C6E60052918D /* Movie.swift */; };
 		C1615D662617081E0052918D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1615D652617081E0052918D /* NetworkError.swift */; };
@@ -36,6 +40,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C141863F261DE3F800808EAB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C1418643261DEDB700808EAB /* DetailOverviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOverviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		C1418644261DEDB700808EAB /* DetailOverviewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailOverviewCollectionViewCell.xib; sourceTree = "<group>"; };
+		C141864B261DFB9500808EAB /* NibInitable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibInitable.swift; sourceTree = "<group>"; };
+		C141864F261DFBD500808EAB /* AnyBundleable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyBundleable.swift; sourceTree = "<group>"; };
 		C1615CC9261696110052918D /* BetterMVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterMVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1615CCC261696110052918D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1615CCE261696110052918D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,7 +58,6 @@
 		C1615CEA261698590052918D /* ListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCollectionViewCell.xib; sourceTree = "<group>"; };
 		C1615CF0261699680052918D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C1615CF4261699C90052918D /* ListLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLogicController.swift; sourceTree = "<group>"; };
-		C1615CFD26169D890052918D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C1615D452616C6990052918D /* ResponseResultExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseResultExample.swift; sourceTree = "<group>"; };
 		C1615D482616C6E60052918D /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		C1615D652617081E0052918D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -77,6 +85,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C141864A261DFB8700808EAB /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				C141864B261DFB9500808EAB /* NibInitable.swift */,
+				C141864F261DFBD500808EAB /* AnyBundleable.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		C1615CC0261696110052918D = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +113,7 @@
 		C1615CCB261696110052918D /* BetterMVC */ = {
 			isa = PBXGroup;
 			children = (
+				C141864A261DFB8700808EAB /* Protocol */,
 				C1A30528261D4CD7002DC30F /* Custom Views */,
 				C1A30521261D4893002DC30F /* Extensions */,
 				C1A30520261D477A002DC30F /* Utilities */,
@@ -108,7 +126,7 @@
 				C1615CD5261696120052918D /* Assets.xcassets */,
 				C1615CD7261696120052918D /* LaunchScreen.storyboard */,
 				C1615CDA261696120052918D /* Info.plist */,
-				C1615CFD26169D890052918D /* Constants.swift */,
+				C141863F261DE3F800808EAB /* Constants.swift */,
 			);
 			path = BetterMVC;
 			sourceTree = "<group>";
@@ -194,6 +212,8 @@
 			children = (
 				C1A30533261DA736002DC30F /* DetailTopInfoCollectionViewCell.swift */,
 				C1A30534261DA736002DC30F /* DetailTopInfoCollectionViewCell.xib */,
+				C1418643261DEDB700808EAB /* DetailOverviewCollectionViewCell.swift */,
+				C1418644261DEDB700808EAB /* DetailOverviewCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -291,6 +311,7 @@
 				C1615CEC261698590052918D /* ListCollectionViewCell.xib in Resources */,
 				C1615CD4261696110052918D /* Main.storyboard in Resources */,
 				C1A30536261DA736002DC30F /* DetailTopInfoCollectionViewCell.xib in Resources */,
+				C1418646261DEDB700808EAB /* DetailOverviewCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +323,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1615CF1261699680052918D /* NetworkManager.swift in Sources */,
+				C1418640261DE3F800808EAB /* Constants.swift in Sources */,
+				C1418650261DFBD500808EAB /* AnyBundleable.swift in Sources */,
 				C1615CD1261696110052918D /* ListViewController.swift in Sources */,
 				C1A30523261D48A1002DC30F /* UIViewController+Extensions.swift in Sources */,
 				C1615CF5261699C90052918D /* ListLogicController.swift in Sources */,
@@ -310,7 +333,9 @@
 				C1615CEB261698590052918D /* ListCollectionViewCell.swift in Sources */,
 				C1615CCD261696110052918D /* AppDelegate.swift in Sources */,
 				C1A30526261D48C9002DC30F /* LoadingViewController.swift in Sources */,
+				C1418645261DEDB700808EAB /* DetailOverviewCollectionViewCell.swift in Sources */,
 				C1615D462616C6990052918D /* ResponseResultExample.swift in Sources */,
+				C141864C261DFB9500808EAB /* NibInitable.swift in Sources */,
 				C1615CE6261697B00052918D /* ListDataSource.swift in Sources */,
 				C1A30530261D8DB0002DC30F /* Genre.swift in Sources */,
 				C1A30539261DAB63002DC30F /* DetailDataSource.swift in Sources */,
@@ -319,7 +344,6 @@
 				C1615D492616C6E60052918D /* Movie.swift in Sources */,
 				C1A3052A261D4CE4002DC30F /* DataLoadingVC.swift in Sources */,
 				C1615D662617081E0052918D /* NetworkError.swift in Sources */,
-				C1615CFE26169D890052918D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
