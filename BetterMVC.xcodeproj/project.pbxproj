@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		C11D5EDC261E88C700965A9D /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11D5EDB261E88C700965A9D /* PersistenceManager.swift */; };
 		C11D5EDE261E98E600965A9D /* HUDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11D5EDD261E98E600965A9D /* HUDViewController.swift */; };
+		C11D5EE3261EB10100965A9D /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11D5EE2261EB10100965A9D /* FavoritesViewController.swift */; };
+		C11D5EE5261EB1A200965A9D /* FavoritesLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11D5EE4261EB1A200965A9D /* FavoritesLogicController.swift */; };
+		C11D5EE7261EB20D00965A9D /* FavoritesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11D5EE6261EB20D00965A9D /* FavoritesDataSource.swift */; };
 		C1418640261DE3F800808EAB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C141863F261DE3F800808EAB /* Constants.swift */; };
 		C1418645261DEDB700808EAB /* DetailOverviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1418643261DEDB700808EAB /* DetailOverviewCollectionViewCell.swift */; };
 		C1418646261DEDB700808EAB /* DetailOverviewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1418644261DEDB700808EAB /* DetailOverviewCollectionViewCell.xib */; };
@@ -45,6 +48,9 @@
 /* Begin PBXFileReference section */
 		C11D5EDB261E88C700965A9D /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		C11D5EDD261E98E600965A9D /* HUDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDViewController.swift; sourceTree = "<group>"; };
+		C11D5EE2261EB10100965A9D /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		C11D5EE4261EB1A200965A9D /* FavoritesLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesLogicController.swift; sourceTree = "<group>"; };
+		C11D5EE6261EB20D00965A9D /* FavoritesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesDataSource.swift; sourceTree = "<group>"; };
 		C141863F261DE3F800808EAB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C1418643261DEDB700808EAB /* DetailOverviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOverviewCollectionViewCell.swift; sourceTree = "<group>"; };
 		C1418644261DEDB700808EAB /* DetailOverviewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailOverviewCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -97,6 +103,32 @@
 				C11D5EDB261E88C700965A9D /* PersistenceManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		C11D5EDF261EB0DD00965A9D /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				C11D5EE1261EB0EF00965A9D /* View */,
+				C11D5EE0261EB0E700965A9D /* Logic */,
+				C11D5EE2261EB10100965A9D /* FavoritesViewController.swift */,
+				C11D5EE6261EB20D00965A9D /* FavoritesDataSource.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		C11D5EE0261EB0E700965A9D /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				C11D5EE4261EB1A200965A9D /* FavoritesLogicController.swift */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		C11D5EE1261EB0EF00965A9D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		C141864A261DFB8700808EAB /* Protocol */ = {
@@ -197,6 +229,7 @@
 		C1615D83261717510052918D /* Activities */ = {
 			isa = PBXGroup;
 			children = (
+				C11D5EDF261EB0DD00965A9D /* Favorites */,
 				C1615CE22616964E0052918D /* List */,
 				C1A30518261D464A002DC30F /* Detail */,
 			);
@@ -339,6 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C11D5EE3261EB10100965A9D /* FavoritesViewController.swift in Sources */,
 				C1615CF1261699680052918D /* NetworkManager.swift in Sources */,
 				C1418640261DE3F800808EAB /* Constants.swift in Sources */,
 				C1418650261DFBD500808EAB /* AnyBundleable.swift in Sources */,
@@ -356,9 +390,11 @@
 				C141864C261DFB9500808EAB /* NibInitable.swift in Sources */,
 				C1792A58261E783800D9AD5E /* MovieDetailModelController.swift in Sources */,
 				C1615CE6261697B00052918D /* ListDataSource.swift in Sources */,
+				C11D5EE5261EB1A200965A9D /* FavoritesLogicController.swift in Sources */,
 				C1A30530261D8DB0002DC30F /* Genre.swift in Sources */,
 				C1A30539261DAB63002DC30F /* DetailDataSource.swift in Sources */,
 				C1615CCF261696110052918D /* SceneDelegate.swift in Sources */,
+				C11D5EE7261EB20D00965A9D /* FavoritesDataSource.swift in Sources */,
 				C1A3052D261D6A06002DC30F /* DetailLogicController.swift in Sources */,
 				C1615D492616C6E60052918D /* Movie.swift in Sources */,
 				C1A3052A261D4CE4002DC30F /* DataLoadingVC.swift in Sources */,

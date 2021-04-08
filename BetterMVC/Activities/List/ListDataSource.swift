@@ -11,7 +11,7 @@ protocol ListDataSourceDelegate: AnyObject {
     func moveToDetail(_ movieID: Int)
 }
 
-final class ListDataSource: NSObject {
+class ListDataSource: NSObject {
     
     var movies: [Movie] = []
     weak var delegate: ListDataSourceDelegate?

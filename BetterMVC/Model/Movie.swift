@@ -76,3 +76,23 @@ struct MovieDetail: Model {
     }
     
 }
+
+extension MovieDetail {
+    func regenrateToMovie() -> Movie {
+        let movie = Movie(adult: self.adult,
+                          backdrop_path: self.backdrop_path,
+                          genre_ids: [],
+                          id: self.id,
+                          original_title: self.original_title,
+                          overview: self.overview,
+                          popularity: self.popularity,
+                          poster_path: self.poster_path,
+                          release_date: self.release_date,
+                          runtime: self.runtime,
+                          title: self.title,
+                          video: self.video,
+                          vote_average: self.vote_average,
+                          vote_count: self.vote_count)
+        return movie
+    }
+}
