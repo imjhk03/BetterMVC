@@ -76,3 +76,7 @@ struct MovieDetail: Model {
     }
     
 }
+
+extension MovieDetail {
+    static var current: MovieDetail?
+}

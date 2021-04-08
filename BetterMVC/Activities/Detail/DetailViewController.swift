@@ -16,6 +16,7 @@ final class DetailViewController: DataLoadingViewController {
     }
     
     private let logic = DetailLogicController()
+    private var modelController: MovieDetailModelController?
     private lazy var dataSource = DetailDataSource(collectionView: collectionView, delegates: self)
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -49,6 +50,8 @@ private extension DetailViewController {
             hideLoadingView()
             
             dataSource.movie = detail
+            modelController = MovieDetailModelController(movieDetail: detail)
+            
             DispatchQueue.main.async {
                 self.navigationItem.title = detail.title
                 self.collectionView.reloadData()
