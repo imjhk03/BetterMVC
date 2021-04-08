@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C11D5EDC261E88C700965A9D /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11D5EDB261E88C700965A9D /* PersistenceManager.swift */; };
+		C11D5EDE261E98E600965A9D /* HUDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11D5EDD261E98E600965A9D /* HUDViewController.swift */; };
 		C1418640261DE3F800808EAB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C141863F261DE3F800808EAB /* Constants.swift */; };
 		C1418645261DEDB700808EAB /* DetailOverviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1418643261DEDB700808EAB /* DetailOverviewCollectionViewCell.swift */; };
 		C1418646261DEDB700808EAB /* DetailOverviewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1418644261DEDB700808EAB /* DetailOverviewCollectionViewCell.xib */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		C11D5EDB261E88C700965A9D /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		C11D5EDD261E98E600965A9D /* HUDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDViewController.swift; sourceTree = "<group>"; };
 		C141863F261DE3F800808EAB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C1418643261DEDB700808EAB /* DetailOverviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOverviewCollectionViewCell.swift; sourceTree = "<group>"; };
 		C1418644261DEDB700808EAB /* DetailOverviewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailOverviewCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				C1A30525261D48C9002DC30F /* LoadingViewController.swift */,
+				C11D5EDD261E98E600965A9D /* HUDViewController.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				C1615D492616C6E60052918D /* Movie.swift in Sources */,
 				C1A3052A261D4CE4002DC30F /* DataLoadingVC.swift in Sources */,
 				C1615D662617081E0052918D /* NetworkError.swift in Sources */,
+				C11D5EDE261E98E600965A9D /* HUDViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

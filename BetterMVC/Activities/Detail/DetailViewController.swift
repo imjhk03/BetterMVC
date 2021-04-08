@@ -70,6 +70,7 @@ extension DetailViewController: DetailTopInfoCollectionViewCellDelegate {
         guard let detail = dataSource.movie else { return }
         PersistenceManager.updateWith(favorite: detail, actionType: actionType) { [weak self] error in
             guard let error = error else {
+                self?.showHUDView(actionType == .add ? "저장했습니다!" : "저장함에 지웠습니다!")
                 self?.render(.presenting(detail))
                 return
             }
