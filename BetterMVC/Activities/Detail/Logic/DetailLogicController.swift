@@ -19,7 +19,6 @@ final class DetailLogicController {
         networking.request(.detail(movieID: movieID)) { (response: Result<MovieDetail, NetworkError>) in
             switch response {
             case .success(let movie):
-                print(movie)
                 handler(.presenting(movie))
             case .failure(let error):
                 handler(.failed)

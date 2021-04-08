@@ -26,9 +26,16 @@ final class ListViewController: DataLoadingViewController {
             self?.render(state)
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
 
     private func setupView() {
-        navigationItem.title = "목록"
+        navigationItem.title = "트렌딩"
+        navigationController?.navigationBar.prefersLargeTitles = true
         
         setupCollectionView()
     }

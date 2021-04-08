@@ -125,9 +125,7 @@
         <scene sceneID="ayY-8S-XuD">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dki-BQ-Oxe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorites" image="star.fill" catalog="system" id="VRc-dO-9jR">
-                        <color key="badgeColor" systemColor="systemYellowColor"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="star.fill" catalog="system" id="VRc-dO-9jR"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jPd-aO-XE7">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

@@ -9,20 +9,27 @@ import Foundation
 
 final class FavoritesLogicController {
     func load(then handler: @escaping (ViewState<[Movie]>) -> Void) {
-        PersistenceManager.retrieveFavorites { result in
+        PersistenceManager.retrieveFavorites { [weak self] result in
+            guard let self = self else { return }
+            
             switch result {
             case .success(let list):
-                
-                var movies = [Movie]()
-                list.forEach { movieDetail in
-                    let movie = movieDetail.regenrateToMovie()
-                    movies.append(movie)
-                }
-                
+                let movies = self.convertFavoriteMovies(list)
                 handler(.presenting(movies))
             case .failure(let error):
                 handler(.failed)
             }
         }
     }
+    
+    private func convertFavoriteMovies(_ favorites: [MovieDetail]) -> [Movie] {
+        var movies = [Movie]()
+        favorites.forEach { movieDetail in
+            let movie = movieDetail.regenrateToMovie()
+            movies.append(movie)
+        }
+        movies.reverse()
+        return movies
+    }
+    
 }

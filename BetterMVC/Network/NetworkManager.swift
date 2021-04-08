@@ -16,6 +16,11 @@ enum Sorting: String {
     case popularityDesc = "popularity.desc"
 }
 
+enum Time: String {
+    case day
+    case week
+}
+
 extension EndPoint {
     static func discover(page: Int, sortedBy sorting: Sorting = .popularityDesc) -> EndPoint {
         return EndPoint(
@@ -38,6 +43,17 @@ extension EndPoint {
             ]
         )
     }
+    
+    static func trending(time: Time) -> EndPoint {
+        return EndPoint(
+            path: "/trending/movie/\(time.rawValue)",
+            queryItems: [
+                URLQueryItem(name: "api_key", value: API_KEY),
+                URLQueryItem(name: "language", value: "ko-KR")
+            ]
+        )
+    }
+    
 }
 
 extension EndPoint {

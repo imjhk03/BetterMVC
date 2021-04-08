@@ -34,7 +34,8 @@ final class FavoritesViewController: DataLoadingViewController {
     }
 
     private func setupView() {
-        navigationItem.title = "목록"
+        navigationItem.title = "저장됨"
+        navigationController?.navigationBar.prefersLargeTitles = true
         
         setupCollectionView()
     }

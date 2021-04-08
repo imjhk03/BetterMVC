@@ -229,9 +229,9 @@
 		C1615D83261717510052918D /* Activities */ = {
 			isa = PBXGroup;
 			children = (
-				C11D5EDF261EB0DD00965A9D /* Favorites */,
 				C1615CE22616964E0052918D /* List */,
 				C1A30518261D464A002DC30F /* Detail */,
+				C11D5EDF261EB0DD00965A9D /* Favorites */,
 			);
 			path = Activities;
 			sourceTree = "<group>";
