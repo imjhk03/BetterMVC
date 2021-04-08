@@ -21,9 +21,7 @@ extension MovieDetailModelController {
         return false
     }
     
-    func save() {
-        movieDetail.isFavorite.toggle()
-    }
+//    func save() { }
     
     /// 아래는 예시, 상품 찜, 스토어 찜 등과 같은 업데이트가 필요한 곳에 사용하면 좋을 것 같다.
 //    func update(then handler: @escaping (Outcome) -> Void) {

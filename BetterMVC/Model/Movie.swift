@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol Model: Codable { }
+protocol Model: Codable, Hashable { }
 
 enum ViewState<Model> {
     case loading
@@ -55,9 +55,9 @@ struct MovieDetail: Model {
     private(set) var video: Bool
     private(set) var vote_average: Double
     private(set) var vote_count: Int
-    
-    var isFavorite: Bool = false
-    
+
+    var isFavorite: Bool { return PersistenceManager.isFavorite(self) }
+
     enum CodingKeys: String, CodingKey {
         case adult
         case backdrop_path
@@ -75,8 +75,4 @@ struct MovieDetail: Model {
         case vote_count
     }
     
-}
-
-extension MovieDetail {
-    static var current: MovieDetail?
 }

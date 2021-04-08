@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Genre: Codable {
+struct Genre: Model {
     private(set) var id: Int
     private(set) var name: String
 }

@@ -13,3 +13,8 @@ enum NetworkError: Error {
     case invalidResponse
     case unableToComplete
 }
+
+enum BError: Error {
+    case unableToFavorite
+    case alreadyInFavorites
+}

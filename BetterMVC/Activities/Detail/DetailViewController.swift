@@ -66,9 +66,15 @@ private extension DetailViewController {
 
 // MARK: - DetailTopInfoCollectionViewCellDelegate
 extension DetailViewController: DetailTopInfoCollectionViewCellDelegate {
-    func buttonTapped() {
-        dataSource.movie?.isFavorite.toggle()
+    func buttonTapped(_ actionType: PersistenceActionType) {
         guard let detail = dataSource.movie else { return }
-        render(.presenting(detail))
+        PersistenceManager.updateWith(favorite: detail, actionType: actionType) { [weak self] error in
+            guard let error = error else {
+                self?.render(.presenting(detail))
+                return
+            }
+            
+            print(error)
+        }
     }
 }

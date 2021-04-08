@@ -9,7 +9,7 @@ import UIKit
 import Nuke
 
 protocol DetailTopInfoCollectionViewCellDelegate: AnyObject {
-    func buttonTapped()
+    func buttonTapped(_ actionType: PersistenceActionType)
 }
 
 final class DetailTopInfoCollectionViewCell: UICollectionViewCell {
@@ -87,7 +87,7 @@ final class DetailTopInfoCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction private func favoriteButtonTapped(_ sender: UIButton) {
-        delegate?.buttonTapped()
+        delegate?.buttonTapped(favoriteButton.isSelected ? .remove : .add)
     }
     
 }
