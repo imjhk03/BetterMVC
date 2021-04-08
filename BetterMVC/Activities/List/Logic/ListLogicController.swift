@@ -20,7 +20,6 @@ final class ListLogicController {
                 handler(.failed)
             }
         }
-        
     }
     
 }
