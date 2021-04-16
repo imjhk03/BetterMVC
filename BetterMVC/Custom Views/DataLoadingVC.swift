@@ -12,6 +12,12 @@ class DataLoadingViewController: UIViewController {
     private let loadingVC = LoadingViewController()
     private let hudVC = HUDViewController()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationController?.hidesBarsOnSwipe = true
+    }
+    
     func showLoadingView() {
         add(loadingVC)
     }
