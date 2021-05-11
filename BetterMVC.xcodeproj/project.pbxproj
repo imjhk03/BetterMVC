@@ -12,6 +12,8 @@
 		C11D5EE3261EB10100965A9D /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11D5EE2261EB10100965A9D /* FavoritesViewController.swift */; };
 		C11D5EE5261EB1A200965A9D /* FavoritesLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11D5EE4261EB1A200965A9D /* FavoritesLogicController.swift */; };
 		C11D5EE7261EB20D00965A9D /* FavoritesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11D5EE6261EB20D00965A9D /* FavoritesDataSource.swift */; };
+		C121921E264AE49400E3F6E6 /* ListCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C121921C264AE49400E3F6E6 /* ListCollectionReusableView.swift */; };
+		C121921F264AE49400E3F6E6 /* ListCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C121921D264AE49400E3F6E6 /* ListCollectionReusableView.xib */; };
 		C1418640261DE3F800808EAB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C141863F261DE3F800808EAB /* Constants.swift */; };
 		C1418645261DEDB700808EAB /* DetailOverviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1418643261DEDB700808EAB /* DetailOverviewCollectionViewCell.swift */; };
 		C1418646261DEDB700808EAB /* DetailOverviewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1418644261DEDB700808EAB /* DetailOverviewCollectionViewCell.xib */; };
@@ -51,6 +53,8 @@
 		C11D5EE2261EB10100965A9D /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		C11D5EE4261EB1A200965A9D /* FavoritesLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesLogicController.swift; sourceTree = "<group>"; };
 		C11D5EE6261EB20D00965A9D /* FavoritesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesDataSource.swift; sourceTree = "<group>"; };
+		C121921C264AE49400E3F6E6 /* ListCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionReusableView.swift; sourceTree = "<group>"; };
+		C121921D264AE49400E3F6E6 /* ListCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCollectionReusableView.xib; sourceTree = "<group>"; };
 		C141863F261DE3F800808EAB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C1418643261DEDB700808EAB /* DetailOverviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOverviewCollectionViewCell.swift; sourceTree = "<group>"; };
 		C1418644261DEDB700808EAB /* DetailOverviewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailOverviewCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -194,6 +198,8 @@
 			children = (
 				C1615CE9261698590052918D /* ListCollectionViewCell.swift */,
 				C1615CEA261698590052918D /* ListCollectionViewCell.xib */,
+				C121921C264AE49400E3F6E6 /* ListCollectionReusableView.swift */,
+				C121921D264AE49400E3F6E6 /* ListCollectionReusableView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -360,6 +366,7 @@
 				C1A3051E261D4687002DC30F /* DetailViewController.xib in Resources */,
 				C1615CEC261698590052918D /* ListCollectionViewCell.xib in Resources */,
 				C1615CD4261696110052918D /* Main.storyboard in Resources */,
+				C121921F264AE49400E3F6E6 /* ListCollectionReusableView.xib in Resources */,
 				C1A30536261DA736002DC30F /* DetailTopInfoCollectionViewCell.xib in Resources */,
 				C1418646261DEDB700808EAB /* DetailOverviewCollectionViewCell.xib in Resources */,
 			);
@@ -397,6 +404,7 @@
 				C11D5EE7261EB20D00965A9D /* FavoritesDataSource.swift in Sources */,
 				C1A3052D261D6A06002DC30F /* DetailLogicController.swift in Sources */,
 				C1615D492616C6E60052918D /* Movie.swift in Sources */,
+				C121921E264AE49400E3F6E6 /* ListCollectionReusableView.swift in Sources */,
 				C1A3052A261D4CE4002DC30F /* DataLoadingVC.swift in Sources */,
 				C1615D662617081E0052918D /* NetworkError.swift in Sources */,
 				C11D5EDE261E98E600965A9D /* HUDViewController.swift in Sources */,
