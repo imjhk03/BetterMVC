@@ -30,7 +30,6 @@ class ListDataSource: NSObject {
         }
     }
     
-    var movies: [Movie] = []
     weak var delegate: ListDataSourceDelegate?
     weak var provider: ListDataSourceDataProvider?
     
@@ -46,22 +45,60 @@ class ListDataSource: NSObject {
 
 // MARK: - UICollectionViewDataSource
 extension ListDataSource: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        Section.allCases.count
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return movies.count
+        let section = Section(rawValue: section)
+        switch section {
+        case .popular:
+            return provider?.item(for: .popular).movies.count ?? 0
+        case .trending:
+            return provider?.item(for: .trending).movies.count ?? 0
+        default:
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCollectionViewCell", for: indexPath) as? ListCollectionViewCell else {
-            fatalError("Failed to dequeue ListCollectionViewCell")
+        let section = Section(rawValue: indexPath.section)
+        switch section {
+        case .popular:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCollectionViewCell", for: indexPath) as? ListCollectionViewCell,
+                  let movies = provider?.item(for: .popular).movies else {
+                fatalError("Failed to dequeue ListCollectionViewCell")
+            }
+            cell.configure(.init(movie: movies[indexPath.item]))
+            return cell
+        case .trending:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCollectionViewCell", for: indexPath) as? ListCollectionViewCell,
+                  let movies = provider?.item(for: .trending).movies else {
+                fatalError("Failed to dequeue ListCollectionViewCell")
+            }
+            cell.configure(.init(movie: movies[indexPath.item]))
+            return cell
+        default:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCollectionViewCell", for: indexPath) as? ListCollectionViewCell else {
+                fatalError("Failed to dequeue ListCollectionViewCell")
+            }
+            return cell
         }
-        cell.configure(.init(movie: movies[indexPath.item]))
-        return cell
     }
 }
 
 // MARK: - UICollectionViewDelegate
 extension ListDataSource: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let section = Section(rawValue: indexPath.section)
+        var movies = [Movie]()
+        switch section {
+        case .popular:
+            movies = provider?.item(for: .popular).movies ?? []
+        case .trending:
+            movies = provider?.item(for: .trending).movies ?? []
+        default: return
+        }
         let movieID = movies[indexPath.item].id
         delegate?.moveToDetail(movieID)
     }

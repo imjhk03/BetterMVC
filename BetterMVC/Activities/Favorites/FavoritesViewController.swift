@@ -53,10 +53,9 @@ private extension FavoritesViewController {
         switch state {
         case .loading:
             showLoadingView()
-        case .presenting(let list):
+        case .presenting:
             hideLoadingView()
             
-            dataSource.movies = list
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }

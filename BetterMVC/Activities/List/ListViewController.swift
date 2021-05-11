@@ -27,6 +27,10 @@ final class ListViewController: DataLoadingViewController {
         logic.load { [weak self] state in
             self?.render(state)
         }
+        
+        logic.loadPopular { [weak self] state in
+            self?.render(state)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,10 +59,9 @@ private extension ListViewController {
         switch state {
         case .loading:
             showLoadingView()
-        case .presenting(let list):
+        case .presenting:
             hideLoadingView()
             
-            dataSource.movies = list
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }

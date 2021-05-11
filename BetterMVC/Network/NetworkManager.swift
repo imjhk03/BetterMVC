@@ -54,6 +54,16 @@ extension EndPoint {
         )
     }
     
+    static func popular() -> EndPoint {
+        return EndPoint(
+            path: "/movie/popular",
+            queryItems: [
+                URLQueryItem(name: "api_key", value: API_KEY),
+                URLQueryItem(name: "language", value: "ko-KR")
+            ]
+        )
+    }
+    
 }
 
 extension EndPoint {
