@@ -36,11 +36,19 @@ final class DetailOverviewCollectionViewCell: UICollectionViewCell {
     }
     
     private func setupView() {
-        labelContainerView.backgroundColor = .secondarySystemBackground
+        if #available(iOS 13.0, *) {
+            labelContainerView.backgroundColor = .secondarySystemBackground
+        } else {
+            // Fallback on earlier versions
+        }
         labelContainerView.layer.cornerRadius = 8
         labelContainerView.clipsToBounds = true
         
-        label.textColor = .label
+        if #available(iOS 13.0, *) {
+            label.textColor = .label
+        } else {
+            // Fallback on earlier versions
+        }
         label.font = .preferredFont(forTextStyle: .body)
         label.numberOfLines = 0
     }

@@ -20,7 +20,11 @@ final class HUDViewController: UIViewController {
         super.viewDidLoad()
         
         let hudView = UIView()
-        hudView.backgroundColor = .systemBackground
+        if #available(iOS 13.0, *) {
+            hudView.backgroundColor = .systemBackground
+        } else {
+            // Fallback on earlier versions
+        }
         hudView.translatesAutoresizingMaskIntoConstraints = false
         hudView.layer.cornerRadius = 24
         
