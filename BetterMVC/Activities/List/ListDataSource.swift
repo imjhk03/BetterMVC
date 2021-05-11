@@ -39,6 +39,9 @@ class ListDataSource: NSObject {
         
         let nib = UINib(nibName: "ListCollectionViewCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "ListCollectionViewCell")
+        
+        let header = UINib(nibName: "ListCollectionReusableView", bundle: nil)
+        collectionView.register(header, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "ListCollectionReusableView")
     }
     
 }
@@ -85,6 +88,30 @@ extension ListDataSource: UICollectionViewDataSource {
             return cell
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let section = Section(rawValue: indexPath.section)
+        switch section {
+        case .popular:
+            guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ListCollectionReusableView", for: indexPath) as? ListCollectionReusableView else {
+                fatalError("Failed to dequeue ListCollectionReusableView")
+            }
+            view.configure("인기")
+            return view
+        case .trending:
+            guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ListCollectionReusableView", for: indexPath) as? ListCollectionReusableView else {
+                fatalError("Failed to dequeue ListCollectionReusableView")
+            }
+            view.configure("트렌딩")
+            return view
+        default:
+            guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ListCollectionReusableView", for: indexPath) as? ListCollectionReusableView else {
+                fatalError("Failed to dequeue ListCollectionReusableView")
+            }
+            return view
+        }
+    }
+    
 }
 
 // MARK: - UICollectionViewDelegate
@@ -97,7 +124,8 @@ extension ListDataSource: UICollectionViewDelegate {
             movies = provider?.item(for: .popular).movies ?? []
         case .trending:
             movies = provider?.item(for: .trending).movies ?? []
-        default: return
+        default:
+            return
         }
         let movieID = movies[indexPath.item].id
         delegate?.moveToDetail(movieID)
@@ -109,6 +137,10 @@ extension ListDataSource: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width: CGFloat = (collectionView.frame.width - (16 * 2) - 8) / 2
         return .init(width: width, height: 325)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return .init(width: collectionView.frame.width, height: 50)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

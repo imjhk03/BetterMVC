@@ -14,7 +14,11 @@ final class ListCollectionReusableView: UICollectionReusableView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        label.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        label.font = .boldSystemFont(ofSize: 18)
+    }
+    
+    func configure(_ text: String) {
+        label.text = text
     }
     
 }
