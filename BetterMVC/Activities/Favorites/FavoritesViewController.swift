@@ -11,7 +11,7 @@ final class FavoritesViewController: DataLoadingViewController {
     
     private let logic = FavoritesLogicController()
     
-    private lazy var dataSource = FavoritesDataSource(collectionView: collectionView, delegate: self)
+    private lazy var dataSource = FavoritesDataSource(collectionView: collectionView, delegate: self, provider: nil)
     
     @IBOutlet private weak var collectionView: UICollectionView!
     

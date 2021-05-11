@@ -11,13 +11,32 @@ protocol ListDataSourceDelegate: AnyObject {
     func moveToDetail(_ movieID: Int)
 }
 
+protocol ListDataSourceDataProvider: AnyObject {
+    func item(for section: ListDataSource.Section) -> ListDataSource.Item
+}
+
 class ListDataSource: NSObject {
+    
+    enum Section: Int, CaseIterable {
+        case popular
+        case trending
+    }
+    
+    struct Item {
+        let movies: [Movie]
+        
+        init(movies: [Movie] = []) {
+            self.movies = movies
+        }
+    }
     
     var movies: [Movie] = []
     weak var delegate: ListDataSourceDelegate?
+    weak var provider: ListDataSourceDataProvider?
     
-    init(collectionView: UICollectionView, delegate: ListDataSourceDelegate?) {
+    init(collectionView: UICollectionView, delegate: ListDataSourceDelegate?, provider: ListDataSourceDataProvider?) {
         self.delegate = delegate
+        self.provider = provider
         
         let nib = UINib(nibName: "ListCollectionViewCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "ListCollectionViewCell")

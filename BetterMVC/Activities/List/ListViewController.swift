@@ -11,7 +11,9 @@ final class ListViewController: DataLoadingViewController {
     
     private let logic = ListLogicController()
     
-    private lazy var dataSource = ListDataSource(collectionView: collectionView, delegate: self)
+    private lazy var dataSource = ListDataSource(collectionView: collectionView,
+                                                 delegate: self,
+                                                 provider: logic)
     
     @IBOutlet private weak var collectionView: UICollectionView!
 
@@ -34,7 +36,7 @@ final class ListViewController: DataLoadingViewController {
     }
 
     private func setupView() {
-        navigationItem.title = "트렌딩"
+        navigationItem.title = "영화"
         navigationController?.navigationBar.prefersLargeTitles = true
         
         setupCollectionView()
