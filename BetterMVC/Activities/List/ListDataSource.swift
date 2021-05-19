@@ -33,6 +33,9 @@ class ListDataSource: NSObject {
     weak var delegate: ListDataSourceDelegate?
     weak var provider: ListDataSourceDataProvider?
     
+    weak var impressionEventStalker: ListingImpression?
+    var indexPathsOfCellsTurnedGreen = [IndexPath]()
+    
     init(collectionView: UICollectionView, delegate: ListDataSourceDelegate?, provider: ListDataSourceDataProvider?) {
         self.delegate = delegate
         self.provider = provider
@@ -73,6 +76,12 @@ extension ListDataSource: UICollectionViewDataSource {
                 fatalError("Failed to dequeue ListCollectionViewCell")
             }
             cell.configure(.init(movie: movies[indexPath.item]))
+            if indexPathsOfCellsTurnedGreen.contains(indexPath) {
+                cell.badge.isHidden = false
+                cell.badge.backgroundColor = .systemGreen
+            } else {
+                cell.badge.isHidden = true
+            }
             return cell
         case .trending:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCollectionViewCell", for: indexPath) as? ListCollectionViewCell,
@@ -153,5 +162,11 @@ extension ListDataSource: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return .init(top: 16, left: 16, bottom: 16, right: 16)
+    }
+}
+
+extension ListDataSource {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        impressionEventStalker?.stalkCells()
     }
 }

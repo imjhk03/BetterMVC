@@ -21,10 +21,13 @@ final class ListCollectionViewCell: UICollectionViewCell {
             return url
         }
     }
+    
+    private var viewModel: ViewModel?
 
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var releaseDateLabel: UILabel!
+    @IBOutlet weak var badge: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,9 +37,12 @@ final class ListCollectionViewCell: UICollectionViewCell {
     
     private func setupView() {
         imageView.contentMode = .scaleAspectFill
+        badge.isHidden = true
     }
     
     func configure(_ viewModel: ViewModel) {
+        self.viewModel = viewModel
+        
         titleLabel.text = viewModel.title
         releaseDateLabel.text = viewModel.releaseDate
         guard let url = viewModel.imageURL else { return }
@@ -45,4 +51,11 @@ final class ListCollectionViewCell: UICollectionViewCell {
         Nuke.loadImage(with: url, options: options, into: imageView)
     }
 
+}
+
+extension ListCollectionViewCell: ListingImpressionItem {
+    func getUniqueId() -> String {
+        guard let viewModel = viewModel else { return "" }
+        return String(viewModel.movie.id)
+    }
 }

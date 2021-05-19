@@ -14,8 +14,14 @@ final class ListViewController: DataLoadingViewController {
     private lazy var dataSource = ListDataSource(collectionView: collectionView,
                                                  delegate: self,
                                                  provider: logic)
+    private var impressionEventStalker: ListingImpression?
     
-    @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView! {
+        didSet {
+            impressionEventStalker = ListingImpression(minimumPercentageOfCell: 0.75, collectionView: collectionView, delegate: self)
+            dataSource.impressionEventStalker = impressionEventStalker
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +43,12 @@ final class ListViewController: DataLoadingViewController {
         super.viewWillAppear(animated)
         
         navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        impressionEventStalker?.stalkCells()
     }
 
     private func setupView() {
@@ -78,5 +90,17 @@ extension ListViewController: ListDataSourceDelegate {
     func moveToDetail(_ movieID: Int) {
         let detailVC = DetailViewController.initialize(with: movieID)
         navigationController?.pushViewController(detailVC, animated: true)
+    }
+}
+
+// MARK: - ListingImpressionDelegate
+extension ListViewController: ListingImpressionDelegate {
+    func sendEventForCell(at indexPath: IndexPath) {
+        print("Event can be sent for indexPath: \(indexPath)")
+        
+        guard let cell = collectionView.cellForItem(at: indexPath) as? ListCollectionViewCell else { return }
+        cell.badge.isHidden = false
+        cell.badge.backgroundColor = .systemGreen
+        dataSource.indexPathsOfCellsTurnedGreen.append(indexPath)
     }
 }
