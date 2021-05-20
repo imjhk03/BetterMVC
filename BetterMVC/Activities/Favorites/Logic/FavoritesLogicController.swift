@@ -8,6 +8,8 @@
 import Foundation
 
 final class FavoritesLogicController {
+    private var movies = [Movie]()
+    
     func load(then handler: @escaping (ViewState<[Movie]>) -> Void) {
         PersistenceManager.retrieveFavorites { [weak self] result in
             guard let self = self else { return }
@@ -15,6 +17,7 @@ final class FavoritesLogicController {
             switch result {
             case .success(let list):
                 let movies = self.convertFavoriteMovies(list)
+                self.movies = movies
                 handler(.presenting(movies))
             case .failure(let error):
                 handler(.failed)
@@ -32,4 +35,13 @@ final class FavoritesLogicController {
         return movies
     }
     
+}
+
+extension FavoritesLogicController: FavoritesDataSourceDataProvider {
+    func item(for section: FavoritesDataSource.Section) -> FavoritesDataSource.Item {
+        switch section {
+        case .main:
+            return .init(movies: movies)
+        }
+    }
 }
