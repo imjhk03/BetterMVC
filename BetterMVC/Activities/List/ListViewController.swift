@@ -99,8 +99,10 @@ extension ListViewController: ListingImpressionDelegate {
         print("Event can be sent for indexPath: \(indexPath)")
         
         guard let cell = collectionView.cellForItem(at: indexPath) as? ListCollectionViewCell else { return }
-        cell.badge.isHidden = false
-        cell.badge.backgroundColor = .systemGreen
+        DispatchQueue.main.async {
+            cell.badge.isHidden = false
+            cell.badge.backgroundColor = .systemGreen
+        }
         dataSource.indexPathsOfCellsTurnedGreen.append(indexPath)
     }
 }
