@@ -11,7 +11,9 @@ final class FavoritesViewController: DataLoadingViewController {
     
     private let logic = FavoritesLogicController()
     
-    private lazy var dataSource = FavoritesDataSource(collectionView: collectionView, delegate: self, provider: nil)
+    private lazy var dataSource = FavoritesDataSource(collectionView: collectionView,
+                                                      delegate: self,
+                                                      provider: logic)
     
     @IBOutlet private weak var collectionView: UICollectionView!
     
@@ -68,7 +70,7 @@ private extension FavoritesViewController {
 }
 
 // MARK: - ListDataSourceDelegate
-extension FavoritesViewController: ListDataSourceDelegate {
+extension FavoritesViewController: FavoritesDataSourceDelegate {
     func moveToDetail(_ movieID: Int) {
         let detailVC = DetailViewController.initialize(with: movieID)
         navigationController?.pushViewController(detailVC, animated: true)
