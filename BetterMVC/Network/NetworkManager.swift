@@ -100,6 +100,8 @@ final class NetworkManager {
                 return
             }
             
+            print("Request Success \(url.absoluteString)")
+            
             do {
                 let decoder = JSONDecoder()
                 let responseData = try decoder.decode(T.self, from: data)

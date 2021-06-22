@@ -8,12 +8,22 @@
 import Foundation
 
 final class TrendingLogicController {
-    var time: Time = .week
+    var time: Time = .day
     private var todayMovies = [Movie]()
     private var thisWeekMovies = [Movie]()
     private let networking = NetworkManager.shared
     
     func load(then handler: @escaping (ViewState<[Movie]>) -> Void) {
+        if !todayMovies.isEmpty && !thisWeekMovies.isEmpty {
+            switch time {
+            case .day:
+                handler(.presenting(todayMovies))
+            case .week:
+                handler(.presenting(thisWeekMovies))
+            }
+            return
+        }
+        
         networking.request(.trending(time: time)) { [weak self] (response: Result<MovieList, NetworkError>) in
             guard let self = self else { return }
             

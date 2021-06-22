@@ -9,11 +9,25 @@ import UIKit
 
 final class TrendingViewController: DataLoadingViewController {
     
+    enum SegmentedControl: Int, CaseIterable {
+        case day
+        case week
+        
+        var title: String {
+            switch self {
+            case .day:      return "Today"
+            case .week:     return "This Week"
+            }
+        }
+    }
+    
     private let logic = TrendingLogicController()
     
     private lazy var dataSource = TrendingDataSource(collectionView: collectionView,
                                                  delegate: self,
                                                  provider: logic)
+    
+    private var segmentedControl: UISegmentedControl?
     
     @IBOutlet private weak var collectionView: UICollectionView!
     
@@ -36,6 +50,17 @@ final class TrendingViewController: DataLoadingViewController {
     }
 
     private func setupView() {
+        var titles = [String]()
+        SegmentedControl.allCases.forEach {
+            titles.append($0.title)
+        }
+        
+        segmentedControl = UISegmentedControl(items: titles)
+        segmentedControl?.backgroundColor = .secondarySystemBackground
+        segmentedControl?.addTarget(self, action: #selector(segmentSelected), for: .valueChanged)
+        segmentedControl?.selectedSegmentIndex = 0
+        navigationItem.titleView = segmentedControl
+        
         navigationItem.title = "Trending"
         navigationController?.navigationBar.prefersLargeTitles = true
         
@@ -45,6 +70,22 @@ final class TrendingViewController: DataLoadingViewController {
     private func setupCollectionView() {
         collectionView.delegate = dataSource
         collectionView.dataSource = dataSource
+    }
+    
+    @objc
+    private func segmentSelected(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case SegmentedControl.day.rawValue:
+            logic.time = .day
+        case SegmentedControl.week.rawValue:
+            logic.time = .week
+        default:
+            break
+        }
+        
+        logic.load { [weak self] state in
+            self?.render(state)
+        }
     }
 
 }
