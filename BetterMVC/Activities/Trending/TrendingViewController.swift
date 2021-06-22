@@ -1,22 +1,22 @@
 //
-//  ListViewController.swift
+//  TrendingViewController.swift
 //  BetterMVC
 //
-//  Created by Joo Hee Kim on 21. 04. 02..
+//  Created by Joohee Kim on 21. 06. 22..
 //
 
 import UIKit
 
-final class ListViewController: DataLoadingViewController {
+final class TrendingViewController: DataLoadingViewController {
     
-    private let logic = ListLogicController()
+    private let logic = TrendingLogicController()
     
-    private lazy var dataSource = ListDataSource(collectionView: collectionView,
+    private lazy var dataSource = TrendingDataSource(collectionView: collectionView,
                                                  delegate: self,
                                                  provider: logic)
     
     @IBOutlet private weak var collectionView: UICollectionView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,7 +24,7 @@ final class ListViewController: DataLoadingViewController {
         
         render(.loading)
         
-        logic.loadPopular { [weak self] state in
+        logic.load { [weak self] state in
             self?.render(state)
         }
     }
@@ -36,7 +36,7 @@ final class ListViewController: DataLoadingViewController {
     }
 
     private func setupView() {
-        navigationItem.title = "영화"
+        navigationItem.title = "Trending"
         navigationController?.navigationBar.prefersLargeTitles = true
         
         setupCollectionView()
@@ -50,7 +50,7 @@ final class ListViewController: DataLoadingViewController {
 }
 
 // MARK: - Render
-private extension ListViewController {
+private extension TrendingViewController {
     private func render(_ state: ViewState<[Movie]>) {
         switch state {
         case .loading:
@@ -70,7 +70,7 @@ private extension ListViewController {
 }
 
 // MARK: - ListDataSourceDelegate
-extension ListViewController: ListDataSourceDelegate {
+extension TrendingViewController: TrendingDataSourceDelegate {
     func moveToDetail(_ movieID: Int) {
         let detailVC = DetailViewController.initialize(with: movieID)
         navigationController?.pushViewController(detailVC, animated: true)

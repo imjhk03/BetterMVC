@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gJ5-38-UVb">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18092"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -71,17 +71,19 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="gJ5-38-UVb" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gzu-Je-0sD">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="kMv-iY-tWb" kind="relationship" relationship="viewControllers" id="Xpe-EH-E4m"/>
                         <segue destination="dki-BQ-Oxe" kind="relationship" relationship="viewControllers" id="lKi-8Z-3tA"/>
+                        <segue destination="doe-45-W0g" kind="relationship" relationship="viewControllers" id="aHp-4v-PFt"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cbL-u4-efP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-109" y="408"/>
+            <point key="canvasLocation" x="-954" y="551"/>
         </scene>
         <!--Favorites View Controller-->
         <scene sceneID="emg-ww-9Ik">
@@ -121,6 +123,44 @@
             </objects>
             <point key="canvasLocation" x="1961" y="827"/>
         </scene>
+        <!--Trending View Controller-->
+        <scene sceneID="DSV-J8-7Dp">
+            <objects>
+                <viewController id="2dX-cU-3Hk" customClass="TrendingViewController" customModule="BetterMVC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="alf-yK-PlL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mrT-cY-coF">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="E5p-IQ-S20">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZVR-rg-twa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZVR-rg-twa" firstAttribute="trailing" secondItem="mrT-cY-coF" secondAttribute="trailing" id="07m-eq-ZKF"/>
+                            <constraint firstItem="mrT-cY-coF" firstAttribute="top" secondItem="ZVR-rg-twa" secondAttribute="top" id="HMu-M7-Bdl"/>
+                            <constraint firstItem="mrT-cY-coF" firstAttribute="leading" secondItem="ZVR-rg-twa" secondAttribute="leading" id="WXa-Zo-fqk"/>
+                            <constraint firstItem="ZVR-rg-twa" firstAttribute="bottom" secondItem="mrT-cY-coF" secondAttribute="bottom" id="w8Y-OE-pHN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Q9I-ZI-YyL"/>
+                    <connections>
+                        <outlet property="collectionView" destination="mrT-cY-coF" id="b3K-aN-9iQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LjF-nM-N2a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1961" y="1641"/>
+        </scene>
         <!--Favorites-->
         <scene sceneID="ayY-8S-XuD">
             <objects>
@@ -140,8 +180,28 @@
             </objects>
             <point key="canvasLocation" x="1051" y="827"/>
         </scene>
+        <!--Trending-->
+        <scene sceneID="I4A-A1-bWO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="doe-45-W0g" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Trending" image="bubble.left.and.bubble.right" catalog="system" id="i9b-bf-fr0"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="N0R-qD-hh0">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2dX-cU-3Hk" kind="relationship" relationship="rootViewController" id="2qk-Rd-m4M"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="04m-Bf-dad" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1051" y="1641"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="bubble.left.and.bubble.right" catalog="system" width="128" height="96"/>
         <image name="lasso.sparkles" catalog="system" width="122" height="128"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
