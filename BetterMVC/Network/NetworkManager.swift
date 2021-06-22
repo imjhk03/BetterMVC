@@ -78,15 +78,18 @@ extension EndPoint {
     }
 }
 
-final class NetworkManager {
+class NetworkManager {
     
     static let shared       = NetworkManager()
     static let scheme       = "https"
     static let host         = "api.themoviedb.org"
     static let basePath     = "/3"
     
-    private let testDetailURL = "https://api.themoviedb.org/3/movie/791373?api_key=\(API_KEY)&language=ko-KR"
+    private let session: URLSession
     
+    init(session: URLSession = .shared) {
+        self.session = session
+    }
     
     func request<T: Decodable>(_ endpoint: EndPoint,
                  then handler: @escaping (Result<T, NetworkError>) -> Void) {
@@ -94,7 +97,7 @@ final class NetworkManager {
             return handler(.failure(.invalidURL))
         }
         
-        let task = URLSession.shared.dataTask(with: url) { data, _, error in
+        let task = session.dataTask(with: url) { data, _, error in
             guard let data = data else {
                 handler(.failure(.invalidData))
                 return
@@ -115,4 +118,38 @@ final class NetworkManager {
         task.resume()
     }
     
+}
+
+// We create a partial mock by subclassing the original class
+class URLSessionDataTaskMock: URLSessionDataTask {
+    private let closure: () -> Void
+    
+    init(closure: @escaping () -> Void) {
+        self.closure = closure
+    }
+    
+    override func resume() {
+        closure()
+    }
+}
+
+class URLSessionMock: URLSession {
+    typealias CompletionHandler = (Data?, URLResponse?, Error?) -> Void
+    
+    // Properties that enable us to set exactly what data or error
+    // we want our mocked URLSession to return for any request.
+    var data: Data?
+    var error: Error?
+    
+    override func dataTask(
+        with url: URL,
+        completionHandler: @escaping CompletionHandler
+    ) -> URLSessionDataTask {
+        let data = self.data
+        let error = self.error
+        
+        return URLSessionDataTaskMock {
+            completionHandler(data, nil, error)
+        }
+    }
 }

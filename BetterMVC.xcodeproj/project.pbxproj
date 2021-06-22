@@ -38,6 +38,8 @@
 		C1792A58261E783800D9AD5E /* MovieDetailModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1792A57261E783800D9AD5E /* MovieDetailModelController.swift */; };
 		C18BEF4426816C9E0041977F /* TrendingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18BEF4326816C9E0041977F /* TrendingDataSource.swift */; };
 		C18BEF4726816D620041977F /* TrendingLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18BEF4626816D620041977F /* TrendingLogicController.swift */; };
+		C18BEF4F2681A2B90041977F /* BetterMVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18BEF4E2681A2B90041977F /* BetterMVCTests.swift */; };
+		C18BEF572681A3DF0041977F /* TrendingMock.json in Sources */ = {isa = PBXBuildFile; fileRef = C18BEF562681A3DF0041977F /* TrendingMock.json */; };
 		C1A3051D261D4687002DC30F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A3051B261D4687002DC30F /* DetailViewController.swift */; };
 		C1A3051E261D4687002DC30F /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1A3051C261D4687002DC30F /* DetailViewController.xib */; };
 		C1A30523261D48A1002DC30F /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A30522261D48A1002DC30F /* UIViewController+Extensions.swift */; };
@@ -49,6 +51,16 @@
 		C1A30536261DA736002DC30F /* DetailTopInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1A30534261DA736002DC30F /* DetailTopInfoCollectionViewCell.xib */; };
 		C1A30539261DAB63002DC30F /* DetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A30538261DAB63002DC30F /* DetailDataSource.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C18BEF512681A2B90041977F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C1615CC1261696110052918D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C1615CC8261696110052918D;
+			remoteInfo = BetterMVC;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		C11D5EDB261E88C700965A9D /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
@@ -83,6 +95,10 @@
 		C1792A57261E783800D9AD5E /* MovieDetailModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailModelController.swift; sourceTree = "<group>"; };
 		C18BEF4326816C9E0041977F /* TrendingDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingDataSource.swift; sourceTree = "<group>"; };
 		C18BEF4626816D620041977F /* TrendingLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingLogicController.swift; sourceTree = "<group>"; };
+		C18BEF4C2681A2B90041977F /* BetterMVCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BetterMVCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C18BEF4E2681A2B90041977F /* BetterMVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterMVCTests.swift; sourceTree = "<group>"; };
+		C18BEF502681A2B90041977F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C18BEF562681A3DF0041977F /* TrendingMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TrendingMock.json; sourceTree = "<group>"; };
 		C1A3051B261D4687002DC30F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C1A3051C261D4687002DC30F /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		C1A30522261D48A1002DC30F /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
@@ -101,6 +117,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1615D81261716C00052918D /* Nuke in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C18BEF492681A2B90041977F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				C1615CCB261696110052918D /* BetterMVC */,
+				C18BEF4D2681A2B90041977F /* BetterMVCTests */,
 				C1615CCA261696110052918D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -172,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				C1615CC9261696110052918D /* BetterMVC.app */,
+				C18BEF4C2681A2B90041977F /* BetterMVCTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -267,6 +292,16 @@
 			path = Logic;
 			sourceTree = "<group>";
 		};
+		C18BEF4D2681A2B90041977F /* BetterMVCTests */ = {
+			isa = PBXGroup;
+			children = (
+				C18BEF4E2681A2B90041977F /* BetterMVCTests.swift */,
+				C18BEF502681A2B90041977F /* Info.plist */,
+				C18BEF562681A3DF0041977F /* TrendingMock.json */,
+			);
+			path = BetterMVCTests;
+			sourceTree = "<group>";
+		};
 		C1A30518261D464A002DC30F /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,17 +381,39 @@
 			productReference = C1615CC9261696110052918D /* BetterMVC.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C18BEF4B2681A2B90041977F /* BetterMVCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C18BEF532681A2B90041977F /* Build configuration list for PBXNativeTarget "BetterMVCTests" */;
+			buildPhases = (
+				C18BEF482681A2B90041977F /* Sources */,
+				C18BEF492681A2B90041977F /* Frameworks */,
+				C18BEF4A2681A2B90041977F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C18BEF522681A2B90041977F /* PBXTargetDependency */,
+			);
+			name = BetterMVCTests;
+			productName = BetterMVCTests;
+			productReference = C18BEF4C2681A2B90041977F /* BetterMVCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		C1615CC1261696110052918D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
 					C1615CC8261696110052918D = {
 						CreatedOnToolsVersion = 12.4;
+					};
+					C18BEF4B2681A2B90041977F = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = C1615CC8261696110052918D;
 					};
 				};
 			};
@@ -377,6 +434,7 @@
 			projectRoot = "";
 			targets = (
 				C1615CC8261696110052918D /* BetterMVC */,
+				C18BEF4B2681A2B90041977F /* BetterMVCTests */,
 			);
 		};
 /* End PBXProject section */
@@ -394,6 +452,13 @@
 				C121921F264AE49400E3F6E6 /* ListCollectionReusableView.xib in Resources */,
 				C1A30536261DA736002DC30F /* DetailTopInfoCollectionViewCell.xib in Resources */,
 				C1418646261DEDB700808EAB /* DetailOverviewCollectionViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C18BEF4A2681A2B90041977F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,7 +504,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C18BEF482681A2B90041977F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C18BEF572681A3DF0041977F /* TrendingMock.json in Sources */,
+				C18BEF4F2681A2B90041977F /* BetterMVCTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C18BEF522681A2B90041977F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C1615CC8261696110052918D /* BetterMVC */;
+			targetProxy = C18BEF512681A2B90041977F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C1615CD2261696110052918D /* Main.storyboard */ = {
@@ -512,7 +594,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -567,7 +649,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -615,6 +697,48 @@
 			};
 			name = Release;
 		};
+		C18BEF542681A2B90041977F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F9Y6SPBV9F;
+				INFOPLIST_FILE = BetterMVCTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.jhk.BetterMVCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BetterMVC.app/BetterMVC";
+			};
+			name = Debug;
+		};
+		C18BEF552681A2B90041977F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F9Y6SPBV9F;
+				INFOPLIST_FILE = BetterMVCTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.jhk.BetterMVCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BetterMVC.app/BetterMVC";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -632,6 +756,15 @@
 			buildConfigurations = (
 				C1615CDE261696120052918D /* Debug */,
 				C1615CDF261696120052918D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C18BEF532681A2B90041977F /* Build configuration list for PBXNativeTarget "BetterMVCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C18BEF542681A2B90041977F /* Debug */,
+				C18BEF552681A2B90041977F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
