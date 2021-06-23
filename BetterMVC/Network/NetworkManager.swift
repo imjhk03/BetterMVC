@@ -85,19 +85,21 @@ class NetworkManager {
     static let host         = "api.themoviedb.org"
     static let basePath     = "/3"
     
-    private let session: URLSession
+    private let session: NetworkSession
     
-    init(session: URLSession = .shared) {
+    init(session: NetworkSession = URLSession.shared) {
         self.session = session
     }
     
     func request<T: Decodable>(_ endpoint: EndPoint,
                  then handler: @escaping (Result<T, NetworkError>) -> Void) {
+        
         guard let url = endpoint.url else {
-            return handler(.failure(.invalidURL))
+            handler(.failure(.invalidURL))
+            return
         }
         
-        let task = session.dataTask(with: url) { data, _, error in
+        session.loadData(from: url) { data, error in
             guard let data = data else {
                 handler(.failure(.invalidData))
                 return
@@ -114,42 +116,27 @@ class NetworkManager {
                 handler(.failure(.invalidData))
             }
         }
+    }
+}
+
+extension URLSession: NetworkSession {
+    
+    func loadData(from url: URL, completionHandler: @escaping (Data?, Error?) -> Void) {
+        let task = dataTask(with: url) { data, _, error in
+            completionHandler(data, error)
+        }
         
         task.resume()
     }
     
 }
 
-// We create a partial mock by subclassing the original class
-class URLSessionDataTaskMock: URLSessionDataTask {
-    private let closure: () -> Void
-    
-    init(closure: @escaping () -> Void) {
-        self.closure = closure
-    }
-    
-    override func resume() {
-        closure()
-    }
-}
-
-class URLSessionMock: URLSession {
-    typealias CompletionHandler = (Data?, URLResponse?, Error?) -> Void
-    
-    // Properties that enable us to set exactly what data or error
-    // we want our mocked URLSession to return for any request.
+class NetworkSessionMock: NetworkSession {
     var data: Data?
     var error: Error?
     
-    override func dataTask(
-        with url: URL,
-        completionHandler: @escaping CompletionHandler
-    ) -> URLSessionDataTask {
-        let data = self.data
-        let error = self.error
-        
-        return URLSessionDataTaskMock {
-            completionHandler(data, nil, error)
-        }
+    func loadData(from url: URL, completionHandler: @escaping (Data?, Error?) -> Void) {
+        completionHandler(data, error)
     }
+    
 }

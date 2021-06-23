@@ -14,6 +14,10 @@
 		C11D5EE7261EB20D00965A9D /* FavoritesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11D5EE6261EB20D00965A9D /* FavoritesDataSource.swift */; };
 		C121921E264AE49400E3F6E6 /* ListCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C121921C264AE49400E3F6E6 /* ListCollectionReusableView.swift */; };
 		C121921F264AE49400E3F6E6 /* ListCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C121921D264AE49400E3F6E6 /* ListCollectionReusableView.xib */; };
+		C128491F2682BCBE001E441D /* TrendingMock.json in Resources */ = {isa = PBXBuildFile; fileRef = C18BEF562681A3DF0041977F /* TrendingMock.json */; };
+		C12849212682BD1B001E441D /* JSONReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12849202682BD1B001E441D /* JSONReader.swift */; };
+		C12849232682BD4F001E441D /* JSONReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12849202682BD1B001E441D /* JSONReader.swift */; };
+		C12849252682CF71001E441D /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12849242682CF71001E441D /* NetworkSession.swift */; };
 		C1394F3E2681551C00D24CE3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1394F3D2681551C00D24CE3 /* Constants.swift */; };
 		C1394F4626816AAF00D24CE3 /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1394F4526816AAF00D24CE3 /* TrendingViewController.swift */; };
 		C1418645261DEDB700808EAB /* DetailOverviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1418643261DEDB700808EAB /* DetailOverviewCollectionViewCell.swift */; };
@@ -39,7 +43,6 @@
 		C18BEF4426816C9E0041977F /* TrendingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18BEF4326816C9E0041977F /* TrendingDataSource.swift */; };
 		C18BEF4726816D620041977F /* TrendingLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18BEF4626816D620041977F /* TrendingLogicController.swift */; };
 		C18BEF4F2681A2B90041977F /* BetterMVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18BEF4E2681A2B90041977F /* BetterMVCTests.swift */; };
-		C18BEF572681A3DF0041977F /* TrendingMock.json in Sources */ = {isa = PBXBuildFile; fileRef = C18BEF562681A3DF0041977F /* TrendingMock.json */; };
 		C1A3051D261D4687002DC30F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A3051B261D4687002DC30F /* DetailViewController.swift */; };
 		C1A3051E261D4687002DC30F /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1A3051C261D4687002DC30F /* DetailViewController.xib */; };
 		C1A30523261D48A1002DC30F /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A30522261D48A1002DC30F /* UIViewController+Extensions.swift */; };
@@ -70,6 +73,8 @@
 		C11D5EE6261EB20D00965A9D /* FavoritesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesDataSource.swift; sourceTree = "<group>"; };
 		C121921C264AE49400E3F6E6 /* ListCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionReusableView.swift; sourceTree = "<group>"; };
 		C121921D264AE49400E3F6E6 /* ListCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCollectionReusableView.xib; sourceTree = "<group>"; };
+		C12849202682BD1B001E441D /* JSONReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONReader.swift; sourceTree = "<group>"; };
+		C12849242682CF71001E441D /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
 		C1394F3D2681551C00D24CE3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C1394F4526816AAF00D24CE3 /* TrendingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingViewController.swift; sourceTree = "<group>"; };
 		C1418643261DEDB700808EAB /* DetailOverviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOverviewCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -250,6 +255,7 @@
 			children = (
 				C1615D652617081E0052918D /* NetworkError.swift */,
 				C1615CF0261699680052918D /* NetworkManager.swift */,
+				C12849242682CF71001E441D /* NetworkSession.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -338,6 +344,7 @@
 			children = (
 				C1A30525261D48C9002DC30F /* LoadingViewController.swift */,
 				C11D5EDD261E98E600965A9D /* HUDViewController.swift */,
+				C12849202682BD1B001E441D /* JSONReader.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -459,6 +466,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C128491F2682BCBE001E441D /* TrendingMock.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +490,7 @@
 				C1A30535261DA736002DC30F /* DetailTopInfoCollectionViewCell.swift in Sources */,
 				C1615CEB261698590052918D /* ListCollectionViewCell.swift in Sources */,
 				C1615CCD261696110052918D /* AppDelegate.swift in Sources */,
+				C12849252682CF71001E441D /* NetworkSession.swift in Sources */,
 				C1A30526261D48C9002DC30F /* LoadingViewController.swift in Sources */,
 				C1418645261DEDB700808EAB /* DetailOverviewCollectionViewCell.swift in Sources */,
 				C1615D462616C6990052918D /* ResponseResultExample.swift in Sources */,
@@ -500,6 +509,7 @@
 				C121921E264AE49400E3F6E6 /* ListCollectionReusableView.swift in Sources */,
 				C1A3052A261D4CE4002DC30F /* DataLoadingVC.swift in Sources */,
 				C1615D662617081E0052918D /* NetworkError.swift in Sources */,
+				C12849212682BD1B001E441D /* JSONReader.swift in Sources */,
 				C11D5EDE261E98E600965A9D /* HUDViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,7 +518,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C18BEF572681A3DF0041977F /* TrendingMock.json in Sources */,
+				C12849232682BD4F001E441D /* JSONReader.swift in Sources */,
 				C18BEF4F2681A2B90041977F /* BetterMVCTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

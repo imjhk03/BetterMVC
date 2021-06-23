@@ -31,22 +31,38 @@ class BetterMVCTests: XCTestCase {
         }
     }
     
+    /// Partial Mocking, intended for successful response
     func testSuccessfulResponse() {
         // Setup our objects
-        let session = URLSessionMock()
+        let session = NetworkSessionMock()
         let manager = NetworkManager(session: session)
         
         // Create data and tell the session to always return it
-        let data = Data(bytes: [0, 1, 0, 1])
-        session.data = data
+        guard let jsonData = JSONReader().read(resource: "TrendingMock") else {
+            XCTFail()
+            return
+        }
+        session.data = jsonData
         
-        // Create a URL (using the file path API to avoid optionals)
-        let url = URL(fileURLWithPath: "url")
+        var movieList: MovieList?
+        
+        do {
+            let decoder = JSONDecoder()
+            movieList = try decoder.decode(MovieList.self, from: jsonData)
+        } catch {
+            XCTFail()
+            return
+        }
+        
+        guard let responseData = movieList else {
+            XCTFail()
+            return
+        }
         
         // Perform the request and verify the result
         var result: Result<MovieList, NetworkError>?
         manager.request(.trending(time: .day)) { result = $0 }
-//        XCTAssertEqual(result, .success(data))
+        XCTAssertEqual(result, .success(responseData))
     }
 
 }
