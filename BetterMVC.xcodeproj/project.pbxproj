@@ -18,6 +18,7 @@
 		C12849212682BD1B001E441D /* JSONReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12849202682BD1B001E441D /* JSONReader.swift */; };
 		C12849232682BD4F001E441D /* JSONReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12849202682BD1B001E441D /* JSONReader.swift */; };
 		C12849252682CF71001E441D /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12849242682CF71001E441D /* NetworkSession.swift */; };
+		C12849272682DD83001E441D /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12849262682DD83001E441D /* EndPoint.swift */; };
 		C1394F3E2681551C00D24CE3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1394F3D2681551C00D24CE3 /* Constants.swift */; };
 		C1394F4626816AAF00D24CE3 /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1394F4526816AAF00D24CE3 /* TrendingViewController.swift */; };
 		C1418645261DEDB700808EAB /* DetailOverviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1418643261DEDB700808EAB /* DetailOverviewCollectionViewCell.swift */; };
@@ -75,6 +76,7 @@
 		C121921D264AE49400E3F6E6 /* ListCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCollectionReusableView.xib; sourceTree = "<group>"; };
 		C12849202682BD1B001E441D /* JSONReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONReader.swift; sourceTree = "<group>"; };
 		C12849242682CF71001E441D /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
+		C12849262682DD83001E441D /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		C1394F3D2681551C00D24CE3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C1394F4526816AAF00D24CE3 /* TrendingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingViewController.swift; sourceTree = "<group>"; };
 		C1418643261DEDB700808EAB /* DetailOverviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOverviewCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				C1615D652617081E0052918D /* NetworkError.swift */,
 				C1615CF0261699680052918D /* NetworkManager.swift */,
 				C12849242682CF71001E441D /* NetworkSession.swift */,
+				C12849262682DD83001E441D /* EndPoint.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 				C1A3051D261D4687002DC30F /* DetailViewController.swift in Sources */,
 				C1A30535261DA736002DC30F /* DetailTopInfoCollectionViewCell.swift in Sources */,
 				C1615CEB261698590052918D /* ListCollectionViewCell.swift in Sources */,
+				C12849272682DD83001E441D /* EndPoint.swift in Sources */,
 				C1615CCD261696110052918D /* AppDelegate.swift in Sources */,
 				C12849252682CF71001E441D /* NetworkSession.swift in Sources */,
 				C1A30526261D48C9002DC30F /* LoadingViewController.swift in Sources */,
