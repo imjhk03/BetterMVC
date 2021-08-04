@@ -19,6 +19,7 @@
 		C1418646261DEDB700808EAB /* DetailOverviewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1418644261DEDB700808EAB /* DetailOverviewCollectionViewCell.xib */; };
 		C141864C261DFB9500808EAB /* NibInitable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C141864B261DFB9500808EAB /* NibInitable.swift */; };
 		C1418650261DFBD500808EAB /* AnyBundleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C141864F261DFBD500808EAB /* AnyBundleable.swift */; };
+		C14AAAE526BA4E80001418A5 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14AAAE426BA4E80001418A5 /* EmptyStateView.swift */; };
 		C1615CCD261696110052918D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1615CCC261696110052918D /* AppDelegate.swift */; };
 		C1615CCF261696110052918D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1615CCE261696110052918D /* SceneDelegate.swift */; };
 		C1615CD1261696110052918D /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1615CD0261696110052918D /* ListViewController.swift */; };
@@ -60,6 +61,7 @@
 		C1418644261DEDB700808EAB /* DetailOverviewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailOverviewCollectionViewCell.xib; sourceTree = "<group>"; };
 		C141864B261DFB9500808EAB /* NibInitable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibInitable.swift; sourceTree = "<group>"; };
 		C141864F261DFBD500808EAB /* AnyBundleable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyBundleable.swift; sourceTree = "<group>"; };
+		C14AAAE426BA4E80001418A5 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		C1615CC9261696110052918D /* BetterMVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterMVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1615CCC261696110052918D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1615CCE261696110052918D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				C1A30529261D4CE4002DC30F /* DataLoadingVC.swift */,
+				C14AAAE426BA4E80001418A5 /* EmptyStateView.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				C1A30535261DA736002DC30F /* DetailTopInfoCollectionViewCell.swift in Sources */,
 				C1615CEB261698590052918D /* ListCollectionViewCell.swift in Sources */,
 				C1615CCD261696110052918D /* AppDelegate.swift in Sources */,
+				C14AAAE526BA4E80001418A5 /* EmptyStateView.swift in Sources */,
 				C1A30526261D48C9002DC30F /* LoadingViewController.swift in Sources */,
 				C1418645261DEDB700808EAB /* DetailOverviewCollectionViewCell.swift in Sources */,
 				C1615D462616C6990052918D /* ResponseResultExample.swift in Sources */,
