@@ -10,7 +10,7 @@ import Foundation
 final class ListLogicController {
     private var popularMovies = [Movie]()
     private let networking = NetworkManager.shared
-    
+
     func loadPopular(then handler: @escaping (ViewState<[Movie]>) -> Void) {
         networking.request(.popular()) { (response: Result<MovieList, NetworkError>) in
             switch response {
@@ -23,7 +23,7 @@ final class ListLogicController {
             }
         }
     }
-    
+
 }
 
 extension ListLogicController: ListDataSourceDataProvider {

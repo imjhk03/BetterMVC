@@ -30,35 +30,35 @@ class BetterMVCTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-    
+
     /// Partial Mocking, intended for successful response
     func testSuccessfulResponse() {
         // Setup our objects
         let session = NetworkSessionMock()
         let manager = NetworkManager(session: session)
-        
+
         // Create data and tell the session to always return it
         guard let jsonData = JSONReader().read(resource: "TrendingMock") else {
-            XCTFail()
+            XCTFail("Failed reading JSON file")
             return
         }
         session.data = jsonData
-        
+
         var movieList: MovieList?
-        
+
         do {
             let decoder = JSONDecoder()
             movieList = try decoder.decode(MovieList.self, from: jsonData)
         } catch {
-            XCTFail()
+            XCTFail("Failed decode JSON")
             return
         }
-        
+
         guard let responseData = movieList else {
-            XCTFail()
+            XCTFail("Failed, responseData is not equal")
             return
         }
-        
+
         // Perform the request and verify the result
         var result: Result<MovieList, NetworkError>?
         manager.request(.trending(time: .day)) { result = $0 }

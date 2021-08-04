@@ -12,7 +12,7 @@ final class TrendingLogicController {
     private var todayMovies = [Movie]()
     private var thisWeekMovies = [Movie]()
     private let networking = NetworkManager.shared
-    
+
     func load(then handler: @escaping (ViewState<[Movie]>) -> Void) {
         if !todayMovies.isEmpty && !thisWeekMovies.isEmpty {
             switch time {
@@ -23,28 +23,28 @@ final class TrendingLogicController {
             }
             return
         }
-        
+
         networking.request(.trending(time: time)) { [weak self] (response: Result<MovieList, NetworkError>) in
             guard let self = self else { return }
-            
+
             switch response {
             case .success(let response):
                 let movies = response.results
-                
+
                 switch self.time {
                 case .day:
                     self.todayMovies = movies
                 case .week:
                     self.thisWeekMovies = movies
                 }
-                
+
                 handler(.presenting(movies))
             case .failure(let error):
                 handler(.failed)
             }
         }
     }
-    
+
 }
 
 extension TrendingLogicController: TrendingDataSourceDataProvider {

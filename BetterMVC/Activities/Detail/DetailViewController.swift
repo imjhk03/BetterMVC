@@ -8,34 +8,34 @@
 import UIKit
 
 final class DetailViewController: DataLoadingViewController {
-    
+
     static func initialize(with movieID: Int) -> DetailViewController {
         let vc = DetailViewController()
         vc.logic.movieID = String(movieID)
         return vc
     }
-    
+
     private let logic = DetailLogicController()
     private var modelController: MovieDetailModelController?
     private lazy var dataSource = DetailDataSource(collectionView: collectionView, delegates: self)
-    
+
     @IBOutlet weak var collectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupView()
-        
+
         render(.loading)
-        
+
         logic.load { [weak self] state in
             self?.render(state)
         }
     }
-    
+
     private func setupView() {
         navigationController?.navigationBar.prefersLargeTitles = false
-        
+
         collectionView.dataSource = dataSource
         collectionView.delegate = dataSource
     }
@@ -50,10 +50,10 @@ private extension DetailViewController {
             showLoadingView()
         case .presenting(let detail):
             hideLoadingView()
-            
+
             dataSource.movie = detail
             modelController = MovieDetailModelController(movieDetail: detail)
-            
+
             DispatchQueue.main.async {
                 self.navigationItem.title = detail.title
                 self.collectionView.isHidden = false
@@ -61,7 +61,7 @@ private extension DetailViewController {
             }
         case .failed:
             hideLoadingView()
-            
+
             DispatchQueue.main.async {
                 self.collectionView.isHidden = true
                 self.showEmptyStateView(with: "Something went wrong. Try again.", in: self.view)
@@ -80,7 +80,7 @@ extension DetailViewController: DetailTopInfoCollectionViewCellDelegate {
                 self?.render(.presenting(detail))
                 return
             }
-            
+
             print(error)
         }
     }

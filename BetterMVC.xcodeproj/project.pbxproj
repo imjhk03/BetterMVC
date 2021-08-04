@@ -390,10 +390,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C1615CDD261696120052918D /* Build configuration list for PBXNativeTarget "BetterMVC" */;
 			buildPhases = (
+				C1CDF00126BB188F00774B41 /* Lint */,
 				C1615CC5261696110052918D /* Sources */,
 				C1615CC6261696110052918D /* Frameworks */,
 				C1615CC7261696110052918D /* Resources */,
-				C1CDF00126BB188F00774B41 /* Lint */,
 			);
 			buildRules = (
 			);
@@ -510,7 +510,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint autocorrect\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

@@ -8,7 +8,7 @@
 import Foundation
 
 class JSONReader {
-    
+
     func read(resource: String) -> Data? {
         guard let path = Bundle(for: type(of: self)).path(forResource: resource, ofType: "json") else {
             return nil
@@ -21,5 +21,5 @@ class JSONReader {
             return nil
         }
     }
-    
+
 }

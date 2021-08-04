@@ -12,11 +12,10 @@ enum PersistenceActionType {
 }
 
 enum PersistenceManager {
-    
+
     static private let defaults = UserDefaults.standard
     enum Keys { static let favorites = "favorites" }
-    
-    
+
     static func updateWith(favorite: MovieDetail, actionType: PersistenceActionType, completed: @escaping (FavoritesError?) -> Void) {
         retrieveFavorites { result in
             switch result {
@@ -27,27 +26,26 @@ enum PersistenceManager {
                         completed(.alreadyInFavorites)
                         return
                     }
-                    
+
                     favorites.append(favorite)
                 case .remove:
                     favorites.removeAll { $0.id == favorite.id }
                 }
-                
+
                 completed(save(favorites: favorites))
-                
+
             case .failure(let error):
                 completed(error)
             }
         }
     }
-    
-    
+
     static func retrieveFavorites(completed: @escaping (Result<[MovieDetail], FavoritesError>) -> Void) {
         guard let favoritesData = defaults.object(forKey: Keys.favorites) as? Data else {
             completed(.success([]))
             return
         }
-        
+
         do {
             let decoder = JSONDecoder()
             let favorites = try decoder.decode([MovieDetail].self, from: favoritesData)
@@ -56,8 +54,7 @@ enum PersistenceManager {
             completed(.failure(.unableToFavorite))
         }
     }
-    
-    
+
     static func save(favorites: [MovieDetail]) -> FavoritesError? {
         do {
             let encoder = JSONEncoder()
@@ -66,14 +63,13 @@ enum PersistenceManager {
         } catch {
             return .unableToFavorite
         }
-        
+
         return nil
     }
-    
-    
+
     static func isFavorite(_ movie: MovieDetail) -> Bool {
         var isFavorite: Bool = false
-        
+
         retrieveFavorites { result in
             switch result {
             case .success(let movies):
@@ -86,8 +82,8 @@ enum PersistenceManager {
                 isFavorite = false
             }
         }
-        
+
         return isFavorite
     }
-    
+
 }

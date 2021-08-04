@@ -9,7 +9,7 @@
 import Foundation
 
 final class PrintProtocol: URLProtocol {
-    
+
     override class func canInit(with request: URLRequest) -> Bool {
         // Print valuable request information.
         print("💬 Running request: \(request.httpMethod ?? "") - \(request.url?.absoluteString ?? "")")
@@ -17,5 +17,5 @@ final class PrintProtocol: URLProtocol {
         // By returning 'false', this URLProtocol will do noting less than logging.
         return false
     }
-    
+
 }

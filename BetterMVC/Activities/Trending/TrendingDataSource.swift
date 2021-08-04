@@ -16,30 +16,30 @@ protocol TrendingDataSourceDataProvider: AnyObject {
 }
 
 final class TrendingDataSource: NSObject {
-    
+
     enum Section: Int, CaseIterable {
         case main
     }
-    
+
     struct Item {
         let movies: [Movie]
-        
+
         init(movies: [Movie] = []) {
             self.movies = movies
         }
     }
-    
+
     weak var delegate: TrendingDataSourceDelegate?
     weak var provider: TrendingDataSourceDataProvider?
-    
+
     init(collectionView: UICollectionView, delegate: TrendingDataSourceDelegate?, provider: TrendingDataSourceDataProvider?) {
         self.delegate = delegate
         self.provider = provider
-        
+
         let nib = UINib(nibName: "ListCollectionViewCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "ListCollectionViewCell")
     }
-    
+
 }
 
 // MARK: - UICollectionViewDataSource
@@ -47,7 +47,7 @@ extension TrendingDataSource: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         Section.allCases.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let section = Section(rawValue: section)
         switch section {
@@ -57,7 +57,7 @@ extension TrendingDataSource: UICollectionViewDataSource {
             return 0
         }
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let section = Section(rawValue: indexPath.section)
         switch section {
@@ -75,7 +75,7 @@ extension TrendingDataSource: UICollectionViewDataSource {
             return cell
         }
     }
-    
+
 }
 
 // MARK: - UICollectionViewDelegate
@@ -100,17 +100,17 @@ extension TrendingDataSource: UICollectionViewDelegateFlowLayout {
         let width: CGFloat = (collectionView.frame.width - (16 * 2) - 8) / 2
         return .init(width: width, height: 325)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 8
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 20
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return .init(top: 16, left: 16, bottom: 16, right: 16)
     }
-    
+
 }

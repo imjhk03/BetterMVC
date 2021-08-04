@@ -33,7 +33,7 @@ extension EndPoint {
             ]
         )
     }
-    
+
     static func detail(movieID: String) -> EndPoint {
         return EndPoint(
             path: "/movie/\(movieID)",
@@ -43,7 +43,7 @@ extension EndPoint {
             ]
         )
     }
-    
+
     static func trending(time: Time) -> EndPoint {
         return EndPoint(
             path: "/trending/movie/\(time.rawValue)",
@@ -53,7 +53,7 @@ extension EndPoint {
             ]
         )
     }
-    
+
     static func popular() -> EndPoint {
         return EndPoint(
             path: "/movie/popular",
@@ -63,7 +63,7 @@ extension EndPoint {
             ]
         )
     }
-    
+
 }
 
 extension EndPoint {
@@ -73,7 +73,7 @@ extension EndPoint {
         components.host = NetworkManager.host
         components.path = NetworkManager.basePath + path
         components.queryItems = queryItems
-        
+
         return components.url
     }
 }
