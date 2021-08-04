@@ -56,6 +56,8 @@
 		C1A30536261DA736002DC30F /* DetailTopInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1A30534261DA736002DC30F /* DetailTopInfoCollectionViewCell.xib */; };
 		C1A30539261DAB63002DC30F /* DetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A30538261DAB63002DC30F /* DetailDataSource.swift */; };
 		C1CDEFF626BAF87E00774B41 /* PrintProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CDEFF526BAF87E00774B41 /* PrintProtocol.swift */; };
+		C1CDF00326BB193100774B41 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = C1CDF00226BB193100774B41 /* .swiftlint.yml */; };
+		C1CDF00526BB1A0E00774B41 /* Mintfile in Resources */ = {isa = PBXBuildFile; fileRef = C1CDF00426BB1A0E00774B41 /* Mintfile */; };
 		C1F6C2BD262AF61900A76943 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F6C2BC262AF61900A76943 /* CustomNavigationController.swift */; };
 /* End PBXBuildFile section */
 
@@ -121,6 +123,8 @@
 		C1A30534261DA736002DC30F /* DetailTopInfoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTopInfoCollectionViewCell.xib; sourceTree = "<group>"; };
 		C1A30538261DAB63002DC30F /* DetailDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDataSource.swift; sourceTree = "<group>"; };
 		C1CDEFF526BAF87E00774B41 /* PrintProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintProtocol.swift; sourceTree = "<group>"; };
+		C1CDF00226BB193100774B41 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		C1CDF00426BB1A0E00774B41 /* Mintfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Mintfile; sourceTree = "<group>"; };
 		C1F6C2BC262AF61900A76943 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -199,6 +203,8 @@
 		C1615CC0261696110052918D = {
 			isa = PBXGroup;
 			children = (
+				C1CDF00426BB1A0E00774B41 /* Mintfile */,
+				C1CDF00226BB193100774B41 /* .swiftlint.yml */,
 				C1615CCB261696110052918D /* BetterMVC */,
 				C18BEF4D2681A2B90041977F /* BetterMVCTests */,
 				C1615CCA261696110052918D /* Products */,
@@ -387,6 +393,7 @@
 				C1615CC5261696110052918D /* Sources */,
 				C1615CC6261696110052918D /* Frameworks */,
 				C1615CC7261696110052918D /* Resources */,
+				C1CDF00126BB188F00774B41 /* Lint */,
 			);
 			buildRules = (
 			);
@@ -463,6 +470,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1CDF00526BB1A0E00774B41 /* Mintfile in Resources */,
+				C1CDF00326BB193100774B41 /* .swiftlint.yml in Resources */,
 				C1615CD9261696120052918D /* LaunchScreen.storyboard in Resources */,
 				C1615CD6261696120052918D /* Assets.xcassets in Resources */,
 				C1A3051E261D4687002DC30F /* DetailViewController.xib in Resources */,
@@ -483,6 +492,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C1CDF00126BB188F00774B41 /* Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Lint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C1615CC5261696110052918D /* Sources */ = {
