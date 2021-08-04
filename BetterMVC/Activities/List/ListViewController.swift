@@ -24,10 +24,6 @@ final class ListViewController: DataLoadingViewController {
         
         render(.loading)
         
-        logic.load { [weak self] state in
-            self?.render(state)
-        }
-        
         logic.loadPopular { [weak self] state in
             self?.render(state)
         }

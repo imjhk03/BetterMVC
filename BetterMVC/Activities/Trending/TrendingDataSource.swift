@@ -1,24 +1,24 @@
 //
-//  ListDataSource.swift
+//  TrendingDataSource.swift
 //  BetterMVC
 //
-//  Created by Joo Hee Kim on 21. 04. 02..
+//  Created by Joohee Kim on 21. 06. 22..
 //
 
 import UIKit
 
-protocol ListDataSourceDelegate: AnyObject {
+protocol TrendingDataSourceDelegate: AnyObject {
     func moveToDetail(_ movieID: Int)
 }
 
-protocol ListDataSourceDataProvider: AnyObject {
-    func item(for section: ListDataSource.Section) -> ListDataSource.Item
+protocol TrendingDataSourceDataProvider: AnyObject {
+    func item(for section: TrendingDataSource.Section) -> TrendingDataSource.Item
 }
 
-class ListDataSource: NSObject {
+final class TrendingDataSource: NSObject {
     
     enum Section: Int, CaseIterable {
-        case popular
+        case main
     }
     
     struct Item {
@@ -29,24 +29,21 @@ class ListDataSource: NSObject {
         }
     }
     
-    weak var delegate: ListDataSourceDelegate?
-    weak var provider: ListDataSourceDataProvider?
+    weak var delegate: TrendingDataSourceDelegate?
+    weak var provider: TrendingDataSourceDataProvider?
     
-    init(collectionView: UICollectionView, delegate: ListDataSourceDelegate?, provider: ListDataSourceDataProvider?) {
+    init(collectionView: UICollectionView, delegate: TrendingDataSourceDelegate?, provider: TrendingDataSourceDataProvider?) {
         self.delegate = delegate
         self.provider = provider
         
         let nib = UINib(nibName: "ListCollectionViewCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "ListCollectionViewCell")
-        
-        let header = UINib(nibName: "ListCollectionReusableView", bundle: nil)
-        collectionView.register(header, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "ListCollectionReusableView")
     }
     
 }
 
 // MARK: - UICollectionViewDataSource
-extension ListDataSource: UICollectionViewDataSource {
+extension TrendingDataSource: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         Section.allCases.count
     }
@@ -54,8 +51,8 @@ extension ListDataSource: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let section = Section(rawValue: section)
         switch section {
-        case .popular:
-            return provider?.item(for: .popular).movies.count ?? 0
+        case .main:
+            return provider?.item(for: .main).movies.count ?? 0
         default:
             return 0
         }
@@ -64,9 +61,9 @@ extension ListDataSource: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let section = Section(rawValue: indexPath.section)
         switch section {
-        case .popular:
+        case .main:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCollectionViewCell", for: indexPath) as? ListCollectionViewCell,
-                  let movies = provider?.item(for: .popular).movies else {
+                  let movies = provider?.item(for: .main).movies else {
                 fatalError("Failed to dequeue ListCollectionViewCell")
             }
             cell.configure(.init(movie: movies[indexPath.item]))
@@ -79,33 +76,16 @@ extension ListDataSource: UICollectionViewDataSource {
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let section = Section(rawValue: indexPath.section)
-        switch section {
-        case .popular:
-            guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ListCollectionReusableView", for: indexPath) as? ListCollectionReusableView else {
-                fatalError("Failed to dequeue ListCollectionReusableView")
-            }
-            view.configure("인기")
-            return view
-        default:
-            guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ListCollectionReusableView", for: indexPath) as? ListCollectionReusableView else {
-                fatalError("Failed to dequeue ListCollectionReusableView")
-            }
-            return view
-        }
-    }
-    
 }
 
 // MARK: - UICollectionViewDelegate
-extension ListDataSource: UICollectionViewDelegate {
+extension TrendingDataSource: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let section = Section(rawValue: indexPath.section)
         var movies = [Movie]()
         switch section {
-        case .popular:
-            movies = provider?.item(for: .popular).movies ?? []
+        case .main:
+            movies = provider?.item(for: .main).movies ?? []
         default:
             return
         }
@@ -115,15 +95,10 @@ extension ListDataSource: UICollectionViewDelegate {
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
-extension ListDataSource: UICollectionViewDelegateFlowLayout {
+extension TrendingDataSource: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width: CGFloat = (collectionView.frame.width - (16 * 2) - 8) / 2
         return .init(width: width, height: 325)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-//        return .init(width: collectionView.frame.width, height: 50)
-        return .zero
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -137,4 +112,5 @@ extension ListDataSource: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return .init(top: 16, left: 16, bottom: 16, right: 16)
     }
+    
 }

@@ -1,0 +1,424 @@
+{
+    "page": 1,
+    "results": [
+        {
+            "adult": false,
+            "backdrop_path": "/620hnMVLu6RSZW6a5rwO8gqpt0t.jpg",
+            "genre_ids": [
+                16,
+                35,
+                10751,
+                14
+            ],
+            "id": 508943,
+            "original_language": "en",
+            "original_title": "Luca",
+            "overview": "이탈리아 리비에라의 아름다운 해변 마을, 바다 밖 세상이 궁금하지만, 두렵기도 한 호기심 많은 소년 루카. 자칭 인간세상 전문가 알베르토와 함께 모험을 감행하지만, 물만 닿으면 바다 괴물로 변신하는 비밀 때문에 아슬아슬하기만 하다. 새로운 친구 줄리아와 함께 젤라또와 파스타를 실컷 먹고 스쿠터 여행을 꿈꾸는 여름은 그저 즐겁기만 한데…",
+            "poster_path": "/a4Z7HqaDvAliosFi259lErst0ZO.jpg",
+            "release_date": "2021-06-17",
+            "title": "루카",
+            "video": false,
+            "vote_average": 8.3,
+            "vote_count": 754,
+            "popularity": 2620.134,
+            "media_type": "movie"
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/miOnymJ0dN2psWBB8Vleo3fUyrc.jpg",
+            "genre_ids": [
+                18,
+                10751,
+                35
+            ],
+            "id": 607259,
+            "original_language": "en",
+            "original_title": "Fatherhood",
+            "overview": "아내를 잃었다. 그와 동시에 아빠가 되었고. 맷은 슬픔과 싸운다. 우는 딸에게 자장가를 불러주고, 분유를 먹이고, 쉴 새 없이 기저귀를 갈면서. 마음을 울리는 실화 바탕의 이야기.",
+            "poster_path": "/pR2fzm82fl0giommpo310LBOMbV.jpg",
+            "release_date": "2021-06-18",
+            "title": "아빠가 되는 중",
+            "video": false,
+            "vote_average": 8.2,
+            "vote_count": 197,
+            "popularity": 236.631,
+            "media_type": "movie"
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/pKVw8zE33cUOfhWA0QYo4BIWGUc.jpg",
+            "genre_ids": [
+                28,
+                12,
+                18
+            ],
+            "id": 602063,
+            "original_language": "ja",
+            "original_title": "るろうに剣心 最終章 The Final",
+            "overview": "그놈의 빰에 아직 십자 흉터가 있는가? 켄신의 과거를 알고 있는 남자, 에니시. 한때는 가족이었던 그가 사상 최강의 적이 되어 켄신 앞에 서고, 드디어 마지막 전투의 서막이 오른다.",
+            "poster_path": "/oS4jWkkS9A6FTLcHQb7Z6FVr9tH.jpg",
+            "release_date": "2021-04-23",
+            "title": "바람의 검심 최종장: 더 파이널",
+            "video": false,
+            "vote_average": 8.1,
+            "vote_count": 75,
+            "popularity": 90.097,
+            "media_type": "movie"
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/p6Azn8NfquLq9banQGNZP4GLjG8.jpg",
+            "genre_ids": [
+                9648,
+                16,
+                28,
+                80
+            ],
+            "id": 736073,
+            "original_language": "en",
+            "original_title": "Batman: The Long Halloween, Part One",
+            "overview": "DC Comics 스토리 라인을 기반으로 Warner Bros. Animation과 DC Entertainment에서 제작 한 미국 애니메이션 직접 비디오 슈퍼 히어로 영화입니다.",
+            "poster_path": "/fvaB0jrzFXq07bUpox03k6qOAJu.jpg",
+            "release_date": "2021-06-21",
+            "title": "배트맨 롱 할로윈 파트1",
+            "video": false,
+            "vote_average": 7.0,
+            "vote_count": 2,
+            "popularity": 51.577,
+            "media_type": "movie"
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/6zbKgwgaaCyyBXE4Sun4oWQfQmi.jpg",
+            "genre_ids": [
+                28,
+                80,
+                18
+            ],
+            "id": 615457,
+            "original_language": "en",
+            "original_title": "Nobody",
+            "overview": "비범한 과거를 숨긴 채 남들과 다를 바 없는 평범한 일상을 사는 한 가정의 가장 ‘허치’ 매일 출근을 하고, 분리수거를 하고 일과 가정 모두 나름 최선을 다하지만 아들한테는 무시당하고 아내와의 관계도 소원하다. 그러던 어느 날, 집안에 강도가 들고 허치는 한 번의 반항도 하지 못하고 당한다. 더 큰 위험으로부터 가족을 지키기 위한 선택이었는데 모두 무능력하다고 ‘허치’를 비난하고, 결국 그동안 참고 억눌렀던 분노가 폭발하고 만다.",
+            "poster_path": "/oXQtH8O7pCvXaDKGB8OAjiPVDi5.jpg",
+            "release_date": "2021-03-26",
+            "title": "노바디",
+            "video": false,
+            "vote_average": 8.4,
+            "vote_count": 2178,
+            "popularity": 1121.198,
+            "media_type": "movie"
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/inJjDhCjfhh3RtrJWBmmDqeuSYC.jpg",
+            "genre_ids": [
+                14,
+                12,
+                28
+            ],
+            "id": 399566,
+            "original_language": "en",
+            "original_title": "Godzilla vs. Kong",
+            "overview": "콩과 보호자들은 정착할 수 있는 곳을 찾아 특별하고 강력한 유대감을 형성하고 있는 지아와 함께 여정을 떠나게 된다. 그러던 중 지구 파괴를 위한 회심의 날을 휘두르는 고질라와 마주하게 되고, 보이지 않는 힘에 의해 맞붙게 된 두 전설의 대결은 지구 깊은 곳에 도사린 수수께끼의 시작에 불과할 뿐이었는데…",
+            "poster_path": "/sqo672rKMXiLRC5kVcGvBRebkp.jpg",
+            "release_date": "2021-03-24",
+            "title": "고질라 VS. 콩",
+            "video": false,
+            "vote_average": 8.0,
+            "vote_count": 6088,
+            "popularity": 1658.146,
+            "media_type": "movie"
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/z2UtGA1WggESspi6KOXeo66lvLx.jpg",
+            "genre_ids": [
+                878,
+                53,
+                27
+            ],
+            "original_language": "en",
+            "original_title": "A Quiet Place Part II",
+            "poster_path": "/6DoKA0l2TaHvw9BbP6YbMuAnxV3.jpg",
+            "vote_count": 332,
+            "video": false,
+            "vote_average": 7.3,
+            "title": "콰이어트 플레이스 2",
+            "overview": "괴생명체에 의한 무차별적 공격으로 황폐해진 세상,  아이들 대신 죽음을 선택한 아빠의 희생 이후 살아남은 가족들은 위험에 노출된다. 극한 상황에 내몰린 엄마 '에블린'은 갓 태어난 막내를 포함 세 아이와의 생존을 위해 놈들에 맞서기 위한 반격을 준비하고 또 다른 생존자들을 찾아 길을 나서는데...  생존을 위한 사투는 계속된다!",
+            "release_date": "2021-05-21",
+            "id": 520763,
+            "popularity": 4442.071,
+            "media_type": "movie"
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/qi6Edc1OPcyENecGtz8TF0DUr9e.jpg",
+            "genre_ids": [
+                27,
+                9648,
+                53
+            ],
+            "original_language": "en",
+            "original_title": "The Conjuring: The Devil Made Me Do It",
+            "poster_path": "/yxPlLa5p54Wk1o2koiW4hqn4wfG.jpg",
+            "vote_count": 2409,
+            "video": false,
+            "vote_average": 8.1,
+            "title": "컨저링 3: 악마가 시켰다",
+            "overview": "1981년, 미국 역사상 최초로 잔혹한 살인사건의 용의자가 악마가 살해하도록 시켰다고 주장하는 초유의 사태가 일어난다. 그리고 사건의 배후에는 악마에게 빙의된 소년이 있다. 살인사건의 범인은 인간인가 악마인가…",
+            "release_date": "2021-05-25",
+            "id": 423108,
+            "popularity": 3651.459,
+            "media_type": "movie"
+        },
+        {
+            "genre_ids": [
+                35,
+                80
+            ],
+            "id": 337404,
+            "original_title": "Cruella",
+            "poster_path": "/rJkDiGzHgFNBf8LUHX8IOL0IiVh.jpg",
+            "title": "크루엘라",
+            "video": false,
+            "vote_average": 8.6,
+            "overview": "재능은 있지만 밑바닥 인생을 살던 에스텔라는 우여곡절 끝에 런던에 오게 된다. 그곳에서 운명처럼 재스퍼와 호레이스를 만난 에스텔라는 뛰어난 패션 감각을 이용해 완벽한 변장과 빠른 손놀림으로 런던 거리를 싹쓸이한다. 도둑질이 지겹게 느껴질 때 쯤, 꿈에 그리던 리버티 백화점에 들어가게 된 에스텔라. 그곳에서 런던 패션계를 꽉 쥐고 있는 남작 부인을 만나 충격적 사건을 겪게 되며, 에스텔라는 런던 패션계를 발칵 뒤집을 파격 아이콘 크루엘라로 새롭게 태어나게 되는데...",
+            "release_date": "2021-05-26",
+            "vote_count": 3086,
+            "adult": false,
+            "backdrop_path": "/8ChCpCYxh9YXusmHwcE9YzP0TSG.jpg",
+            "original_language": "en",
+            "popularity": 4387.63,
+            "media_type": "movie"
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/s7XjGIy8cCYpMHDGNFMbP2zE7uq.jpg",
+            "genre_ids": [
+                28,
+                80
+            ],
+            "id": 656113,
+            "original_language": "ta",
+            "original_title": "ஜகமே தந்திரம்",
+            "overview": "잘 돌아가는 머리로 근심 걱정 없이 살아가는 갱스터. 해외 범죄계 거물의 라이벌 타도 작전에 투입되면서, 도덕적 딜레마에 허를 찔린다. 이제 선과 악 중에서 선택해야 할 때.",
+            "poster_path": "/goLoLNagbnWpPQh4YQE9R2hSLqj.jpg",
+            "release_date": "2021-06-18",
+            "title": "갱스터라 불린 사나이",
+            "video": false,
+            "vote_average": 6.3,
+            "vote_count": 7,
+            "popularity": 127.173,
+            "media_type": "movie"
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/yefJJnW0sHkBxH3HjdizI4mmeCr.jpg",
+            "genre_ids": [
+                27,
+                878,
+                53
+            ],
+            "id": 579828,
+            "original_language": "ru",
+            "original_title": "Кольская сверхглубокая",
+            "overview": "가장 깊고, 큰 규모의 비밀 연구 시설에서 1984년 알 수 없는 비명소리가 지하 12Km에서 녹음되었고, 그 깊은 곳에서 사상자가 발생하는 초유의 사건이 발생되면서  그 속에 숨겨진 비밀을 캐기위해 한 조사팀이 파견된다.",
+            "poster_path": "/3uUA6d7gkGyivkuxaf7zNSbkSuj.jpg",
+            "release_date": "2020-11-04",
+            "title": "슈퍼딥",
+            "video": false,
+            "vote_average": 7.1,
+            "vote_count": 57,
+            "popularity": 46.403,
+            "media_type": "movie"
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/fV3gp5MWfqpXZrsICHaCy9csKo8.jpg",
+            "genre_ids": [
+                53
+            ],
+            "id": 666624,
+            "original_language": "it",
+            "original_title": "Security",
+            "overview": "해변가 마을에서 한 여학생이 폭행당했다. 친부가 용의자로 지목되며 온 동네가 떠들썩해지고, 보안 전문가가 진범 찾기에 나선다. 그리고 아름다운 마을의 추악한 비밀과 거짓이 하나둘 드러난다.",
+            "poster_path": "/tuMcn12Us09pmAOuVEHXmFRivjF.jpg",
+            "release_date": "2021-06-07",
+            "title": "시큐리티",
+            "video": false,
+            "vote_average": 5.4,
+            "vote_count": 28,
+            "popularity": 51.393,
+            "media_type": "movie"
+        },
+        {
+            "id": 581726,
+            "poster_path": "/niw2AKHz6XmwiRMLWaoyAOAti0G.jpg",
+            "video": false,
+            "title": "인피니트",
+            "overview": "한 남자는 자신의 환각이 실제로 전생에서 온 환영이라는 것을 알게 된다.  2009년 출간한 에릭 메이크란츠 《The Reincarnationist Papers》 원작으로 제작된 영화로  수십 세기 환생하며 불멸에 가까운 집단 \"인피니트\"를 그리는 이야기.",
+            "release_date": "2021-09-08",
+            "vote_count": 0,
+            "adult": false,
+            "backdrop_path": "/wjQXZTlFM3PVEUmKf1sUajjygqT.jpg",
+            "vote_average": 0.0,
+            "genre_ids": [
+                878,
+                28,
+                53
+            ],
+            "original_title": "Infinite",
+            "original_language": "en",
+            "popularity": 3286.395,
+            "media_type": "movie"
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/oVY9wO5Y9KJB3FqfzMs8M73EqoJ.jpg",
+            "genre_ids": [
+                27
+            ],
+            "id": 663866,
+            "original_language": "en",
+            "original_title": "Censor",
+            "overview": "1985년, 영화 검열관 이니드는 이상하게 익숙한 저예산 공포영화를 본 뒤, 실종된 여동생과 관련된 과거의 미스터리를 해결하는 일에 착수한다. 이는 곧 현실과 허구의 경계를 허물기 시작한다.",
+            "poster_path": "/3rSel7TYn7CcVsgJqyfxFIXJ5Jf.jpg",
+            "release_date": "2021-06-11",
+            "title": "검열",
+            "video": false,
+            "vote_average": 6.4,
+            "vote_count": 10,
+            "popularity": 33.653,
+            "media_type": "movie"
+        },
+        {
+            "adult": false,
+            "id": 550205,
+            "genre_ids": [
+                16,
+                10751,
+                35,
+                14
+            ],
+            "vote_count": 183,
+            "original_language": "en",
+            "original_title": "Wish Dragon",
+            "poster_path": "/lnPf6hzANL6pVQTxUlsNYSuhT5l.jpg",
+            "title": "위시 드래곤",
+            "video": false,
+            "vote_average": 8.3,
+            "backdrop_path": "/4kIRrW1AlHP5Idne8CPHeQt8nR5.jpg",
+            "overview": "요술램프 속 지니? 아니 이 몸은 찻주전자 속의 위시 드래곤이란 말씀. 근데 천 년 만에 만난 주인이 이렇게 순박한 너라니. 한 가지 소원은 아까 들어줬고... 빨리 다음 소원이나 말해봐.",
+            "release_date": "2021-01-15",
+            "popularity": 488.481,
+            "media_type": "movie"
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/6FzuNrApEc71aJ3CwwkpadbNled.jpg",
+            "genre_ids": [
+                28,
+                35,
+                80
+            ],
+            "id": 581644,
+            "original_language": "en",
+            "original_title": "The Misfits",
+            "overview": "절도는 물론, 탈옥에도 일가견이 있는 범죄자 ‘페이스’. 그에게 뜻밖의 제안이 들어온다. 변장에 능한 ‘링고’, 폭탄전문가 ‘윅’, 암살자 ‘바이올렛’, 물주 ‘프린스’, 그리고 ‘페이스’의 딸이자 이번 작전의 기획자 ‘호프’까지, 그들과 함께 테러 자금을 대는 교도소장 ‘슐츠’의 아부다비 교도소에 숨겨진 금을 털자는 것이다. 스스로 사회 부적응자, 즉 ‘미스피츠’라 이름 지은 그들은 세상 나쁜 놈들에게 사이다 한 방을 날리기 위해 아부다비로 향하는데…",
+            "poster_path": "/3kq2Ii7cf1Dl2soc2koY6LcH0Bm.jpg",
+            "release_date": "2021-06-10",
+            "title": "미스피츠",
+            "video": false,
+            "vote_average": 4.2,
+            "vote_count": 18,
+            "popularity": 60.115,
+            "media_type": "movie"
+        },
+        {
+            "overview": "성모 마리아의 성령을 받은것으로 추정되는 청각 장애 소녀.  앨리스(크리켓 브라운)는 병자들을 듣게 하고 말하게 하고 걷게 하고  치료 할 수 있는 능력을 가진 것으로 소문이 나게 되고, 소문이 퍼지고  근처에 사는 이웃 뿐 아니라 먼 곳의 사람들까지 그녀의 기적을 목격하기 위해 몰려 들게 된다. 이 소식을 들은 한 불명예기자(제프리 딘 모건)는 자신의 명예가 회복 되기를 바라며 조사를 위해 작은 뉴 잉글랜드 마을을 방문하게 된다. 끔찍한 사건이 사방에서 발생하자, 그는 이러한 현상이 성모 마리아의 작품인지 또는 훨씬 더 사악한 것인지 의문을 갖기 시작한다.",
+            "release_date": "2021-03-31",
+            "adult": false,
+            "backdrop_path": "/jw6ASGRT2gi8EjCImpGtbiJ9NQ9.jpg",
+            "genre_ids": [
+                27
+            ],
+            "vote_count": 1004,
+            "id": 632357,
+            "original_title": "The Unholy",
+            "poster_path": "/bShgiEQoPnWdw4LBrYT5u18JF34.jpg",
+            "vote_average": 7.0,
+            "video": false,
+            "title": "더 언홀리",
+            "original_language": "en",
+            "popularity": 1666.351,
+            "media_type": "movie"
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/xPpXYnCWfjkt3zzE0dpCNME1pXF.jpg",
+            "genre_ids": [
+                14,
+                16,
+                28,
+                12,
+                18
+            ],
+            "id": 635302,
+            "original_language": "ja",
+            "original_title": "劇場版「鬼滅の刃」無限列車編",
+            "overview": "혈귀로 변해버린 여동생 ‘네즈코’를 인간으로 되돌릴 단서를 찾아 비밀조직 귀살대에 들어간 ‘탄지로.’ ‘젠이츠’, ‘이노스케’와 새로운 임무 수행을 위해 무한열차에 탑승 후 귀살대 최강 검사 염주 ‘렌고쿠’와 합류한다. 달리는 무한열차에서 승객들이 하나 둘 흔적 없이 사라지자 숨어있는 식인 혈귀의 존재를 직감하는 ‘렌고쿠’. 귀살대 ‘탄지로’ 일행과 최강 검사 염주 ‘렌고쿠’는 어둠 속을 달리는 무한열차에서 모두의 목숨을 구하기 위해 예측불가능한 능력을 가진 혈귀와 목숨을 건 혈전을 시작하는데…",
+            "poster_path": "/tDAQALgC407eg3SVAgehbiMwqo0.jpg",
+            "release_date": "2020-10-16",
+            "title": "극장판 귀멸의 칼날: 무한열차 편",
+            "video": false,
+            "vote_average": 8.4,
+            "vote_count": 1231,
+            "popularity": 962.917,
+            "media_type": "movie"
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/xXHZeb1yhJvnSHPzZDqee0zfMb6.jpg",
+            "genre_ids": [
+                28,
+                12,
+                53
+            ],
+            "id": 385128,
+            "original_language": "en",
+            "original_title": "F9",
+            "overview": "도미닉(빈 디젤)은 자신과 가장 가까웠던 형제 제이콥(존 시나)이 사이퍼(샤를리즈 테론)와 연합해 전 세계를 위기로 빠트릴 위험천만한 계획을 세운다는 사실을 알게 되고, 이를 막기 위해 다시 한번 패밀리들을 소환한다. 가장 가까운 자가 한순간, 가장 위험한 적이 된 상황 도미닉과 패밀리들은 이에 반격할 놀라운 컴백과 작전을 세우고 지상도, 상공도, 국경도 경계가 없는 불가능한 대결이 시작되는데...",
+            "poster_path": "/szGpS43AM11mGzTdxFQ5wOis3EH.jpg",
+            "release_date": "2021-05-19",
+            "title": "분노의 질주: 더 얼티메이트",
+            "video": false,
+            "vote_average": 8.0,
+            "vote_count": 151,
+            "popularity": 1081.639,
+            "media_type": "movie"
+        },
+        {
+            "video": false,
+            "vote_average": 7.4,
+            "overview": "`우스나비`에겐 도미니카 해변에 아버지의 상점을 다시 열고 싶은 꿈이 있다. 어린 시절부터 좋아한 친구 바네사에게 아직 고백 한 번 못한 채 망설이며 지내고 있다. `바네사`는 동네 미용실에서 패션 디자이너가 되기 위해 도시로 나가려다 예기치 못한 사랑에 빠진다. 스탠포드 대학에 진학한 `니나`는 가족들과 마을 사람들의 기대가 부담스럽고, 연인 `베니`는 니나의 아버지이자 사장이 니나의 학비 마련을 위해 운수회사를 팔려고 한다는 사실을 알게 된다. 그러던 어느 날 우스나비 가게에서 복권 당첨자가 나오고, 하이츠의 모든 사람들은 저 마다의 행복한 미래를 꿈꾸는데...",
+            "release_date": "2021-06-10",
+            "title": "인 더 하이츠",
+            "adult": false,
+            "backdrop_path": "/uEJuqp08dH6IQwZJGASlPZOXqKu.jpg",
+            "id": 467909,
+            "genre_ids": [
+                18,
+                10402,
+                10749
+            ],
+            "vote_count": 105,
+            "original_language": "en",
+            "original_title": "In the Heights",
+            "poster_path": "/xrGrqgCdq49l8X5UfsVYXbf9m0Y.jpg",
+            "popularity": 343.405,
+            "media_type": "movie"
+        }
+    ],
+    "total_pages": 1000,
+    "total_results": 20000
+}

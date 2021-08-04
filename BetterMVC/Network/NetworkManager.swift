@@ -7,95 +7,34 @@
 
 import Foundation
 
-struct EndPoint {
-    let path: String
-    let queryItems: [URLQueryItem]
-}
-
-enum Sorting: String {
-    case popularityDesc = "popularity.desc"
-}
-
-enum Time: String {
-    case day
-    case week
-}
-
-extension EndPoint {
-    static func discover(page: Int, sortedBy sorting: Sorting = .popularityDesc) -> EndPoint {
-        return EndPoint(
-            path: "/discover/movie",
-            queryItems: [
-                URLQueryItem(name: "api_key", value: API_KEY),
-                URLQueryItem(name: "language", value: "ko-KR"),
-                URLQueryItem(name: "sort_by", value: sorting.rawValue),
-                URLQueryItem(name: "page", value: String(page))
-            ]
-        )
-    }
-    
-    static func detail(movieID: String) -> EndPoint {
-        return EndPoint(
-            path: "/movie/\(movieID)",
-            queryItems: [
-                URLQueryItem(name: "api_key", value: API_KEY),
-                URLQueryItem(name: "language", value: "ko-KR")
-            ]
-        )
-    }
-    
-    static func trending(time: Time) -> EndPoint {
-        return EndPoint(
-            path: "/trending/movie/\(time.rawValue)",
-            queryItems: [
-                URLQueryItem(name: "api_key", value: API_KEY),
-                URLQueryItem(name: "language", value: "ko-KR")
-            ]
-        )
-    }
-    
-    static func popular() -> EndPoint {
-        return EndPoint(
-            path: "/movie/popular",
-            queryItems: [
-                URLQueryItem(name: "api_key", value: API_KEY),
-                URLQueryItem(name: "language", value: "ko-KR")
-            ]
-        )
-    }
-    
-}
-
-extension EndPoint {
-    var url: URL? {
-        var components = URLComponents()
-        components.scheme = NetworkManager.scheme
-        components.host = NetworkManager.host
-        components.path = NetworkManager.basePath + path
-        components.queryItems = queryItems
-        
-        return components.url
-    }
-}
-
-final class NetworkManager {
+class NetworkManager {
     
     static let shared       = NetworkManager()
     static let scheme       = "https"
     static let host         = "api.themoviedb.org"
     static let basePath     = "/3"
     
+    private let session: NetworkSession
+    
+    init(session: NetworkSession = URLSession.shared) {
+        self.session = session
+    }
+    
     func request<T: Decodable>(_ endpoint: EndPoint,
                  then handler: @escaping (Result<T, NetworkError>) -> Void) {
+        
         guard let url = endpoint.url else {
-            return handler(.failure(.invalidURL))
+            handler(.failure(.invalidURL))
+            return
         }
         
-        let task = URLSession.shared.dataTask(with: url) { data, _, error in
+        session.loadData(from: url) { data, error in
             guard let data = data else {
                 handler(.failure(.invalidData))
                 return
             }
+            
+            print("Request Success \(url.absoluteString)")
             
             do {
                 let decoder = JSONDecoder()
@@ -106,8 +45,27 @@ final class NetworkManager {
                 handler(.failure(.invalidData))
             }
         }
+    }
+}
+
+extension URLSession: NetworkSession {
+    
+    func loadData(from url: URL, completionHandler: @escaping (Data?, Error?) -> Void) {
+        let task = dataTask(with: url) { data, _, error in
+            completionHandler(data, error)
+        }
         
         task.resume()
+    }
+    
+}
+
+class NetworkSessionMock: NetworkSession {
+    var data: Data?
+    var error: Error?
+    
+    func loadData(from url: URL, completionHandler: @escaping (Data?, Error?) -> Void) {
+        completionHandler(data, error)
     }
     
 }
