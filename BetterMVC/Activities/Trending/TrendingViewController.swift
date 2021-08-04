@@ -8,11 +8,11 @@
 import UIKit
 
 final class TrendingViewController: DataLoadingViewController {
-    
+
     enum SegmentedControl: Int, CaseIterable {
         case day
         case week
-        
+
         var title: String {
             switch self {
             case .day:      return "Today"
@@ -20,32 +20,32 @@ final class TrendingViewController: DataLoadingViewController {
             }
         }
     }
-    
+
     private let logic = TrendingLogicController()
-    
+
     private lazy var dataSource = TrendingDataSource(collectionView: collectionView,
                                                  delegate: self,
                                                  provider: logic)
-    
+
     private var segmentedControl: UISegmentedControl?
-    
+
     @IBOutlet private weak var collectionView: UICollectionView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setupView()
-        
+
         render(.loading)
-        
+
         logic.load { [weak self] state in
             self?.render(state)
         }
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         navigationController?.navigationBar.prefersLargeTitles = true
     }
 
@@ -54,24 +54,24 @@ final class TrendingViewController: DataLoadingViewController {
         SegmentedControl.allCases.forEach {
             titles.append($0.title)
         }
-        
+
         segmentedControl = UISegmentedControl(items: titles)
         segmentedControl?.backgroundColor = .secondarySystemBackground
         segmentedControl?.addTarget(self, action: #selector(segmentSelected), for: .valueChanged)
         segmentedControl?.selectedSegmentIndex = 0
         navigationItem.titleView = segmentedControl
-        
+
         navigationItem.title = "Trending"
         navigationController?.navigationBar.prefersLargeTitles = true
-        
+
         setupCollectionView()
     }
-    
+
     private func setupCollectionView() {
         collectionView.delegate = dataSource
         collectionView.dataSource = dataSource
     }
-    
+
     @objc
     private func segmentSelected(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
@@ -82,7 +82,7 @@ final class TrendingViewController: DataLoadingViewController {
         default:
             break
         }
-        
+
         logic.load { [weak self] state in
             self?.render(state)
         }
@@ -98,13 +98,13 @@ private extension TrendingViewController {
             showLoadingView()
         case .presenting:
             hideLoadingView()
-            
+
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
         case .failed:
             hideLoadingView()
-            
+
             print("Failed to load")
         }
     }

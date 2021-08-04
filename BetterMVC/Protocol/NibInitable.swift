@@ -14,7 +14,7 @@ protocol NibInitable {
 extension NibInitable where Self: UIView {
     static func initFromNib() -> Self? {
         let xibName = String(describing: self)
-        guard let _ = bundle.path(forResource: xibName, ofType: "nib") else { return nil }
+        guard bundle.path(forResource: xibName, ofType: "nib") != nil else { return nil }
         return bundle.loadNibNamed(xibName, owner: nil, options: nil)?.first as? Self
     }
 }

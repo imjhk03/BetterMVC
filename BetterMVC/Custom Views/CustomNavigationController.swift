@@ -8,27 +8,26 @@
 import UIKit
 
 class CustomNavigationController: UINavigationController {
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         interactivePopGestureRecognizer?.delegate = self
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        
-        //self.navigationController?.interactivePopGestureRecognizer?.isEnabled = enable ? navigationController?.viewControllers.count ?? 0 > 1 : false
-        
+
+        // self.navigationController?.interactivePopGestureRecognizer?.isEnabled = enable ? navigationController?.viewControllers.count ?? 0 > 1 : false
+
         let viewControllersCount = navigationController?.viewControllers.count ?? 0
         navigationController?.interactivePopGestureRecognizer?.isEnabled = viewControllersCount > 1
     }
-    
+
 }
 
 extension CustomNavigationController: UIGestureRecognizerDelegate {
-    
+
 }
 
 extension CustomNavigationController: UINavigationControllerDelegate {

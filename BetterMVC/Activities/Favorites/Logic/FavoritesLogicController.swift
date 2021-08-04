@@ -9,11 +9,11 @@ import Foundation
 
 final class FavoritesLogicController {
     private var movies = [Movie]()
-    
+
     func load(then handler: @escaping (ViewState<[Movie]>) -> Void) {
         PersistenceManager.retrieveFavorites { [weak self] result in
             guard let self = self else { return }
-            
+
             switch result {
             case .success(let list):
                 let movies = self.convertFavoriteMovies(list)
@@ -24,7 +24,7 @@ final class FavoritesLogicController {
             }
         }
     }
-    
+
     private func convertFavoriteMovies(_ favorites: [MovieDetail]) -> [Movie] {
         var movies = [Movie]()
         favorites.forEach { movieDetail in
@@ -34,7 +34,7 @@ final class FavoritesLogicController {
         movies.reverse()
         return movies
     }
-    
+
 }
 
 extension FavoritesLogicController: FavoritesDataSourceDataProvider {

@@ -21,7 +21,7 @@ struct MovieList: Model {
 }
 
 struct Movie: Model {
-    
+
     private(set) var adult: Bool
     private(set) var backdrop_path: String?
     private(set) var genre_ids: [Int]
@@ -36,11 +36,11 @@ struct Movie: Model {
     private(set) var video: Bool
     private(set) var vote_average: Double
     private(set) var vote_count: Int
-    
+
 }
 
 struct MovieDetail: Model {
-    
+
     private(set) var adult: Bool
     private(set) var backdrop_path: String?
     private(set) var genres: [Genre]
@@ -74,7 +74,7 @@ struct MovieDetail: Model {
         case vote_average
         case vote_count
     }
-    
+
 }
 
 extension MovieDetail {
