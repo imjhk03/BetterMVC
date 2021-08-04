@@ -59,12 +59,16 @@ private extension ListViewController {
             hideLoadingView()
             
             DispatchQueue.main.async {
+                self.collectionView.isHidden = false
                 self.collectionView.reloadData()
             }
         case .failed:
             hideLoadingView()
             
-            print("Failed to load")
+            DispatchQueue.main.async {
+                self.collectionView.isHidden = true
+                self.showEmptyStateView(with: "Something went wrong. Try again.", in: self.view)
+            }
         }
     }
 }
