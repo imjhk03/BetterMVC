@@ -14,7 +14,7 @@ enum NetworkError: Error {
     case unableToComplete
 }
 
-enum BError: Error {
+enum FavoritesError: Error {
     case unableToFavorite
     case alreadyInFavorites
 }

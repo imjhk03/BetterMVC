@@ -8,6 +8,8 @@
 import Foundation
 
 final class ListLogicController {
+    private var popularMovies = [Movie]()
+    private var trendingMovies = [Movie]()
     private let networking = NetworkManager.shared
     
     func load(then handler: @escaping (ViewState<[Movie]>) -> Void) {
@@ -15,6 +17,7 @@ final class ListLogicController {
             switch response {
             case .success(let response):
                 let movies = response.results
+                self.trendingMovies = movies
                 handler(.presenting(movies))
             case .failure(let error):
                 handler(.failed)
@@ -22,4 +25,28 @@ final class ListLogicController {
         }
     }
     
+    func loadPopular(then handler: @escaping (ViewState<[Movie]>) -> Void) {
+        networking.request(.popular()) { (response: Result<MovieList, NetworkError>) in
+            switch response {
+            case .success(let response):
+                let movies = response.results
+                self.popularMovies = movies
+                handler(.presenting(movies))
+            case .failure(let error):
+                handler(.failed)
+            }
+        }
+    }
+    
+}
+
+extension ListLogicController: ListDataSourceDataProvider {
+    func item(for section: ListDataSource.Section) -> ListDataSource.Item {
+        switch section {
+        case .popular:
+            return .init(movies: popularMovies)
+        case .trending:
+            return .init(movies: trendingMovies)
+        }
+    }
 }

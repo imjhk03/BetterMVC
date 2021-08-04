@@ -11,7 +11,9 @@ final class ListViewController: DataLoadingViewController {
     
     private let logic = ListLogicController()
     
-    private lazy var dataSource = ListDataSource(collectionView: collectionView, delegate: self)
+    private lazy var dataSource = ListDataSource(collectionView: collectionView,
+                                                 delegate: self,
+                                                 provider: logic)
     
     @IBOutlet private weak var collectionView: UICollectionView!
 
@@ -25,6 +27,10 @@ final class ListViewController: DataLoadingViewController {
         logic.load { [weak self] state in
             self?.render(state)
         }
+        
+        logic.loadPopular { [weak self] state in
+            self?.render(state)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,7 +40,7 @@ final class ListViewController: DataLoadingViewController {
     }
 
     private func setupView() {
-        navigationItem.title = "트렌딩"
+        navigationItem.title = "영화"
         navigationController?.navigationBar.prefersLargeTitles = true
         
         setupCollectionView()
@@ -53,17 +59,20 @@ private extension ListViewController {
         switch state {
         case .loading:
             showLoadingView()
-        case .presenting(let list):
+        case .presenting:
             hideLoadingView()
             
-            dataSource.movies = list
             DispatchQueue.main.async {
+                self.collectionView.isHidden = false
                 self.collectionView.reloadData()
             }
         case .failed:
             hideLoadingView()
             
-            print("Failed to load")
+            DispatchQueue.main.async {
+                self.collectionView.isHidden = true
+                self.showEmptyStateView(with: "Something went wrong. Try again.", in: self.view)
+            }
         }
     }
 }
