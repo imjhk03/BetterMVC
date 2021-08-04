@@ -15,20 +15,20 @@ class DataLoadingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.hidesBarsOnSwipe = true
-        navigationController?.interactivePopGestureRecognizer?.delegate = self
+//        navigationController?.hidesBarsOnSwipe = true
+//        navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidDisappear(animated)
 
-        navigationController?.interactivePopGestureRecognizer?.isEnabled = navigationController?.viewControllers.count ?? 0 > 1
+//        navigationController?.interactivePopGestureRecognizer?.isEnabled = navigationController?.viewControllers.count ?? 0 > 1
     }
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
 
-        navigationController?.interactivePopGestureRecognizer?.delegate = nil
+//        navigationController?.interactivePopGestureRecognizer?.delegate = nil
     }
     
     func showLoadingView() {
