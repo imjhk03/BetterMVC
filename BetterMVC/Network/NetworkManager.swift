@@ -18,6 +18,12 @@ class NetworkManager {
     
     init(session: NetworkSession = URLSession.shared) {
         self.session = session
+        
+        // Register the custom URL Protocol.
+        URLProtocol.registerClass(PrintProtocol.self)
+        
+        let configuration = URLSessionConfiguration.default
+        configuration.protocolClasses?.insert(PrintProtocol.self, at: 0)
     }
     
     func request<T: Decodable>(_ endpoint: EndPoint,
@@ -34,7 +40,7 @@ class NetworkManager {
                 return
             }
             
-            print("Request Success \(url.absoluteString)")
+            print("✅ Request Success: \(url.absoluteString)")
             
             do {
                 let decoder = JSONDecoder()

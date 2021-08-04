@@ -55,6 +55,7 @@
 		C1A30535261DA736002DC30F /* DetailTopInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A30533261DA736002DC30F /* DetailTopInfoCollectionViewCell.swift */; };
 		C1A30536261DA736002DC30F /* DetailTopInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1A30534261DA736002DC30F /* DetailTopInfoCollectionViewCell.xib */; };
 		C1A30539261DAB63002DC30F /* DetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A30538261DAB63002DC30F /* DetailDataSource.swift */; };
+		C1CDEFF626BAF87E00774B41 /* PrintProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CDEFF526BAF87E00774B41 /* PrintProtocol.swift */; };
 		C1F6C2BD262AF61900A76943 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F6C2BC262AF61900A76943 /* CustomNavigationController.swift */; };
 /* End PBXBuildFile section */
 
@@ -119,6 +120,7 @@
 		C1A30533261DA736002DC30F /* DetailTopInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTopInfoCollectionViewCell.swift; sourceTree = "<group>"; };
 		C1A30534261DA736002DC30F /* DetailTopInfoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTopInfoCollectionViewCell.xib; sourceTree = "<group>"; };
 		C1A30538261DAB63002DC30F /* DetailDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDataSource.swift; sourceTree = "<group>"; };
+		C1CDEFF526BAF87E00774B41 /* PrintProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintProtocol.swift; sourceTree = "<group>"; };
 		C1F6C2BC262AF61900A76943 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -263,6 +265,7 @@
 				C1615CF0261699680052918D /* NetworkManager.swift */,
 				C12849242682CF71001E441D /* NetworkSession.swift */,
 				C12849262682DD83001E441D /* EndPoint.swift */,
+				C1CDEFF526BAF87E00774B41 /* PrintProtocol.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -490,7 +493,6 @@
 				C1615CF1261699680052918D /* NetworkManager.swift in Sources */,
 				C1418650261DFBD500808EAB /* AnyBundleable.swift in Sources */,
 				C11D5EDC261E88C700965A9D /* PersistenceManager.swift in Sources */,
-				C12C7664262ABA8F00CE46B9 /* Constants.swift in Sources */,
 				C1615CD1261696110052918D /* ListViewController.swift in Sources */,
 				C18BEF4726816D620041977F /* TrendingLogicController.swift in Sources */,
 				C1394F3E2681551C00D24CE3 /* Constants.swift in Sources */,
@@ -518,6 +520,7 @@
 				C1615CCF261696110052918D /* SceneDelegate.swift in Sources */,
 				C11D5EE7261EB20D00965A9D /* FavoritesDataSource.swift in Sources */,
 				C1A3052D261D6A06002DC30F /* DetailLogicController.swift in Sources */,
+				C1CDEFF626BAF87E00774B41 /* PrintProtocol.swift in Sources */,
 				C1615D492616C6E60052918D /* Movie.swift in Sources */,
 				C121921E264AE49400E3F6E6 /* ListCollectionReusableView.swift in Sources */,
 				C1A3052A261D4CE4002DC30F /* DataLoadingVC.swift in Sources */,
