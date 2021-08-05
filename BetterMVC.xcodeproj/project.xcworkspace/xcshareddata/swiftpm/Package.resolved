@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "ios-tools",
+        "repositoryURL": "https://github.com/imjhk03/ios-tools",
+        "state": {
+          "branch": null,
+          "revision": "7a7043bd5eb820b3feb79c5e8dfeb1ef27ab6cac",
+          "version": "0.0.3"
+        }
+      },
+      {
         "package": "Nuke",
         "repositoryURL": "https://github.com/kean/Nuke.git",
         "state": {
