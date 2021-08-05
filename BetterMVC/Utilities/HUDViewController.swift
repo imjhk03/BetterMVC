@@ -21,7 +21,6 @@ final class HUDViewController: UIViewController {
 
         let hudView = UIView()
         hudView.backgroundColor = .systemBackground
-        hudView.translatesAutoresizingMaskIntoConstraints = false
         hudView.layer.cornerRadius = 24
 
         view.alpha = 0.1
@@ -29,22 +28,14 @@ final class HUDViewController: UIViewController {
         let label = UILabel()
         label.text = text
         label.textColor = .black
-        label.translatesAutoresizingMaskIntoConstraints = false
 
         self.label = label
 
         view.addSubview(hudView)
         view.addSubview(label)
 
-        NSLayoutConstraint.activate([
-            hudView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 80),
-            hudView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -80),
-            hudView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
-            hudView.heightAnchor.constraint(equalToConstant: 55),
-
-            label.centerXAnchor.constraint(equalTo: hudView.centerXAnchor),
-            label.centerYAnchor.constraint(equalTo: hudView.centerYAnchor)
-        ])
+        hudView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: nil, trailing: view.safeAreaLayoutGuide.trailingAnchor, padding: .init(top: 24, left: 80, bottom: 0, right: 80), size: .init(width: 0, height: 55))
+        label.anchorCenter(to: hudView)
     }
 
 }

@@ -17,15 +17,11 @@ final class LoadingViewController: UIViewController {
 
     private func configureHierarchy() {
         let spinner = UIActivityIndicatorView(style: .medium)
-        spinner.translatesAutoresizingMaskIntoConstraints = false
         spinner.startAnimating()
         view.addSubview(spinner)
 
         // Center our spinner both horizontally & vertically
-        NSLayoutConstraint.activate([
-            spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        ])
+        spinner.anchorCenter(to: view)
     }
 
 }
