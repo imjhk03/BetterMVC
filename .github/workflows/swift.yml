@@ -7,14 +7,16 @@ on:
     branches: [ main, develop ]
 
 jobs:
-  build:
-
+  test:
+    name: Test
     runs-on: macos-latest
-
+    strategy:
+      matrix:
+      destination: ['platform=iOS Simulator,name=iPhone 12,OS=14.5']
+    
     steps:
+    - name: Checkout
     - uses: actions/checkout@v2
-#     - name: Build
-#       run: swift build -v
     - name: Run tests
       run:
-      xcodebuild -project BetterMVC.xcodeproj -scheme BetterMVC -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 12,OS=14.5' test
+      xcodebuild -project BetterMVC.xcodeproj -scheme BetterMVC -sdk iphonesimulator -destination "${destination}" test
