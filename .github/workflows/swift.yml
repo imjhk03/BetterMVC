@@ -19,9 +19,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run tests
       run:
-      xcodebuild \
+      xcodebuild test \
       -project BetterMVC.xcodeproj \
       -scheme BetterMVC \
       -sdk iphonesimulator \
       -destination "${destination}" \
-      test
