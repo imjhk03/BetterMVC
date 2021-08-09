@@ -490,7 +490,6 @@
 				C1615CF1261699680052918D /* NetworkManager.swift in Sources */,
 				C1418650261DFBD500808EAB /* AnyBundleable.swift in Sources */,
 				C11D5EDC261E88C700965A9D /* PersistenceManager.swift in Sources */,
-				C12C7664262ABA8F00CE46B9 /* Constants.swift in Sources */,
 				C1615CD1261696110052918D /* ListViewController.swift in Sources */,
 				C18BEF4726816D620041977F /* TrendingLogicController.swift in Sources */,
 				C1394F3E2681551C00D24CE3 /* Constants.swift in Sources */,
@@ -727,7 +726,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F9Y6SPBV9F;
 				INFOPLIST_FILE = BetterMVCTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -748,7 +747,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F9Y6SPBV9F;
 				INFOPLIST_FILE = BetterMVCTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
