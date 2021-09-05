@@ -38,14 +38,9 @@ final class EmptyStateView: UIView {
     private func configureMessageLabel() {
         messageLabel.numberOfLines  = 3
         messageLabel.textColor      = .secondaryLabel
-        messageLabel.translatesAutoresizingMaskIntoConstraints = false
 
-        NSLayoutConstraint.activate([
-            messageLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            messageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 50),
-            messageLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50),
-            messageLabel.heightAnchor.constraint(equalToConstant: 80)
-        ])
+        messageLabel.anchor(top: nil, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor, padding: .init(top: 0, left: 50, bottom: 0, right: 50), size: .init(width: 0, height: 80))
+        messageLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0).isActive = true
     }
 
 }
