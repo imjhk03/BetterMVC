@@ -58,6 +58,7 @@
 		C1CDF00526BB1A0E00774B41 /* Mintfile in Resources */ = {isa = PBXBuildFile; fileRef = C1CDF00426BB1A0E00774B41 /* Mintfile */; };
 		C1EB857C26BBD19C00CD8987 /* ios-tools in Frameworks */ = {isa = PBXBuildFile; productRef = C1EB857B26BBD19C00CD8987 /* ios-tools */; };
 		C1F6C2BD262AF61900A76943 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F6C2BC262AF61900A76943 /* CustomNavigationController.swift */; };
+		F5B2BC54280832EF0075C1E4 /* UIStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B2BC53280832EF0075C1E4 /* UIStackViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,7 @@
 		C1CDF00226BB193100774B41 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		C1CDF00426BB1A0E00774B41 /* Mintfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Mintfile; sourceTree = "<group>"; };
 		C1F6C2BC262AF61900A76943 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		F5B2BC53280832EF0075C1E4 /* UIStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,6 +288,7 @@
 		C1615D83261717510052918D /* Activities */ = {
 			isa = PBXGroup;
 			children = (
+				F5B2BC522807F65D0075C1E4 /* StackView */,
 				C1394F4426816AA200D24CE3 /* Trending */,
 				C1615CE22616964E0052918D /* List */,
 				C1A30518261D464A002DC30F /* Detail */,
@@ -369,6 +372,14 @@
 				C1F6C2BC262AF61900A76943 /* CustomNavigationController.swift */,
 			);
 			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		F5B2BC522807F65D0075C1E4 /* StackView */ = {
+			isa = PBXGroup;
+			children = (
+				F5B2BC53280832EF0075C1E4 /* UIStackViewController.swift */,
+			);
+			path = StackView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -511,6 +522,7 @@
 			files = (
 				C11D5EE3261EB10100965A9D /* FavoritesViewController.swift in Sources */,
 				C1615CF1261699680052918D /* NetworkManager.swift in Sources */,
+				F5B2BC54280832EF0075C1E4 /* UIStackViewController.swift in Sources */,
 				C11D5EDC261E88C700965A9D /* PersistenceManager.swift in Sources */,
 				C1615CD1261696110052918D /* ListViewController.swift in Sources */,
 				C18BEF4726816D620041977F /* TrendingLogicController.swift in Sources */,
