@@ -28,7 +28,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Danger
-        uses: docker://ghcr.io/danger/danger-swift:3.7.2
+        uses: docker://ghcr.io/danger/danger-swift-with-swiftlint:3.13.0
         with:
             args: --failOnErrors --no-publish-check
         env:
