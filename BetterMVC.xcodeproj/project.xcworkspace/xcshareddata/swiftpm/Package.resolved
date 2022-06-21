@@ -1,25 +1,23 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "ios-tools",
-        "repositoryURL": "https://github.com/imjhk03/ios-tools",
-        "state": {
-          "branch": null,
-          "revision": "7a7043bd5eb820b3feb79c5e8dfeb1ef27ab6cac",
-          "version": "0.0.3"
-        }
-      },
-      {
-        "package": "Nuke",
-        "repositoryURL": "https://github.com/kean/Nuke.git",
-        "state": {
-          "branch": null,
-          "revision": "6e6c6b5f8acaaac1ac4f7024dcf40f2facabc0a3",
-          "version": "9.4.1"
-        }
+  "pins" : [
+    {
+      "identity" : "ios-tools",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/imjhk03/ios-tools",
+      "state" : {
+        "revision" : "7a7043bd5eb820b3feb79c5e8dfeb1ef27ab6cac",
+        "version" : "0.0.3"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "nuke",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kean/Nuke.git",
+      "state" : {
+        "revision" : "6e6c6b5f8acaaac1ac4f7024dcf40f2facabc0a3",
+        "version" : "9.4.1"
+      }
+    }
+  ],
+  "version" : 2
 }
