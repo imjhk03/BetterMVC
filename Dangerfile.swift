@@ -17,8 +17,6 @@ if editedAppFiles.count > 0 && !skipCheck {
   fail("Please add a CHANGELOG entry for these changes. If you would like to skip this check, add `#no_changelog` to the PR body and re-run CI.")
 }
 
-message("These files have changed: \(editedFiles.joined(separator: ", "))")
-
 // Make it more obvious that a PR is a work in progress and shouldn't be merged yet
 if danger.github.pullRequest.title.contains("WIP") {
     warn("PR is classed as Work in Progress")
