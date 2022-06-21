@@ -1,5 +1,4 @@
 import Danger
-import DangerSwiftLint
 
 let danger = Danger()
 
@@ -18,19 +17,5 @@ if editedAppFiles.count > 0 && !skipCheck {
   fail("Please add a CHANGELOG entry for these changes. If you would like to skip this check, add `#no_changelog` to the PR body and re-run CI.")
 }
 
-SwiftLint.lint()
-
-// Instead of making a markdown table in the main message
-// sprinkle those comments inline, this can be a bit noisy
-// but it definitely feels magical.
-SwiftLint.lint(inline: true)
-
-// Have different runs of SwiftLint against different sub-folders
-SwiftLint.lint(directory: "Sources", configFile: ".swiftlint.yml")
-SwiftLint.lint(directory: "Tests", configFile: "Tests/HarveyTests/.swiftlint.yml")
-
-// The equivalent to running `swiftlint` in the root of the folder
-SwiftLint.lint(lintAllFiles: true)
-
-// Use a different path for SwiftLint
-SwiftLint.lint(swiftlintPath: "Pods/SwiftLint/swiftlint")
+// Run Swiftlint
+SwiftLint.lint(inline: true, configFile: ".swiftlint.yml")
