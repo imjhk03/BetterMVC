@@ -5,7 +5,10 @@ disabled_rules: # rule identifiers turned on by default to exclude from running
   - control_statement
   - identifier_name
 opt_in_rules: # some rules are turned off by default, so you need to opt-in
-  #- empty_count # Find all the available rules by running: `swiftlint rules`
+  - empty_count # Find all the available rules by running: `swiftlint rules`
+  - private_subject
+  - private_outlet
+  
 
 # Alternatively, specify all rules explicitly by uncommenting this option:
 # only_rules: # delete `disabled_rules` & `opt_in_rules` if using this
@@ -17,6 +20,7 @@ included: # paths to include during linting. `--path` is ignored if present.
 excluded: # paths to ignore during linting. Takes precedence over `included`.
   - .build
   - /Constants.swift
+  - Dangerfile.swift
 analyzer_rules: # Rules run by `swiftlint analyze` (experimental)
   - explicit_self
 
