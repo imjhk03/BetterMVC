@@ -18,4 +18,4 @@ if editedAppFiles.count > 0 && !skipCheck {
 }
 
 // Run Swiftlint
-SwiftLint.lint(inline: true, configFile: ".swiftlint.yml")
+//SwiftLint.lint(inline: true, configFile: ".swiftlint.yml")
