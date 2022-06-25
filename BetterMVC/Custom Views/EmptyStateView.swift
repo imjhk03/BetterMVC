@@ -9,7 +9,7 @@ import UIKit
 
 final class EmptyStateView: UIView {
 
-    private lazy var messageLabel: UILabel = {
+    lazy var messageLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 28)
@@ -30,12 +30,12 @@ final class EmptyStateView: UIView {
         messageLabel.text = message
     }
 
-    private func configure() {
+    func configure() {
         addSubview(messageLabel)
         configureMessageLabel()
     }
 
-    private func configureMessageLabel() {
+    func configureMessageLabel() {
         messageLabel.numberOfLines  = 3
         messageLabel.textColor      = .secondaryLabel
 
