@@ -87,5 +87,3 @@ enum PersistenceManager {
     }
 
 }
-
-
