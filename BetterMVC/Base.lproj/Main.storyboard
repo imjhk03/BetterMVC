@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gJ5-38-UVb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gJ5-38-UVb">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -54,7 +54,7 @@
                     <tabBarItem key="tabBarItem" title="Discover" image="lasso.sparkles" catalog="system" id="vJ2-sR-Jpk"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iLY-7b-gMO">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -86,6 +86,37 @@
             </objects>
             <point key="canvasLocation" x="-954" y="551"/>
         </scene>
+        <!--Table View Controller-->
+        <scene sceneID="Rtb-iW-yjS">
+            <objects>
+                <viewController id="YFd-U2-a6U" customClass="TableViewController" customModule="BetterMVC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wf1-Ii-u7O">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="isK-fg-8aN">
+                                <rect key="frame" x="0.0" y="92" width="414" height="721"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZI5-Df-ubk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZI5-Df-ubk" firstAttribute="bottom" secondItem="isK-fg-8aN" secondAttribute="bottom" id="OIx-7f-MzF"/>
+                            <constraint firstItem="isK-fg-8aN" firstAttribute="leading" secondItem="ZI5-Df-ubk" secondAttribute="leading" id="ZPv-3a-fM5"/>
+                            <constraint firstItem="ZI5-Df-ubk" firstAttribute="trailing" secondItem="isK-fg-8aN" secondAttribute="trailing" id="bnh-3Q-9rP"/>
+                            <constraint firstItem="isK-fg-8aN" firstAttribute="top" secondItem="ZI5-Df-ubk" secondAttribute="top" id="r0X-cF-Por"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="kwi-cO-DH0"/>
+                    <connections>
+                        <outlet property="tableView" destination="isK-fg-8aN" id="8vm-Kz-0U8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="shb-A2-GuR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1970" y="828"/>
+        </scene>
         <!--Favorites View Controller-->
         <scene sceneID="emg-ww-9Ik">
             <objects>
@@ -95,7 +126,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Dah-0h-knf">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="UMz-la-Yja">
                                     <size key="itemSize" width="128" height="128"/>
@@ -122,7 +153,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sMo-jd-gCg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1961" y="827"/>
+            <point key="canvasLocation" x="2836" y="826"/>
         </scene>
         <!--Trending View Controller-->
         <scene sceneID="DSV-J8-7Dp">
@@ -169,12 +200,12 @@
                     <tabBarItem key="tabBarItem" title="Favorites" image="star.fill" catalog="system" id="VRc-dO-9jR"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jPd-aO-XE7">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="mqX-SR-uAt" kind="relationship" relationship="rootViewController" id="kJC-Vj-kZB"/>
+                        <segue destination="YFd-U2-a6U" kind="relationship" relationship="rootViewController" id="mhb-Jf-ywh"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xUu-oA-yHk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -188,7 +219,7 @@
                     <tabBarItem key="tabBarItem" title="Trending" image="bubble.left.and.bubble.right" catalog="system" id="i9b-bf-fr0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="N0R-qD-hh0">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -203,7 +234,7 @@
     </scenes>
     <resources>
         <image name="bubble.left.and.bubble.right" catalog="system" width="128" height="96"/>
-        <image name="lasso.sparkles" catalog="system" width="122" height="128"/>
+        <image name="lasso.sparkles" catalog="system" width="115" height="128"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
