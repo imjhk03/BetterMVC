@@ -23,6 +23,14 @@ final class ListLogicController {
             }
         }
     }
+    
+    func appendMovie(_ movie: Movie, at index: Int) {
+        popularMovies.insert(movie, at: index)
+    }
+    
+    func removeMovie(at index: Int) {
+        popularMovies.remove(at: index)
+    }
 
 }
 

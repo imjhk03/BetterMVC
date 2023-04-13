@@ -7,11 +7,13 @@
 
 import UIKit
 
-class AdditionalCollectionViewCell: UICollectionViewCell {
+final class AdditionalCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        contentView.backgroundColor = .systemRed
     }
 
 }

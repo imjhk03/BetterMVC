@@ -38,6 +38,9 @@ class ListDataSource: NSObject {
 
         let nib = UINib(nibName: "ListCollectionViewCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "ListCollectionViewCell")
+        
+        let newNib = UINib(nibName: "AdditionalCollectionViewCell", bundle: nil)
+        collectionView.register(newNib, forCellWithReuseIdentifier: "AdditionalCollectionViewCell")
 
         let header = UINib(nibName: "ListCollectionReusableView", bundle: nil)
         collectionView.register(header, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "ListCollectionReusableView")
@@ -63,13 +66,27 @@ extension ListDataSource: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let section = Section(rawValue: indexPath.section)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCollectionViewCell", for: indexPath) as? ListCollectionViewCell else {
+            fatalError("Failed to dequeue ListCollectionViewCell")
+        }
         switch section {
         case .popular:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCollectionViewCell", for: indexPath) as? ListCollectionViewCell,
-                  let movies = provider?.item(for: .popular).movies else {
-                fatalError("Failed to dequeue ListCollectionViewCell")
+            if let movies = provider?.item(for: .popular).movies {
+                let movie = movies[indexPath.item]
+                if movie.id == 123 {
+                    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AdditionalCollectionViewCell", for: indexPath) as? AdditionalCollectionViewCell else {
+                        fatalError("Failed to dequeue AdditionalCollectionViewCell")
+                    }
+                    return cell
+                } else {
+                    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCollectionViewCell", for: indexPath) as? ListCollectionViewCell else {
+                        fatalError("Failed to dequeue ListCollectionViewCell")
+                    }
+                    cell.configure(.init(movie: movies[indexPath.item]))
+                    return cell
+                }
             }
-            cell.configure(.init(movie: movies[indexPath.item]))
+            
             return cell
         default:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCollectionViewCell", for: indexPath) as? ListCollectionViewCell else {
@@ -117,8 +134,16 @@ extension ListDataSource: UICollectionViewDelegate {
 // MARK: - UICollectionViewDelegateFlowLayout
 extension ListDataSource: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width: CGFloat = (collectionView.frame.width - (16 * 2) - 8) / 2
-        return .init(width: width, height: 325)
+        if let movies = provider?.item(for: .popular).movies {
+            let movie = movies[indexPath.item]
+            if movie.id == 123 {
+                return .init(width: collectionView.frame.size.width, height: 175)
+            } else {
+                let width: CGFloat = (collectionView.frame.width - (16 * 2) - 8) / 2
+                return .init(width: width, height: 325)
+            }
+        }
+        return .zero
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
