@@ -19,7 +19,7 @@ final class DetailViewController: DataLoadingViewController {
     private var modelController: MovieDetailModelController?
     private lazy var dataSource = DetailDataSource(collectionView: collectionView, delegates: self)
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,7 @@ final class DetailViewController: DataLoadingViewController {
     }
 
     private func setupView() {
-        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationItem.largeTitleDisplayMode = .never
 
         collectionView.dataSource = dataSource
         collectionView.delegate = dataSource
