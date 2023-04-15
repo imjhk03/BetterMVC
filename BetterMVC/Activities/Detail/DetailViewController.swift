@@ -34,7 +34,7 @@ final class DetailViewController: DataLoadingViewController {
     }
 
     private func setupView() {
-        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationItem.largeTitleDisplayMode = .never
 
         collectionView.dataSource = dataSource
         collectionView.delegate = dataSource

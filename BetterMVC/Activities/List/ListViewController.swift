@@ -29,12 +29,6 @@ final class ListViewController: DataLoadingViewController {
         }
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        navigationController?.navigationBar.prefersLargeTitles = true
-    }
-
     private func setupView() {
         navigationItem.title = "영화"
         navigationController?.navigationBar.prefersLargeTitles = true
