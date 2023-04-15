@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -156,7 +156,6 @@
 		C11D5EDF261EB0DD00965A9D /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
-				C11D5EE1261EB0EF00965A9D /* View */,
 				C11D5EE0261EB0E700965A9D /* Logic */,
 				C11D5EE2261EB10100965A9D /* FavoritesViewController.swift */,
 				C11D5EE6261EB20D00965A9D /* FavoritesDataSource.swift */,
@@ -170,13 +169,6 @@
 				C11D5EE4261EB1A200965A9D /* FavoritesLogicController.swift */,
 			);
 			path = Logic;
-			sourceTree = "<group>";
-		};
-		C11D5EE1261EB0EF00965A9D /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		C1394F4426816AA200D24CE3 /* Trending */ = {
@@ -420,8 +412,9 @@
 		C1615CC1261696110052918D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					C1615CC8261696110052918D = {
 						CreatedOnToolsVersion = 12.4;
