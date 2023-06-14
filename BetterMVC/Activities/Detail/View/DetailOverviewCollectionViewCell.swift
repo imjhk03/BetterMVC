@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class DetailOverviewCollectionViewCell: UICollectionViewCell {
+final class DetailOverviewCollectionViewCell: UICollectionViewCell, NibReusable {
 
     static func fittingSize(availableWidth: CGFloat, movie: MovieDetail) -> CGSize {
         guard let sizingCell = DetailOverviewCollectionViewCell.initFromNib() else { return .zero }

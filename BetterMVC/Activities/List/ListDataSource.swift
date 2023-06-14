@@ -36,11 +36,8 @@ class ListDataSource: NSObject {
         self.delegate = delegate
         self.provider = provider
 
-        let nib = UINib(nibName: "ListCollectionViewCell", bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: "ListCollectionViewCell")
-
-        let header = UINib(nibName: "ListCollectionReusableView", bundle: nil)
-        collectionView.register(header, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "ListCollectionReusableView")
+        collectionView.registerCell(ListCollectionViewCell.self)
+        collectionView.registerView(ListCollectionReusableView.self, forSupplementaryViewKind: .header)
     }
 
 }
@@ -63,35 +60,26 @@ extension ListDataSource: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let section = Section(rawValue: indexPath.section)
+        let cell: ListCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
         switch section {
         case .popular:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCollectionViewCell", for: indexPath) as? ListCollectionViewCell,
-                  let movies = provider?.item(for: .popular).movies else {
-                fatalError("Failed to dequeue ListCollectionViewCell")
+            if let movies = provider?.item(for: .popular).movies {
+                cell.configure(.init(movie: movies[indexPath.item]))
             }
-            cell.configure(.init(movie: movies[indexPath.item]))
             return cell
         default:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCollectionViewCell", for: indexPath) as? ListCollectionViewCell else {
-                fatalError("Failed to dequeue ListCollectionViewCell")
-            }
             return cell
         }
     }
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let section = Section(rawValue: indexPath.section)
+        let view: ListCollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: .header, for: indexPath)
         switch section {
         case .popular:
-            guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ListCollectionReusableView", for: indexPath) as? ListCollectionReusableView else {
-                fatalError("Failed to dequeue ListCollectionReusableView")
-            }
             view.configure("인기")
             return view
         default:
-            guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ListCollectionReusableView", for: indexPath) as? ListCollectionReusableView else {
-                fatalError("Failed to dequeue ListCollectionReusableView")
-            }
             return view
         }
     }
@@ -122,7 +110,6 @@ extension ListDataSource: UICollectionViewDelegateFlowLayout {
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-//        return .init(width: collectionView.frame.width, height: 50)
         return .zero
     }
 

@@ -35,8 +35,11 @@ final class FavoritesDataSource: NSObject {
         self.delegate = delegate
         self.provider = provider
 
-        let nib = UINib(nibName: "ListCollectionViewCell", bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: "ListCollectionViewCell")
+//        let nib = UINib(nibName: "ListCollectionViewCell", bundle: nil)
+//        collectionView.register(nib, forCellWithReuseIdentifier: "ListCollectionViewCell")
+        
+        collectionView.registerCell(ListCollectionViewCell.self)
+//        collectionView.register(<#T##viewClass: AnyClass?##AnyClass?#>, forSupplementaryViewOfKind: <#T##String#>, withReuseIdentifier: <#T##String#>)
     }
 
 }
@@ -59,18 +62,21 @@ extension FavoritesDataSource: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let section = Section(rawValue: indexPath.section)
+        let cell: ListCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
         switch section {
         case .main:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCollectionViewCell", for: indexPath) as? ListCollectionViewCell,
-                  let movies = provider?.item(for: .main).movies else {
-                fatalError("Failed to dequeue ListCollectionViewCell")
+//            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCollectionViewCell", for: indexPath) as? ListCollectionViewCell,
+//                  let movies = provider?.item(for: .main).movies else {
+//                fatalError("Failed to dequeue ListCollectionViewCell")
+//            }
+            if let movies = provider?.item(for: .main).movies {
+                cell.configure(.init(movie: movies[indexPath.item]))
             }
-            cell.configure(.init(movie: movies[indexPath.item]))
             return cell
         default:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCollectionViewCell", for: indexPath) as? ListCollectionViewCell else {
-                fatalError("Failed to dequeue ListCollectionViewCell")
-            }
+//            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCollectionViewCell", for: indexPath) as? ListCollectionViewCell else {
+//                fatalError("Failed to dequeue ListCollectionViewCell")
+//            }
             return cell
         }
     }

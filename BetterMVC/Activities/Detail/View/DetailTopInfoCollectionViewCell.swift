@@ -12,7 +12,7 @@ protocol DetailTopInfoCollectionViewCellDelegate: AnyObject {
     func buttonTapped(_ actionType: PersistenceActionType)
 }
 
-final class DetailTopInfoCollectionViewCell: UICollectionViewCell {
+final class DetailTopInfoCollectionViewCell: UICollectionViewCell, NibReusable {
 
     struct ViewModel {
         let movie: MovieDetail

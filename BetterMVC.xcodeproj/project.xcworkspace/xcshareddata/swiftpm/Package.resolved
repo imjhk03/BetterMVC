@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/imjhk03/ios-tools",
       "state" : {
-        "revision" : "7a7043bd5eb820b3feb79c5e8dfeb1ef27ab6cac",
-        "version" : "0.0.3"
+        "branch" : "feature/add-reusable",
+        "revision" : "8e9373a4fd6f304e655a1fe8f1e8ff963af6d50d"
       }
     },
     {
@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/kean/Nuke.git",
       "state" : {
-        "revision" : "6e6c6b5f8acaaac1ac4f7024dcf40f2facabc0a3",
-        "version" : "9.4.1"
+        "revision" : "7f73ceaeacd5df75a7994cd82e165ad9ff1815db",
+        "version" : "9.6.1"
       }
     }
   ],

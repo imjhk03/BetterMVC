@@ -823,8 +823,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/imjhk03/ios-tools";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.3;
+				branch = "feature/add-reusable";
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

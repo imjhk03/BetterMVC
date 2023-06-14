@@ -22,12 +22,9 @@ final class DetailDataSource: NSObject {
 
     init(collectionView: UICollectionView, delegates: Delegates?) {
         self.delegates = delegates
-
-        let nib = UINib(nibName: "DetailTopInfoCollectionViewCell", bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: "DetailTopInfoCollectionViewCell")
-
-        let overviewNib = UINib(nibName: "DetailOverviewCollectionViewCell", bundle: nil)
-        collectionView.register(overviewNib, forCellWithReuseIdentifier: "DetailOverviewCollectionViewCell")
+        
+        collectionView.registerCell(DetailTopInfoCollectionViewCell.self)
+        collectionView.registerCell(DetailOverviewCollectionViewCell.self)
     }
 
 }
@@ -46,16 +43,12 @@ extension DetailDataSource: UICollectionViewDataSource {
 
         switch Section(rawValue: indexPath.section) {
         case .topInfo:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailTopInfoCollectionViewCell", for: indexPath) as? DetailTopInfoCollectionViewCell else {
-                fatalError("Failed to dequeue DetailTopInfoCollectionViewCell")
-            }
+            let cell: DetailTopInfoCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
             guard let movieDetail = movie else { return cell }
             cell.configure(.init(movie: movieDetail), delegate: delegates)
             return cell
         case .overview:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailOverviewCollectionViewCell", for: indexPath) as? DetailOverviewCollectionViewCell else {
-                fatalError("Failed to dequeue DetailOverviewCollectionViewCell")
-            }
+            let cell: DetailOverviewCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
             guard let movieDetail = movie else { return cell }
             cell.configure(.init(movie: movieDetail))
             return cell

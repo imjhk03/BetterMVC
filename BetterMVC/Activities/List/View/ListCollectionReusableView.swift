@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ListCollectionReusableView: UICollectionReusableView {
+final class ListCollectionReusableView: UICollectionReusableView, NibReusable {
 
     @IBOutlet private weak var label: UILabel!
 

@@ -59,4 +59,7 @@ identifier_name:
     - GlobalAPIKey
     - API_KEY
 reporter: "xcode" # reporter type (xcode, json, csv, checkstyle, codeclimate, junit, html, emoji, sonarqube, markdown, github-actions-logging)
+trailing_whitespace:
+  ignores_empty_lines: true
+  ignores_comments: true
 allow_zero_lintable_files: true

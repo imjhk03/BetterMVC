@@ -8,7 +8,7 @@
 import UIKit
 import Nuke
 
-final class ListCollectionViewCell: UICollectionViewCell {
+final class ListCollectionViewCell: UICollectionViewCell, NibReusable {
 
     struct ViewModel {
         let movie: Movie
