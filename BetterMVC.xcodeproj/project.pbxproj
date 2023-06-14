@@ -58,6 +58,7 @@
 		C1CDF00526BB1A0E00774B41 /* Mintfile in Resources */ = {isa = PBXBuildFile; fileRef = C1CDF00426BB1A0E00774B41 /* Mintfile */; };
 		C1EB857C26BBD19C00CD8987 /* ios-tools in Frameworks */ = {isa = PBXBuildFile; productRef = C1EB857B26BBD19C00CD8987 /* ios-tools */; };
 		C1F6C2BD262AF61900A76943 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F6C2BC262AF61900A76943 /* CustomNavigationController.swift */; };
+		F5FE564E2A39766F00D8EFB6 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE564D2A39766F00D8EFB6 /* DataViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,7 @@
 		C1CDF00226BB193100774B41 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		C1CDF00426BB1A0E00774B41 /* Mintfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Mintfile; sourceTree = "<group>"; };
 		C1F6C2BC262AF61900A76943 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		F5FE564D2A39766F00D8EFB6 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 		C1394F4426816AA200D24CE3 /* Trending */ = {
 			isa = PBXGroup;
 			children = (
+				F5FE564C2A39765600D8EFB6 /* DataViewControllers */,
 				C18BEF4526816D250041977F /* Logic */,
 				C1394F4526816AAF00D24CE3 /* TrendingViewController.swift */,
 				C18BEF4326816C9E0041977F /* TrendingDataSource.swift */,
@@ -363,6 +366,14 @@
 			path = "Custom Views";
 			sourceTree = "<group>";
 		};
+		F5FE564C2A39765600D8EFB6 /* DataViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F5FE564D2A39766F00D8EFB6 /* DataViewController.swift */,
+			);
+			path = DataViewControllers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -516,6 +527,7 @@
 				C1615CEB261698590052918D /* ListCollectionViewCell.swift in Sources */,
 				C12849272682DD83001E441D /* EndPoint.swift in Sources */,
 				C1615CCD261696110052918D /* AppDelegate.swift in Sources */,
+				F5FE564E2A39766F00D8EFB6 /* DataViewController.swift in Sources */,
 				C12849252682CF71001E441D /* NetworkSession.swift in Sources */,
 				C14AAAE526BA4E80001418A5 /* EmptyStateView.swift in Sources */,
 				C1A30526261D48C9002DC30F /* LoadingViewController.swift in Sources */,

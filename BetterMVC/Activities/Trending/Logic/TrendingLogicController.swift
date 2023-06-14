@@ -12,8 +12,10 @@ final class TrendingLogicController {
     private var todayMovies = [Movie]()
     private var thisWeekMovies = [Movie]()
     private let networking = NetworkManager.shared
+    private var hasLoaded: Bool = false
 
     func load(then handler: @escaping (ViewState<[Movie]>) -> Void) {
+        if hasLoaded { return }
         if !todayMovies.isEmpty && !thisWeekMovies.isEmpty {
             switch time {
             case .day:
@@ -37,9 +39,10 @@ final class TrendingLogicController {
                 case .week:
                     self.thisWeekMovies = movies
                 }
-
+                
+                self.hasLoaded = true
                 handler(.presenting(movies))
-            case .failure(let error):
+            case .failure:
                 handler(.failed)
             }
         }

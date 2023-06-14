@@ -97,7 +97,7 @@ extension TrendingDataSource: UICollectionViewDelegate {
 // MARK: - UICollectionViewDelegateFlowLayout
 extension TrendingDataSource: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width: CGFloat = (collectionView.frame.width - (16 * 2) - 8) / 2
+        let width: CGFloat = (collectionView.frame.width - 8) / 2
         return .init(width: width, height: 325)
     }
 
@@ -110,7 +110,8 @@ extension TrendingDataSource: UICollectionViewDelegateFlowLayout {
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return .init(top: 16, left: 16, bottom: 16, right: 16)
+//        return .init(top: 16, left: 16, bottom: 16, right: 16)
+        return .zero
     }
 
 }
