@@ -21,39 +21,14 @@ final class TrendingViewController: DataLoadingViewController {
         }
     }
 
-    private let logic = TrendingLogicController()
-
+//    private let logic = TrendingLogicController()
+//
 //    private lazy var dataSource = TrendingDataSource(collectionView: collectionView,
 //                                                 delegate: self,
 //                                                 provider: logic)
 
     private var segmentedControl: UISegmentedControl?
     
-    private lazy var firstView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .green
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    private lazy var secondView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .yellow
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-
-//    @IBOutlet private weak var collectionView: UICollectionView!
-    
-    private let vc1: UIViewController = {
-        let vc = UIViewController()
-        vc.view.backgroundColor = .red
-        return vc
-    }()
-    private let vc2: UIViewController = {
-        let vc = UIViewController()
-        vc.view.backgroundColor = .green
-        return vc
-    }()
     private lazy var pageViewController: UIPageViewController = {
         let vc = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         vc.setViewControllers([self.dataViewControllers[0]], direction: .forward, animated: true)
@@ -62,33 +37,35 @@ final class TrendingViewController: DataLoadingViewController {
         vc.view.translatesAutoresizingMaskIntoConstraints = false
         return vc
     }()
+    private lazy var todayViewController: DataViewController = DataViewController()
+    private lazy var weekViewController: DataViewController = DataViewController()
     var dataViewControllers: [UIViewController] {
-        [self.vc1, self.vc2]
-      }
-      var currentPage: Int = 0 {
+        [todayViewController, weekViewController]
+    }
+    var currentPage: Int = 0 {
         didSet {
-          // from segmentedControl -> pageViewController 업데이트
-          print(oldValue, self.currentPage)
-          let direction: UIPageViewController.NavigationDirection = oldValue <= self.currentPage ? .forward : .reverse
-          self.pageViewController.setViewControllers(
-            [dataViewControllers[self.currentPage]],
-            direction: direction,
-            animated: true,
-            completion: nil
-          )
+            // from segmentedControl -> pageViewController 업데이트
+            print(oldValue, self.currentPage)
+            let direction: UIPageViewController.NavigationDirection = oldValue <= self.currentPage ? .forward : .reverse
+            self.pageViewController.setViewControllers(
+                [dataViewControllers[self.currentPage]],
+                direction: direction,
+                animated: true,
+                completion: nil
+            )
         }
-      }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupView()
 
-        render(.loading)
+//        render(.loading)
 
-        logic.load { [weak self] state in
-            self?.render(state)
-        }
+//        logic.load { [weak self] state in
+//            self?.render(state)
+//        }
     }
 
     private func setupView() {
@@ -122,6 +99,9 @@ final class TrendingViewController: DataLoadingViewController {
 
 //        setupCollectionView()
 //        view.addSubview(pageViewController.view)
+        todayViewController.configure(color: .systemBackground, time: .day)
+        weekViewController.configure(color: .systemBackground, time: .week)
+        
         add(pageViewController)
         pageViewController.view.anchor(
             top: view.safeAreaLayoutGuide.topAnchor
